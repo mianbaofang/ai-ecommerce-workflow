@@ -40,6 +40,20 @@ build/
 .env.*
 *.key
 *.pem
+
+# Tool caches
 .firecrawl/
+.mcp/
+.anysearch/
+.multi-search-engine/
 docs/site/frames/
-docs/site/frames/
+
+# Browser session data (cookies, localStorage snapshots)
+*.cookies.json
+session-data/
+.local-chromium/
+
+# OS-generated noise
+.DS_Store
+Thumbs.db
+desktop.ini

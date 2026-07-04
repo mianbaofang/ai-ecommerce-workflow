@@ -6,16 +6,6 @@
   </a>
 </p>
 
-## Why This Skill Exists
-
-A usable ecommerce launch package is rarely one writing task. It needs positioning, competitor price bands, review-mined pain points, main image logic, a detail page in the user's actual decision order, SEO titles, FAQ, customer-service scripts, and a launch plan that respects budget and inventory.
-
-I built this Skill because watching a real team prepare a new product still takes several days and three people. Operators draft a brief, designers ask the same twenty questions, and service checks the listing too late. There is also a more annoying problem: the AI draft usually looks confident, but the numbers inside are guessed and the absolute statements would not survive a marketplace review.
-
-This Skill turns that work into one structured Agent workflow. It validates the input, calls companion search and scrape tools, labels every claim with an evidence level and a source trail, blocks prohibited marketplace terms before any copy goes out, refuses to invent a closed loop when the user cannot afford paid traffic, and packages the answer by who needs to act next. Operators, designers, service and decision makers each get a focused packet instead of one long report.
-
-It does not publish products to seller backends, write fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package and stays honest about what data is real, what is observed, and what is only inferred.
-
 <p align="center">
   <a href="README.zh-CN.md">中文 README</a>
   ·
@@ -29,8 +19,20 @@ It does not publish products to seller backends, write fake reviews, scrape with
   ·
   <a href="skill/references/compliance-terms.md">Compliance terms</a>
   ·
+  <a href="SECURITY_AUDIT.md">Security audit</a>
+  ·
   <a href="CHANGELOG.md">Changelog</a>
 </p>
+
+## Why This Skill Exists
+
+A usable ecommerce launch package is rarely one writing task. It needs positioning, competitor price bands, review-mined pain points, main image logic, a detail page in the user's actual decision order, SEO titles, FAQ, customer-service scripts, and a launch plan that respects budget and inventory.
+
+I built this Skill because watching a real team prepare a new product still takes several days and three people. Operators draft a brief, designers ask the same twenty questions, and service checks the listing too late. There is also a more annoying problem: the AI draft usually looks confident, but the numbers inside are guessed and the absolute statements would not survive a marketplace review.
+
+This Skill turns that work into one structured Agent workflow. It validates the input, calls companion search and scrape tools, labels every claim with an evidence level and a source trail, blocks prohibited marketplace terms before any copy goes out, refuses to invent a closed loop when the user cannot afford paid traffic, and packages the answer by who needs to act next. Operators, designers, service and decision makers each get a focused packet instead of one long report.
+
+It does not publish products to seller backends, write fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package and stays honest about what data is real, what is observed, and what is only inferred.
 
 An Agent Skill for preparing ecommerce new-product launch packages across Taobao, Pinduoduo, Douyin, Amazon, 1688, Kuaishou, and similar channels. Built for OpenClaw, Hermes, Codex, or any Skill-compatible Agent runtime.
 
@@ -239,6 +241,8 @@ rg -n "legacy Taobao-only naming|old trigger phrase" .
 Lightweight eval cases: [tests/TEST-CASES.md](tests/TEST-CASES.md) and [skill/references/trigger-output-eval.md](skill/references/trigger-output-eval.md).
 
 Full capability audit: [docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md).
+
+Security audit: [SECURITY_AUDIT.md](SECURITY_AUDIT.md) — confirms no private API keys or caches are tracked.
 
 ## License
 

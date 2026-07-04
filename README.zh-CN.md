@@ -6,14 +6,6 @@
   </a>
 </p>
 
-## 为什么做这个 Skill
-
-一份真正能交给团队执行的上架资料包，通常不是一两段文案能写完的事。它包括产品定位、竞品价格带、评论里挖出的痛点、主图逻辑、按用户决策顺序排的详情页、平台 SEO 标题、FAQ、客服话术，以及一份预算和库存能承受的 30 天运营计划。
-
-我之前见到的写法，要么是罗列十几条通用结论、数据全部估的；要么是看起来很专业，但价格是常识编的、绝对化表达一写就是几条，真到平台去交售后会被原路退回。这些问题的根源不是 Skill 不够长，而是没有强制每条结论留证据、没有强制做合规拦截、没有按预算适配投放。
-
-所以这个 Skill 把上面这些工作整理成 Agent 可执行的一条流程。它先验证输入、调起搜索和抓取 companion skills、对每条结论标证据等级和来源迹、输出文案前过合规拦截门、没钱时不擅自排付费计划，最后按角色把交付包拆给运营、设计、客服、决策。Skill 不替你发商品、不写假评论、不裸抓数据，也不把常识包装成事实。
-
 <p align="center">
   <a href="README.md">English</a>
   ·
@@ -27,8 +19,18 @@
   ·
   <a href="skill/references/compliance-terms.md">合规禁词表</a>
   ·
+  <a href="SECURITY_AUDIT.md">安全审计</a>
+  ·
   <a href="CHANGELOG.md">更新日志</a>
 </p>
+
+## 为什么做这个 Skill
+
+一份真正能交给团队执行的上架资料包，通常不是一两段文案能写完的事。它包括产品定位、竞品价格带、评论里挖出的痛点、主图逻辑、按用户决策顺序排的详情页、平台 SEO 标题、FAQ、客服话术，以及一份预算和库存能承受的 30 天运营计划。
+
+我之前见到的写法，要么是罗列十几条通用结论、数据全部估的；要么是看起来很专业，但价格是常识编的、绝对化表达一写就是几条，真到平台去交售后会被原路退回。这些问题的根源不是 Skill 不够长，而是没有强制每条结论留证据、没有强制做合规拦截、没有按预算适配投放。
+
+所以这个 Skill 把上面这些工作整理成 Agent 可执行的一条流程。它先验证输入、调起搜索和抓取 companion skills、对每条结论标证据等级和来源迹、输出文案前过合规拦截门、没钱时不擅自排付费计划，最后按角色把交付包拆给运营、设计、客服、决策。Skill 不替你发商品、不写假评论、不裸抓数据，也不把常识包装成事实。
 
 一个用于电商新品上架准备的 Agent Skill，覆盖淘宝、拼多多、抖音、亚马逊、1688、快手等渠道。适配 OpenClaw、Hermes、Codex 或任何支持 Skill 的 Agent 环境。
 
@@ -235,6 +237,8 @@ rg -n "legacy Taobao-only naming|old trigger phrase" .
 轻量评测用例：[tests/TEST-CASES.md](tests/TEST-CASES.md) 和 [skill/references/trigger-output-eval.md](skill/references/trigger-output-eval.md)。
 
 完整的能力审计：[docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md)。
+
+安全审计：[SECURITY_AUDIT.md](SECURITY_AUDIT.md) — 确认仓库没有泄露任何私有 API key 或工具缓存。
 
 ## License
 
