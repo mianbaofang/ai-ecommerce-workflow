@@ -1,7 +1,9 @@
 # AI Ecommerce Workflow
 
 <p align="center">
-  <img src="docs/assets/hero.svg" alt="AI Ecommerce Workflow Skill hero" width="100%">
+  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
+    <img src="docs/assets/intro-animation-preview.gif" alt="35-second project introduction with GPT Image 2 generated visuals" width="100%">
+  </a>
 </p>
 
 ## Why This Skill Exists
@@ -13,12 +15,6 @@ I built this Skill because watching a real team prepare a new product still take
 This Skill turns that work into one structured Agent workflow. It validates the input, calls companion search and scrape tools, labels every claim with an evidence level and a source trail, blocks prohibited marketplace terms before any copy goes out, refuses to invent a closed loop when the user cannot afford paid traffic, and packages the answer by who needs to act next. Operators, designers, service and decision makers each get a focused packet instead of one long report.
 
 It does not publish products to seller backends, write fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package and stays honest about what data is real, what is observed, and what is only inferred.
-
-<p align="center">
-  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
-    <img src="docs/assets/intro-animation-preview.gif" alt="35-second project introduction with GPT Image 2 generated visuals" width="100%">
-  </a>
-</p>
 
 <p align="center">
   <a href="README.zh-CN.md">中文 README</a>

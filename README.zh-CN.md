@@ -1,7 +1,9 @@
 # AI 电商新品上架工作流
 
 <p align="center">
-  <img src="docs/assets/hero.svg" alt="AI 电商新品上架工作流 Skill 封面" width="100%">
+  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
+    <img src="docs/assets/intro-animation-preview.gif" alt="35 秒项目介绍动画，含 GPT Image 2 生成的视觉" width="100%">
+  </a>
 </p>
 
 ## 为什么做这个 Skill
@@ -11,12 +13,6 @@
 我之前见到的写法，要么是罗列十几条通用结论、数据全部估的；要么是看起来很专业，但价格是常识编的、绝对化表达一写就是几条，真到平台去交售后会被原路退回。这些问题的根源不是 Skill 不够长，而是没有强制每条结论留证据、没有强制做合规拦截、没有按预算适配投放。
 
 所以这个 Skill 把上面这些工作整理成 Agent 可执行的一条流程。它先验证输入、调起搜索和抓取 companion skills、对每条结论标证据等级和来源迹、输出文案前过合规拦截门、没钱时不擅自排付费计划，最后按角色把交付包拆给运营、设计、客服、决策。Skill 不替你发商品、不写假评论、不裸抓数据，也不把常识包装成事实。
-
-<p align="center">
-  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
-    <img src="docs/assets/intro-animation-preview.gif" alt="35 秒项目介绍动画，含 GPT Image 2 生成的视觉" width="100%">
-  </a>
-</p>
 
 <p align="center">
   <a href="README.md">English</a>
