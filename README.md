@@ -1,4 +1,4 @@
-# AI Ecommerce Workflow Skill
+# AI Ecommerce Workflow
 
 <p align="center">
   <img src="docs/assets/hero.svg" alt="AI Ecommerce Workflow Skill hero" width="100%">
@@ -6,13 +6,17 @@
 
 ## Why This Skill Exists
 
-Launching a new product in ecommerce is rarely one writing task. A usable launch package needs positioning, competitor price bands, review-mined pain points, main image logic, detail page structure, SEO titles, FAQ, customer-service scripts, and a launch plan that fits budget and inventory.
+A usable ecommerce launch package is rarely one writing task. It needs positioning, competitor price bands, review-mined pain points, main image logic, a detail page in the user's actual decision order, SEO titles, FAQ, customer-service scripts, and a launch plan that respects budget and inventory.
 
-This Skill turns that work into one structured Agent workflow. It is designed for operators who want an AI assistant to prepare the material before publishing, while still keeping marketplace data, compliance claims, and final business decisions under human review.
+I built this Skill because watching a real team prepare a new product still takes several days and three people. Operators draft a brief, designers ask the same twenty questions, and service checks the listing too late. There is also a more annoying problem: the AI draft usually looks confident, but the numbers inside are guessed and the absolute statements would not survive a marketplace review.
+
+This Skill turns that work into one structured Agent workflow. It validates the input, calls companion search and scrape tools, labels every claim with an evidence level and a source trail, blocks prohibited marketplace terms before any copy goes out, refuses to invent a closed loop when the user cannot afford paid traffic, and packages the answer by who needs to act next. Operators, designers, service and decision makers each get a focused packet instead of one long report.
+
+It does not publish products to seller backends, write fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package and stays honest about what data is real, what is observed, and what is only inferred.
 
 <p align="center">
-  <a href="docs/site/project-intro-animation.html">
-    <img src="docs/assets/intro-animation-preview.gif" alt="AI Ecommerce Workflow HTML intro preview" width="100%">
+  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
+    <img src="docs/assets/intro-animation-preview.gif" alt="35-second project introduction with GPT Image 2 generated visuals" width="100%">
   </a>
 </p>
 
@@ -25,8 +29,6 @@ This Skill turns that work into one structured Agent workflow. It is designed fo
   ·
   <a href="skill/examples/commute-backpack.md">Example output</a>
   ·
-  <a href="docs/QUICK-START.md">Quick start</a>
-  ·
   <a href="docs/COMPANION-SKILLS.md">Companion skills</a>
   ·
   <a href="skill/references/compliance-terms.md">Compliance terms</a>
@@ -34,70 +36,11 @@ This Skill turns that work into one structured Agent workflow. It is designed fo
   <a href="CHANGELOG.md">Changelog</a>
 </p>
 
-`ai-ecommerce-workflow` is an Agent Skill for preparing ecommerce new-product launch packages across marketplaces such as Taobao, Pinduoduo, Douyin, Amazon, 1688, and similar channels.
-
-It does not publish products to seller backends, create fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package.
-
-## What It Produces
-
-A complete run produces 15 structured outputs plus role handoff packages:
-
-| Layer | Output |
-|---|---|
-| Strategy | Product positioning, target users, core selling points, user pain points |
-| Market | Competitor price-band analysis, differentiation opportunities |
-| Visual | Main image planning, detail page structure, design brief |
-| Traffic | Platform-specific titles, 20-title test pool, keyword layers |
-| Customer service | Review insights, FAQ, customer-service scripts |
-| Operations | 7-day test, 14-day scale-up, and 30-day stabilization plan |
-| Delivery | Operations, design, customer service, boss approval, and material-generation packs |
-
-Every key conclusion should carry an evidence level:
-
-| Level | Meaning |
-|---|---|
-| A | User-provided fact, screenshot, export, or source document |
-| B | Authorized tool export or publicly verifiable page observation |
-| C | Industry/common-sense inference |
-| D | Strong assumption that needs review |
-
-## Competitor Data Sources
-
-The workflow is designed to auto-call companion search and scrape Skills when they are installed in the user's Agent environment. These tools discover competitor candidates, read public pages, and collect content-platform signals before the Skill writes the competitor price-band analysis.
-
-Recommended companion data Skills:
-
-| Companion Skill / tool | Auto-used for | Not enough for |
-|---|---|---|
-| `multi-search-engine` | Multi-engine competitor discovery and cross-checking | Real transaction price or logged-in seller data |
-| `anysearch` | Broad web search, competitor discovery, public source lookup | Real transaction price or logged-in seller data |
-| `firecrawl-search` | Finding public product pages, reviews, articles, brand pages | Coupon-after price, app-only price, seller backend data |
-| `firecrawl-scrape` | Reading a specific public URL as markdown/html/screenshot | Full SKU pricing when hidden behind login, popups, or anti-bot controls |
-| `agent-reach` | Cross-platform search and social/content observation such as Xiaohongshu, Bilibili, Reddit, Twitter | Ecommerce backend prices, sales, or commercial analytics |
-| Tavily or similar search APIs | Search and page summaries when available in the user's environment | Authorized marketplace data |
-| User exports/screenshots | Seller tools, third-party analytics, price screenshots, review exports | Must still record source, time, and pricing basis |
-
-If a companion Skill is missing, the Agent should say which one is missing, continue with the available tools, and mark affected price, sales, and review claims as pending verification. Search and scrape tools can help discover competitors and observe public page prices. They must not be described as real transaction prices unless the user provides authorized data or a reliable export.
-
-## Capability Matrix
-
-| Category | Feature | Dependency | Status |
-|---|---|---|---|
-| Core workflow | Input validation, run modes, output contract | None | Built-in ✅ |
-| Core workflow | 15 launch modules | None | Built-in ✅ |
-| Marketing | Competitor price-band analysis | Any companion search/scrape tool | Needs skill ⚠️ |
-| Copy | Humanized copy checks | None (built-in rules) | Built-in ✅ |
-| Copy | Enhanced anti-AI writing | humanizer-zh skill | Needs skill ⚠️ |
-| Images | Prompt briefs and preflight | None | Built-in ✅ |
-| Images | Actual image generation | User-provided model/tool | User provides 🔧 |
-| Video | Storyboards and prompt briefs | None | Built-in ✅ |
-| Video | Actual video generation | User-provided tool | User provides 🔧 |
-| Data | Competitor discovery + page reading | companion search/scrape skills | Needs skill ⚠️ |
-| Data | Sales/price from seller tools | User screenshots or authorized exports | User provides 🔧 |
+An Agent Skill for preparing ecommerce new-product launch packages across Taobao, Pinduoduo, Douyin, Amazon, 1688, Kuaishou, and similar channels. Built for OpenClaw, Hermes, Codex, or any Skill-compatible Agent runtime.
 
 ## Quick Start
 
-Most users do not need to run commands. Give this Skill path to your Skill-compatible Agent:
+Most users do not need to install code. Give this Skill path to a Skill-compatible Agent:
 
 ```text
 https://github.com/mianbaofang/ai-ecommerce-workflow/tree/main/skill
@@ -122,47 +65,68 @@ Chinese invocation template:
 预估成本:45元
 ```
 
-The Agent should validate required fields before running:
+The Agent should validate three required fields before running:
 
 1. Product name plus one-line description.
 2. Product category.
 3. Target platform or platforms.
 
-Optional but useful fields include product photos, price/cost, launch budget, inventory, fulfillment capacity, known competitors, desired copy tone, and whether image/video prompt briefs are needed.
+Optional but useful fields: product photos, price and cost, launch budget, inventory, fulfillment capacity, known competitors, desired copy tone, and whether image/video prompt briefs are needed.
 
 ## Run Modes
 
 | Mode | Use when | Output scope |
 |---|---|---|
-| Quick diagnosis | You only want to know whether the product is worth testing | Positioning, users, pain points, competitor band, opportunity summary |
-| Complete launch | You need the full pre-listing package | All 15 outputs plus role handoffs |
+| Quick diagnosis | Decide whether the product is worth testing | Positioning, users, pain points, competitor band, opportunity summary |
+| Complete launch | Build the full pre-listing package | All 15 outputs plus 4-role handoffs |
 | Material production | Direction is set and you need image/detail/title briefs | Selling points, main images, detail page, titles, design brief, optional image/video prompts |
-| Post-launch optimization | Product is already listed but data is weak | Competitor review, title/keyword, reviews, FAQ, customer service, optimization plan |
+| Post-launch optimization | Product is listed but data is weak | Competitor review, title/keyword, reviews, FAQ, customer service, optimization plan |
 
-## Image And Video Policy
+## Capability Matrix
 
-The open-source Skill is provider-neutral. It can produce image prompts, video storyboards, material briefs, and preflight questions, but it does not hard-code private image or video tooling.
+| Category | Feature | Dependency | Status |
+|---|---|---|---|
+| Core workflow | Input validation, run modes, output contract | None | Built-in |
+| Core workflow | 15 launch modules | None | Built-in |
+| Marketing | Competitor price-band analysis | Companion search/scrape skill | Needs skill |
+| Copy | Humanized copy checks | Built-in rules | Built-in |
+| Copy | Enhanced anti-AI writing | `humanizer-zh` skill | Needs skill |
+| Compliance | Auto-block prohibited marketplace terms | Built-in reference list | Built-in |
+| Evidence | Source trail per competitor claim | Manual URL/time tags | Built-in |
+| Traffic | 30-day plan with kill switch | Built-in budget rules | Built-in |
+| Images | Prompt briefs and preflight | None | Built-in |
+| Images | Actual image generation | User-provided model/tool | User provides |
+| Video | Storyboards and prompt briefs | None | Built-in |
+| Video | Actual video generation | User-provided tool | User provides |
+| Data | Real transaction prices | User screenshots or authorized exports | User provides |
 
-Before any generation route is used, the Agent should confirm:
+Default behavior: when no companion search tool is available, the Skill still runs but prices and reviews are marked pending verification. When no budget is given, the 30-day plan defaults to free/low-budget actions only.
 
-1. Model or tool.
-2. Purpose: main image, detail scene, comparison image, detail close-up, main video, short video, or storyboard only.
-3. Reference images and their rights.
-4. Ratio, size, count, style, and text policy.
-5. Output path or delivery format.
+## Companion Skills
 
-Generated images and videos are creative references. Real marketplace assets still need product truth, authorization, and platform compliance review.
+This Skill is designed to auto-call companion search and scrape skills when they are installed in the Agent environment:
+
+- `multi-search-engine` — multi-engine competitor discovery (Chinese and international)
+- `anysearch` — real-time web search and page extraction
+- `firecrawl-search` + `firecrawl-scrape` — find and read public product pages
+- `agent-reach` — Xiaohongshu, Bilibili, Reddit, Twitter, and other content/social sources
+- `humanizer-zh` — stronger anti-AI writing pass
+- `Tavily` — optional search API when the environment already provides it
+
+If a companion skill is missing, the Agent should say which one is missing, continue with available evidence, and mark affected claims as pending verification. Detailed rule: [docs/COMPANION-SKILLS.md](docs/COMPANION-SKILLS.md).
+
+The Skill does not bundle any API keys. Keys for private tools stay in environment variables; the open-source repo is provider-neutral.
 
 ## Compliance Gate
 
-Every copy output passes through an automatic compliance gate before delivery. This gate:
+Every copy output passes through an automatic compliance gate before delivery:
 
-- Blocks absolute prohibited terms (广告法红线): superlatives, absolute claims, unsubstantiated certifications, fake authority.
-- Block platform-specific prohibitions for Taobao, Pinduoduo, Douyin, Amazon, Kuaishou, and 1688.
-- Detected terms trigger a full rewrite — they are not output with a warning tag.
-- Health/beauty/medical claims without official certification are blocked and marked pending review.
+- Blocks absolute prohibited terms (advertising law red lines): superlatives, absolute claims, unsubstantiated certifications.
+- Blocks platform-specific prohibited words for Taobao, Pinduoduo, Douyin, Amazon, Kuaishou, and 1688.
+- Health, beauty, or medical claims without official certification are blocked and marked pending review.
+- Triggered words trigger full rewrite, not just a warning tag.
 
-Full prohibited term table with platform rules: [skill/references/compliance-terms.md](skill/references/compliance-terms.md).
+Full prohibited term table with platform differences: [skill/references/compliance-terms.md](skill/references/compliance-terms.md).
 
 ## Evidence Traceability
 
@@ -172,11 +136,11 @@ Every competitor, price, sales, review, and certification claim must include a s
 [Source: observation path + timestamp + price basis]
 ```
 
-Valid source types: public page URL with observation time, search tool result, user screenshot/export, authorized analytics tool name, or a clear C/D inference label. Claims without a source trail cannot be labeled A or B evidence.
+Valid source types: public page URL with observation time, search tool result, user screenshot or export filename, authorized analytics tool name, or a clear C/D inference label. Claims without a source trail cannot be labeled A or B evidence.
 
-## Budget And Stop-Loss Rules
+## Budget And Stop-Loss
 
-The Skill defaults to organic/low-budget strategies when no advertising budget is provided. Every paid traffic suggestion must include a kill switch:
+The Skill defaults to organic/low-budget strategies when no budget is provided. Every paid traffic suggestion must include a kill switch:
 
 - Daily budget cap.
 - Max CPC threshold — pause when exceeded.
@@ -184,38 +148,58 @@ The Skill defaults to organic/low-budget strategies when no advertising budget i
 - Check frequency.
 - Kill action: pause plan, swap creative, lower bid, or shut down.
 
-The 7-day test phase (D1-D7) prohibits spending more than 50% of daily budget on any single day. The 14-day scale phase (D8-D14) auto-switches to optimization-only mode when ROI stays below 1.0.
+The 7-day test phase (D1-D7) limits single-day spending to no more than 50% of daily budget. The 14-day scale phase (D8-D14) auto-switches to optimization-only mode when ROI stays below 1.0.
+
+## Image And Video Policy
+
+The open-source Skill is provider-neutral. It outputs image prompts, video storyboards, material briefs, and preflight questions, but it does not hard-code any private image or video tooling.
+
+Before any generation route is used, the Agent should confirm:
+
+1. Model or tool.
+2. Purpose: main image, detail scene, comparison image, detail close-up, main video, short video, or storyboard only.
+3. Reference images and their rights.
+4. Ratio, size, count, style, and text policy.
+5. Output path or delivery format.
+
+AI-generated images and videos are creative references only, not final marketplace assets.
 
 ## Repository Layout
 
 ```text
-skill/
-  SKILL.md                         Agent-facing workflow instructions
-  agents/interface.yaml            Skill UI metadata
-  templates/user-input-form.md     Copy-ready input form
-  examples/                        Invocation samples and complete example output
-  references/                      Output contract, role handoff, price-band method, eval cases
+skill/                          Skill package (installable)
+  SKILL.md                       Agent-facing workflow instructions
+  agents/interface.yaml          Skill UI metadata, companion skill list
+  templates/user-input-form.md   Copy-ready Chinese input form
+  examples/                      Invocation samples and complete example output
+  references/                    Output contract, role handoff, price-band method,
+                                 compliance terms, eval cases
 
 docs/
-  QUICK-START.md                   Chinese quick start
-  assets/                          README hero and GIF preview
-  site/                            HTML animation source
-  history/                         PM iteration notes and source-article integration notes
+  QUICK-START.md                 Chinese quick-start guide
+  COMPANION-SKILLS.md            Companion skill detail and missing-skill behavior
+  CAPABILITY-AUDIT.md            Per-feature dependency audit
+  assets/                        README hero SVG, animated GIF, 1K visuals
+  site/                          Standalone HTML animation with GPT Image 2 scenes
+  history/                       PM iteration notes and source-article records
 
 tests/
-  TEST-CASES.md                    Lightweight trigger/output regression cases
+  TEST-CASES.md                  Trigger/output regression cases
+
+LICENCE                         MIT license
+CONTRIBUTING.md                 How to contribute without leaking private APIs
 ```
 
 ## Boundaries
 
-This Skill should not:
+This Skill does not:
 
-- publish directly to seller backends;
-- create fake reviews or buyer-show comments;
-- fabricate certifications, safety claims, medical/health claims, or test reports;
-- scrape protected or unauthorized platform data;
-- present AI-generated marketplace data as verified fact;
-- bake private provider API keys or private image/video routes into the open-source package.
+- Publish directly to seller backends.
+- Create fake reviews or buyer-show comments.
+- Fabricate certifications, safety claims, medical/health claims, or test reports.
+- Scrape protected or unauthorized platform data.
+- Present AI-generated marketplace data as verified fact.
+- Bake private provider API keys or private image/video routes into the open-source package.
 
 ## Development Notes
 
@@ -228,7 +212,9 @@ rg -n "API_KEY|SECRET|TOKEN|Bearer|sk-" .
 rg -n "legacy Taobao-only naming|old trigger phrase" .
 ```
 
-The lightweight eval cases are in `tests/TEST-CASES.md` and `skill/references/trigger-output-eval.md`.
+Lightweight eval cases: [tests/TEST-CASES.md](tests/TEST-CASES.md) and [skill/references/trigger-output-eval.md](skill/references/trigger-output-eval.md).
+
+Full capability audit: [docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md).
 
 ## License
 
