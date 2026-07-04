@@ -41,3 +41,4 @@ build/
 *.key
 *.pem
 .firecrawl/
+docs/site/frames/
