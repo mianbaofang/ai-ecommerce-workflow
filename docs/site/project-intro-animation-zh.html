@@ -246,19 +246,63 @@
       opacity: 0.95;
     }
 
-    .mode > div {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
     .mode {
       padding: 24px 26px;
-      display: grid;
-      grid-template-rows: auto auto 1fr;
-      gap: 16px;
+      display: block;
       position: relative;
       overflow: hidden;
+    }
+
+    .mode > svg.card-illust {
+      display: block;
+      width: 100%;
+      max-height: 96px;
+      margin: 0 0 14px;
+    }
+
+    .mode > div {
+      display: block;
+    }
+
+    .mode > div .mode-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--color);
+      font-weight: 850;
+      font-size: 22px;
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .mode > div .mode-num::after {
+      content: "";
+      position: absolute;
+      right: -16px;
+      bottom: -16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .mode h3 {
+      margin: 0 60px 6px 0;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .mode p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.32;
+      color: var(--muted);
     }
 
     .mode h3 {
@@ -346,13 +390,17 @@
     }
 
     .module {
-      padding: 24px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      justify-content: center;
+      padding: 22px 22px;
+      display: block;
       position: relative;
       overflow: hidden;
+    }
+
+    .module > svg {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 0 0 10px;
     }
 
     .module h3 {
@@ -391,31 +439,30 @@
     }
 
     .material-card {
-      padding: 28px 28px 22px;
-      display: grid;
-      grid-template-rows: auto auto auto 1fr auto;
-      gap: 12px;
+      padding: 26px 28px;
+      display: block;
       position: relative;
       overflow: hidden;
     }
 
+    .material-card svg.card-illust {
+      display: block;
+      width: 100%;
+      max-height: 92px;
+      margin: 0 0 12px;
+    }
+
     .material-card h3 {
-      margin: 4px 0 0;
+      margin: 0 0 6px;
       font-size: 28px;
       line-height: 1.05;
     }
 
     .material-card p {
-      margin: 0;
+      margin: 0 0 12px;
       font-size: 18px;
       color: var(--muted);
       line-height: 1.32;
-    }
-
-    .card-illust {
-      width: 100%;
-      max-height: 132px;
-      display: block;
     }
 
     .brief-box {
@@ -446,12 +493,30 @@
     }
 
     .role {
-      padding: 28px;
-      display: grid;
-      align-content: center;
-      gap: 12px;
+      padding: 30px 32px;
+      display: block;
       position: relative;
       overflow: hidden;
+    }
+
+    .role > svg {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 0 0 12px;
+    }
+
+    .role h3 {
+      margin: 0 0 6px;
+      font-size: 26px;
+      line-height: 1.05;
+    }
+
+    .role p {
+      margin: 0;
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.3;
     }
 
     .role h3 {
@@ -465,6 +530,14 @@
       font-size: 19px;
       line-height: 1.3;
     }
+
+    /* Global brand chrome is hidden once animation starts to give scenes breathing room */
+    body.phase-scene .brand-title,
+    body.phase-scene .brand-subtitle,
+    body.phase-scene .progress,
+    body.phase-scene .accent,
+    body.phase-scene .footer { opacity: 0; pointer-events: none; }
+    body .footer { opacity: 1; transition: opacity 0.4s ease; }
 
     .footer {
       position: absolute;
@@ -721,12 +794,28 @@
       });
     }
 
+    const allScenes = Array.from(document.querySelectorAll('.scene'));
+    const domBody = document.body;
+    function updateChromeForScene(idx) {
+      if (idx === 0) domBody.classList.remove('phase-scene');
+      else domBody.classList.add('phase-scene');
+    }
+    function activeSceneIndex() {
+      let active = -1;
+      for (let i = 0; i < allScenes.length; i += 1) {
+        if (allScenes[i].classList.contains('active')) { active = i; break; }
+      }
+      return active;
+    }
+
     const params = new URLSearchParams(location.search);
     const lockedProgress = params.get('p');
     if (lockedProgress !== null) {
       setProgress(Number(lockedProgress));
+      updateChromeForScene(activeSceneIndex());
     } else {
       setProgress(0.035);
+      updateChromeForScene(activeSceneIndex());
       const startedAt = performance.now();
       function tick(now) {
         const elapsed = (now - startedAt) % (DURATION * 1000);
@@ -734,11 +823,26 @@
         requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
+
+    // Track which scene is currently 'active' by data-scene id
+    function activeSceneIndex() {
+      let active = -1;
+      for (let i = 0; i < allScenes.length; i += 1) {
+        if (allScenes[i].classList.contains('active')) { active = i; break; }
+      }
+      return active;
+    }
+    setInterval(() => {
+      updateChromeForScene(activeSceneIndex());
+    }, 120);
+    
     }
 
     const tl = gsap.timeline({ paused: true });
     tl.to({}, { duration: DURATION, onUpdate: () => setProgress(tl.progress()), ease: 'none' }, 0);
     window.__timelines['ai-ecommerce-workflow-intro'] = tl;
+    
+    
     window.__ready = true;
   </script>
 </body>
