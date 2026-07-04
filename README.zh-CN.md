@@ -98,18 +98,46 @@ https://github.com/mianbaofang/ai-ecommerce-workflow/tree/main/skill
 
 ## 配套 Skill
 
-这套工作流设计为：在用户 Agent 环境已经安装对应 companion skills 时，自动调用搜索和抓取能力：
+这套工作流在用户 Agent 环境里已经安装对应 companion skills 时，会自动调用。每一个 Skill 通常由支持 Skill 的 Agent 环境提供，可在需要时按需安装。
 
-- `multi-search-engine` — 多引擎发现竞品（中英文搜索覆盖）
-- `anysearch` — 实时全网搜索和页面抽取
-- `firecrawl-search` + `firecrawl-scrape` — 发现和读取公开商品页
-- `agent-reach` — 小红书、B站、Reddit、Twitter 等社媒/内容平台
-- `humanizer-zh` — 增强去AI味
-- `Tavily` — 当环境已提供时的可选搜索 API
+### 数据发现和抓取
 
-如果某个 companion Skill 没安装，Agent 应明确告诉用户缺哪个，继续使用已有工具；受影响的竞品价格、销量、评论结论标注【待核验】。详细规则见 [docs/COMPANION-SKILLS.md](docs/COMPANION-SKILLS.md)。
+| Companion Skill | 作用 | 在竞品分析中的调用样例 |
+|---|---|---|
+| `multi-search-engine` | 多引擎搜索（百度、Bing CN、搜狗、Google 等），用于找到候选竞品 URL，返回结构化的商品页、测评页、品牌页列表 | `搜索 "{品名} {类目} 测评"`，跨引擎返回候选 |
+| `anysearch` | 实时全网搜索 + 垂直域子域探测 + 页面抽取。适合英文资料和近期内容 | 获取商品页和带观察时间的评论 |
+| `firecrawl-search` | 搜索公开商品页，并支持附带回显抓取 | `搜索 "{品牌} {型号} 实拍"`，得到页面列表 |
+| `firecrawl-scrape` | 把指定 URL 读成 markdown / html / links / screenshot。最适合已知候选 URL | 抽取标题、公开展示价、SKU 可见信息、评论摘要 |
+| `agent-reach` | 跨平台研究：Exa 搜索、网页阅读、小红书/B站/Reddit/Twitter 讨论、抖音/快手/X 等内容平台 | 找用户真实痛点、原生表达、种草内容 |
+| `Tavily` | 当 Agent 环境已提供时的可选搜索 API | 补充搜索 + 交叉验证 |
 
-仓库不捆绑任何 API key。需要私有工具的 key 留在环境变量；开源版保持 provider-neutral。
+这些 Skill 帮助工作流发现候选竞品和读取公开页面观察值。**没有**一个能证明实际成交价、券后价、登录态后台数据。任何需要真实成交数据的需求，仍然要靠用户截图、卖家工具导出或授权 API。
+
+### 去AI味
+
+| Companion Skill | 作用 |
+|---|---|
+| `humanizer-zh` | 公开的中文去AI味 Skill。最终改写一轮，删除「此外 / 值得注意的是 / 综上所述」等填充短语，拆掉「不仅...更是...」这类模板结构，把「高级感 / 品质感」换成具体细节，并打散节奏让结果读起来像真人写的 |
+
+未安装 `humanizer-zh` 时，工作流仍然跑，只用内置的 5 条人味化规则（见 [SKILL.md](skill/SKILL.md)）。
+
+### 自动安装行为
+
+当 Skill 在支持安装 Skill 的 Agent 运行环境（如 OpenClaw、Hermes 等）中被调用时，Agent 应：
+
+1. 先检查当前运行环境里哪些 companion Skills 已经安装；
+2. 若运行环境支持 `npx skills add` 或等价安装命令，对缺失的 companion Skills 尝试自动安装；
+3. 若运行环境不支持自动安装，回退到列出缺失项 + 给出可复制的安装命令。
+
+安装后重新跑一遍能力预检，再进入 15 项输出。如果安装失败，对应模块标注【待核验】，工作流继续按当前可用能力跑。
+
+### Provider 中立的生图和视频
+
+开源版不捆绑任何生图或视频生成 API。`SKILL.md` 里生图 / 视频的执行门要求用户先选好模型或工具，再做实际生成。Skill 产出可直接使用的 prompt；模型由用户挑选。
+
+### API key
+
+开源版不捆绑任何 API key。`anysearch`、`firecrawl`、`Tavily`、生图、视频和其它需要鉴权的集成，key 都留在环境变量。开源仓库保持 provider-neutral。
 
 ## 合规拦截门
 

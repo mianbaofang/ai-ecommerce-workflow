@@ -100,18 +100,46 @@ Default behavior: when no companion search tool is available, the Skill still ru
 
 ## Companion Skills
 
-This Skill is designed to auto-call companion search and scrape skills when they are installed in the Agent environment:
+The Skill is designed to auto-call companion data and writing Skills when they are installed in the user's Agent runtime. Each Skill either ships with the Skill-compatible Agent or is installed on demand.
 
-- `multi-search-engine` — multi-engine competitor discovery (Chinese and international)
-- `anysearch` — real-time web search and page extraction
-- `firecrawl-search` + `firecrawl-scrape` — find and read public product pages
-- `agent-reach` — Xiaohongshu, Bilibili, Reddit, Twitter, and other content/social sources
-- `humanizer-zh` — stronger anti-AI writing pass
-- `Tavily` — optional search API when the environment already provides it
+### Data discovery and scraping
 
-If a companion skill is missing, the Agent should say which one is missing, continue with available evidence, and mark affected claims as pending verification. Detailed rule: [docs/COMPANION-SKILLS.md](docs/COMPANION-SKILLS.md).
+| Companion Skill | Role | Example call (during competitor analysis) |
+|---|---|---|
+| `multi-search-engine` | Multi-engine search (Baidu, Bing CN, Sogou, Google, etc.) for candidate competitor URLs. Returns a structured list of product, review, and brand pages. | `搜索 "{品名} {类目} 测评"`, get candidate URLs across engines |
+| `anysearch` | Real-time web search with vertical-domain sub-domain discovery and page extraction. Useful for English sources and recent content. | Get product pages and reviews with observed timestamps |
+| `firecrawl-search` | Search public product pages and optionally scrape full content. | `搜索 "{品牌} {型号} 实拍"`, get page list |
+| `firecrawl-scrape` | Read a specific URL as markdown / html / links / screenshot. Best for known candidate URLs. | Extract title, public display price, SKU visible info, review snippets |
+| `agent-reach` | Cross-platform research: Exa search, web reading, Xiaohongshu / Bilibili / Reddit / Twitter discussions, and content-platform observation. | Find real user pain points, organic language, viral content |
+| `Tavily` | Optional search API when the Agent runtime already provides it. | Secondary search, cross-verification |
 
-The Skill does not bundle any API keys. Keys for private tools stay in environment variables; the open-source repo is provider-neutral.
+These Skills help the workflow find competitor candidates and observe public page prices. None of them prove actual transaction prices, coupon-after prices, or logged-in seller data. Anything that needs real transaction data still requires user screenshots, seller-tool exports, or authorized APIs.
+
+### Humanization
+
+| Companion Skill | Role |
+|---|---|
+| `humanizer-zh` | Public open-source anti-AI-writing Skill focused on Chinese. Produces a final rewrite pass on the 15 outputs to remove filler phrases like 「此外 / 值得注意的是 / 综上所述」, breaks formulaic structures like 「不仅...更是...」, replaces empty claims like 「高级感 / 品质感」 with concrete details, and varies rhythm so the result reads like a real person wrote it. |
+
+If `humanizer-zh` is not installed, the workflow still runs but uses the built-in humanized copy rules instead. The five built-in core principles are documented in [SKILL.md](skill/SKILL.md).
+
+### Auto-install behavior
+
+When the Skill is invoked in an Agent runtime that supports skill installation (for example OpenClaw or Hermes), the Agent should:
+
+1. Check which of the companion Skills above are already installed in the current runtime.
+2. If a runtime supports `npx skills add` or the equivalent installation command, attempt to install missing companion Skills automatically.
+3. If the runtime does not support auto-install, fall back to listing missing companion Skills with copy-ready install commands.
+
+After install, the Agent re-runs the capability preflight, then proceeds with the 15 outputs. If a Skill still fails to install, the affected modules are marked pending verification and the workflow continues with whatever is available.
+
+### Provider-neutral image and video
+
+The Skill does not bundle any image-generation or video-generation API. The execution gate for `image prompt` (`skill/SKILL.md`) requires the user to choose a model or tool before any generation runs. The Skill produces ready-to-use prompts; the user picks the model.
+
+### API keys
+
+The Skill does not bundle any API keys. Private provider keys for `anysearch`, `firecrawl`, `Tavily`, image tools, video tools, and any other integration stay in environment variables. The open-source repo stays provider-neutral.
 
 ## Compliance Gate
 
