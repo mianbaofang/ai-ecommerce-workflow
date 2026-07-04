@@ -26,25 +26,13 @@ description: Create, improve, or run an AI-assisted e-commerce product launch wo
 
 ## 〇、能力预检与自动安装（执行前必做）
 
-执行任何模块前，必须先检查当前 Agent 环境可用的 companion skills。如果宿主环境支持 Skill 安装（如 OpenClaw / Hermes / 其他 Skill-compatible Agent），缺失的 companion skills 应自动安装；如果不支持，输出缺失清单并降级。
+执行任何模块前，必须先做 companion skills 预检：先识别当前 Agent 环境已安装的技能，再尝试自动安装缺失项；若宿主环境不支持安装能力，则输出缺失清单并按降级路径继续。
 
-**自动安装步骤：**
-1. 检查 `multi-search-engine`、`anysearch`、`firecrawl-search`、`firecrawl-scrape`、`agent-reach` 是否已安装
-2. 检查 `humanizer-zh` 是否已安装
-3. **如果宿主 Agent 支持 `npx skills add` / `skills install` 等安装命令，对缺失的 skills 执行自动安装**
-4. 安装后再验证一次，输出可用/不可用清单
-5. 如果宿主环境不支持自动安装，输出推荐安装清单，告知用户粘贴命令安装
-
-**预检命令（伪代码）：**
-```text
-1. for each skill in [multi-search-engine, anysearch, firecrawl-search, firecrawl-scrape, agent-reach, humanizer-zh]:
-2.   if not installed:
-3.     if runtime supports auto-install:
-4.       run: npx skills add <skill-name>  (或等效安装命令)
-5.     else:
-6.       mark as missing, add to install-recommendation list
-7. 输出预检清单，标注每个模块的依赖状态
-```
+**预检与安装顺序（强制）：**
+1. 检查 `multi-search-engine`、`anysearch`、`firecrawl-search`、`firecrawl-scrape`、`agent-reach`、`humanizer-zh` 是否已安装。
+2. 若某些 companion skills 缺失，且宿主 Agent 支持 `npx skills add` / `skills install` 或等价安装命令，则先自动安装缺失项。
+3. 安装完成后重新执行一次能力预检，输出最终可用/缺失清单。
+4. 若宿主环境不支持自动安装，或安装后仍失败，则继续工作流，但把对应模块标记为【待核验】并记录降级影响。
 
 **预检输出格式：**
 ```markdown
@@ -57,12 +45,11 @@ description: Create, improve, or run an AI-assisted e-commerce product launch wo
 | 视频生成 | 用户提供视频工具 | 🔧 由用户指定 | 只输出分镜和 prompt |
 ```
 
-**预检后执行以下规则：**
-- ✅ 已安装 → 执行时自动调用对应 companion skill
-- ⚠️ 缺失 → 对应模块标注【待核验】或使用内置兜底规则，不影响主流程完整性
-- 🔧 需用户提供 → 只输出 prompt、brief、preflight 问题，不执行实际生成
-
-## 二、输入规范
+**预检后执行规则：**
+- ✅ 已安装 → 直接调用对应 companion skill。
+- ⚠️ 缺失但已安装成功 → 重新跑预检后继续。
+- ⚠️ 缺失且无法安装 → 对应模块标注【待核验】或使用内置兜底规则，不影响主流程完整性。
+- 🔧 需用户提供 → 只输出 prompt、brief、preflight 问题，不执行实际生成。
 
 调用时,主人在一条消息里尽量提供以下资料(缺失的由模型基于常识补全,会标注"待核验"):
 
@@ -926,32 +913,34 @@ description: Create, improve, or run an AI-assisted e-commerce product launch wo
 
 ### 5.1 竞品数据获取(第5项执行时)
 
-执行第5项时默认自动调用已安装 companion skills,不要只凭模型常识写竞品。
+执行第5项时默认先做 companion skills 自动发现与安装预检，不要只凭模型常识写竞品。
 
-1. **候选发现(自动):** 用 `multi-search-engine` / `anysearch` / `firecrawl-search` / `Tavily` 搜索类目词、品牌词、核心属性词。
+1. **自动发现:** 先检查 `multi-search-engine` / `anysearch` / `firecrawl-search` / `firecrawl-scrape` / `agent-reach` / `humanizer-zh` 是否已安装。
+2. **自动安装:** 若宿主 Agent 支持安装命令,对缺失项先尝试自动安装,再重新跑一遍能力预检。
+3. **候选发现(自动):** 用 `multi-search-engine` / `anysearch` / `firecrawl-search` / `Tavily` 搜索类目词、品牌词、核心属性词。
    ```
    示例:搜索"通勤双肩包 15.6寸 电脑包 价格 测评",得到候选品牌、商品页、测评页、平台页。
    ```
-2. **页面读取(自动):** 对候选 URL 用 `firecrawl-scrape` / `web_fetch` / 浏览器读取公开页面观察值。
+4. **页面读取(自动):** 对候选 URL 用 `firecrawl-scrape` / `web_fetch` / 浏览器读取公开页面观察值。
    ```
    示例:提取标题、公开展示价、SKU可见信息、主图卖点、评论摘要;标注为"页面观察价"。
    ```
-3. **内容平台洞察(自动):** 用 `agent-reach` 补小红书/B站/Reddit/Twitter 等讨论、种草话术和痛点表达。
+5. **内容平台洞察(自动):** 用 `agent-reach` 补小红书/B站/Reddit/Twitter 等讨论、种草话术和痛点表达。
    ```
    示例:搜索"通勤电脑包 压肩 差评"、"commuter backpack laptop review"。
    ```
-4. **用户/授权数据校正(优先):** 如用户提供截图、表格、后台导出或授权工具数据,优先用它校正价格带。
+6. **用户/授权数据校正(优先):** 如用户提供截图、表格、后台导出或授权工具数据,优先用它校正价格带。
    ```
    示例:用户提供"竞品价格表/生意参谋截图/蝉妈妈导出/Keepa曲线"。
    ```
-5. **缺工具兜底:** 如果相关 companion skills 不可用,输出缺失清单和降级说明,再基于常识生成价格带假设。
+7. **缺工具兜底:** 如果相关 companion skills 未安装且无法自动安装,输出缺失清单和降级说明,再基于常识生成价格带假设。
    ```
    【待核验-缺少 companion search/scrape skills 或授权数据】
    ```
 
 ### 5.2 文案人味化(第3/7/8/9/12/13/14项完成后)
 - **优先:** 如用户本地安装公开 skill `humanizer-zh`,可调用它对主图文案、详情页文案、FAQ、客服话术做二次去AI味。
-- **兜底:** 未安装 `humanizer-zh` 时,按"四.七 文案人味化质检"内置规则执行。
+- **兜底:** 未安装 `humanizer-zh` 或安装失败时,按"四.七 文案人味化质检"内置规则执行。
 - **约束:** 人味化不能改变事实参数、价格、材质、售后承诺;只能调整表达方式。
 
 ### 5.3 主图/详情页创意图生成(第7/8/14项完成后,可选) 【🔧 需用户提供】
@@ -1035,7 +1024,7 @@ description: Create, improve, or run an AI-assisted e-commerce product launch wo
 
 [ ] 是否先识别运行模式,并按模式输出对应范围?(2.0)
 [ ] 是否输出一页决策摘要?(2.0.1)
-[ ] 是否先执行能力预检并报告可用/缺失的 companion skills?(〇)
+[ ] 是否先执行能力预检并报告可用/缺失的 companion skills,并在宿主支持时尝试自动安装?(〇)
 [ ] 是否识别类目适配规则,并处理高风险内容?(4.0)
 [ ] 竞品是否分了至少3个价格带?(第5项)
 [ ] 每个竞品/价格结论是否附带来源迹(观察路径+时间+口径)?(2.1)

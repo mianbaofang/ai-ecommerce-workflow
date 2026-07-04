@@ -102,7 +102,17 @@ Default behavior: when no companion search tool is available, the Skill still ru
 
 ## Companion Skills
 
-The Skill is designed to auto-call companion data and writing Skills when they are installed in the user's Agent runtime. Each Skill either ships with the Skill-compatible Agent or is installed on demand.
+The Skill is designed to **auto-discover** companion data and writing Skills when invoked in an Agent runtime, and to **attempt auto-install** when the runtime supports one. Each Skill either ships with the Skill-compatible Agent or is installed on demand. This behavior is automatic, not a manual step.
+
+### Auto-install behavior
+
+1. Detect which of the companion Skills listed below are already installed in the current runtime.
+2. If the runtime supports `npx skills add` or the equivalent installation command, attempt to install missing companion Skills automatically.
+3. Re-run the capability preflight so the final `available / missing` list is accurate.
+4. If the runtime does not support auto-install, fall back to listing missing companion Skills with copy-ready install commands.
+5. After install (or after the missing-list fallback), the Agent proceeds with the 15 outputs. If a Skill still fails to install, the affected modules are marked pending verification and the workflow continues with whatever is available.
+
+The Skill package itself only declares the dependency manifest in `skill/agents/interface.yaml`. The actual installer and runtime probe are owned by the host Agent runtime.
 
 ### Data discovery and scraping
 
@@ -123,17 +133,7 @@ These Skills help the workflow find competitor candidates and observe public pag
 |---|---|
 | `humanizer-zh` | Public open-source anti-AI-writing Skill focused on Chinese. Produces a final rewrite pass on the 15 outputs to remove filler phrases like 「此外 / 值得注意的是 / 综上所述」, breaks formulaic structures like 「不仅...更是...」, replaces empty claims like 「高级感 / 品质感」 with concrete details, and varies rhythm so the result reads like a real person wrote it. |
 
-If `humanizer-zh` is not installed, the workflow still runs but uses the built-in humanized copy rules instead. The five built-in core principles are documented in [SKILL.md](skill/SKILL.md).
-
-### Auto-install behavior
-
-When the Skill is invoked in an Agent runtime that supports skill installation (for example OpenClaw or Hermes), the Agent should:
-
-1. Check which of the companion Skills above are already installed in the current runtime.
-2. If a runtime supports `npx skills add` or the equivalent installation command, attempt to install missing companion Skills automatically.
-3. If the runtime does not support auto-install, fall back to listing missing companion Skills with copy-ready install commands.
-
-After install, the Agent re-runs the capability preflight, then proceeds with the 15 outputs. If a Skill still fails to install, the affected modules are marked pending verification and the workflow continues with whatever is available.
+If `humanizer-zh` is not installed or cannot be auto-installed, the workflow still runs but uses the built-in humanized copy rules instead. The five built-in core principles are documented in [SKILL.md](skill/SKILL.md).
 
 ### Provider-neutral image and video
 

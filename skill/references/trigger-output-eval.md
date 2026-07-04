@@ -21,7 +21,7 @@ This file records lightweight eval cases for the e-commerce new-product launch w
 
 **Expected:**
 - Runs input validation.
-- Runs capability preflight: checks available companion skills and reports missing ones with impact.
+- Runs capability preflight: detects installed companion skills, attempts auto-install when the runtime supports it, then reports the final available / missing list with impact.
 - Outputs one-page decision summary.
 - Runs 15-item workflow.
 - Marks evidence levels and pending verification.
@@ -81,7 +81,7 @@ For a complete run, output must include:
 
 - One-page decision summary.
 - Selected running mode.
-- Available/missing companion search and scrape skills.
+- Available/missing companion search and scrape skills, with auto-install attempts recorded.
 - Category adaptation rule.
 - Capability preflight report before main output.
 - 15 standard outputs or mode-specific subset.

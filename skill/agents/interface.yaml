@@ -1,5 +1,5 @@
 display_name: AI 电商新品上架工作流
-short_description: 自动调用搜索/抓取 companion skills,完成新品定位、竞品、主图、详情页、标题、客服话术和30天运营计划。
+short_description: 自动发现 companion skills 并在宿主环境支持时尝试自动安装,完成新品定位、竞品、主图、详情页、标题、客服话术和30天运营计划。
 recommended_companion_skills:
   - multi-search-engine
   - anysearch
@@ -11,6 +11,14 @@ optional_companion_tools:
   - browser/Playwright
   - seller analytics exports
   - marketplace screenshots
+auto_install_policy:
+  detect: true
+  install_if_supported: true
+  fallback: report_missing_and_degrade
+auto_install_notes:
+  - companion skills are resolved by the host Agent runtime
+  - if the runtime exposes an installer, attempt auto-install for missing skills
+  - if the runtime does not expose an installer, continue with missing-skill reporting and degraded evidence handling
 default_prompt: |
   【跑电商新品上架流程】
   运行模式:完整上架

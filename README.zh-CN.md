@@ -100,7 +100,17 @@ https://github.com/mianbaofang/ai-ecommerce-workflow/tree/main/skill
 
 ## 配套 Skill
 
-这套工作流在用户 Agent 环境里已经安装对应 companion skills 时，会自动调用。每一个 Skill 通常由支持 Skill 的 Agent 环境提供，可在需要时按需安装。
+这套工作流在用户 Agent 环境里已经安装对应 companion skills 时会自动调用；当环境支持安装能力时，宿主 Agent 还会对缺失项尝试自动安装。整个流程是自动发生的，不要求用户手动操作。
+
+### 自动安装行为
+
+1. 先发现当前运行环境里哪些 companion Skills 已经安装。
+2. 若运行环境支持 `npx skills add` 或等价安装命令，对缺失项尝试自动安装。
+3. 安装完成后重新跑一遍能力预检，给出最终可用/缺失清单。
+4. 若运行环境不支持自动安装，回退到列出缺失项 + 给出可复制的安装命令。
+5. 安装完成（或走缺失命令清单回退）后再进入 15 项输出。如果安装失败，对应模块标注【待核验】，工作流继续按当前可用能力跑。
+
+Skill 包本身只在 `skill/agents/interface.yaml` 声明依赖清单；实际的安装和探测由宿主 Agent 运行环境负责。
 
 ### 数据发现和抓取
 
@@ -121,17 +131,7 @@ https://github.com/mianbaofang/ai-ecommerce-workflow/tree/main/skill
 |---|---|
 | `humanizer-zh` | 公开的中文去AI味 Skill。最终改写一轮，删除「此外 / 值得注意的是 / 综上所述」等填充短语，拆掉「不仅...更是...」这类模板结构，把「高级感 / 品质感」换成具体细节，并打散节奏让结果读起来像真人写的 |
 
-未安装 `humanizer-zh` 时，工作流仍然跑，只用内置的 5 条人味化规则（见 [SKILL.md](skill/SKILL.md)）。
-
-### 自动安装行为
-
-当 Skill 在支持安装 Skill 的 Agent 运行环境（如 OpenClaw、Hermes 等）中被调用时，Agent 应：
-
-1. 先检查当前运行环境里哪些 companion Skills 已经安装；
-2. 若运行环境支持 `npx skills add` 或等价安装命令，对缺失的 companion Skills 尝试自动安装；
-3. 若运行环境不支持自动安装，回退到列出缺失项 + 给出可复制的安装命令。
-
-安装后重新跑一遍能力预检，再进入 15 项输出。如果安装失败，对应模块标注【待核验】，工作流继续按当前可用能力跑。
+未安装 `humanizer-zh` 或安装失败时，工作流仍然跑，只用内置的 5 条人味化规则（见 [SKILL.md](skill/SKILL.md)）。
 
 ### Provider 中立的生图和视频
 

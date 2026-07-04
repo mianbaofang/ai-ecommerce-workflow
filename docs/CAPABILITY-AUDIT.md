@@ -9,7 +9,7 @@
 | 状态 | 含义 |
 |---|---|
 | ✅ **内置可执行** | 不依赖任何外部工具，纯 SKILL.md 流程指令即可运行 |
-| ⚠️ **需 Companion Skill** | 需要在 Agent 环境安装特定 companion skill 才能执行；文档已写明依赖项和缺失降级 |
+| ⚠️ **需 Companion Skill** | 需要在宿主 Agent 环境安装特定 companion skill 才能执行；宿主在支持时尝试自动安装，不支持时输出缺失清单与降级影响 |
 | 🔧 **需用户提供** | 需要用户提供具体模型、API、工具或授权数据才能执行；开源 skill 只定义 preflight 和 prompt 规范 |
 | ❌ **未实现** | 有描述但没有任何可执行路径 |
 
@@ -21,7 +21,7 @@
 | 2 | 四种运行模式选择 | ✅ 内置可执行 | 纯 LLM 逻辑 |
 | 3 | 分层交付（决策摘要 + 详情 + 交付包） | ✅ 内置可执行 | 纯输出格式控制 |
 | 4 | 证据等级标注（A/B/C/D） | ✅ 内置可执行 | 纯标注规则 |
-| 5 | 竞品价格来源规则 | ⚠️ 需 Companion Skill | 自动调用 companion search skills（anysearch/firecrawl/agent-reach/multi-search-engine）；缺失时降为待核验假设 |
+| 5 | 竞品价格来源规则 | ⚠️ 需 Companion Skill | 预检 + 自动发现/自动安装（anysearch/firecrawl/agent-reach/multi-search-engine）；缺失且安装失败时降为待核验假设 |
 | 6 | 15项标准输出 | ✅ 内置可执行 | 纯输出合同框架 |
 | 7 | 类目适配矩阵 | ✅ 内置可执行 | 静态规则表 |
 | 8 | 执行交付包 | ✅ 内置可执行 | 纯输出重组 |
@@ -35,8 +35,8 @@
 | 16 | 生图前交互 | ✅ 内置可执行 | 只在 preflight 询问，不执行生成 |
 | 17 | 生图 Prompt 规范 | ✅ 内置可执行 | 通用的 prompt 结构模板 |
 | 18 | 产品视频分支 | ✅ 内置可执行 | 判断是否需要视频+输出分镜/prompt 建议 |
-| 19 | 竞品数据自动获取 | ⚠️ 需 Companion Skill | 搜索/抓取 companion skills 自动调用；缺失时标注待核验 |
-| 20 | humanizer-zh 自动调用 | ⚠️ 需 Companion Skill | 有则自动调用增强文案人味化；无则用内置规则 |
+| 19 | 竞品数据自动获取 | ⚠️ 需 Companion Skill | 宿主运行时自动发现/安装搜索抓取 companion skills；缺失且安装失败时标注待核验 |
+| 20 | humanizer-zh 自动调用 | ⚠️ 需 Companion Skill | 宿主运行时自动发现/安装 humanizer-zh；缺失且安装失败时用内置人味化规则 |
 | 21 | 主图/详情图生成 | 🔧 需用户提供 | 不绑定私有工具；用户必须显式选择模型/API/路径 |
 | 22 | 产品渲染/种草视频生成 | 🔧 需用户提供 | 不绑定私有视频工具；用户必须显式选择 |
 | 23 | 飞书数据落库 | ⚠️ 需 Companion Skill | 需要 feishu_bitable 等飞书集成 skill |
@@ -51,5 +51,5 @@
 ## 仍需补的
 
 1. 工具协同 5.3 和 5.4 需要统一标注为 【🔧 需用户提供】，目前只写了不绑定但没有明确标"开源版只到 preflight 和 prompt 建议为止"。
-2. SKILL.md 头部推荐补一段能力 Preflight 描述（执行前先检查 companion skills 可用性并报告给用户）。
-3. README 需要同步这个能力矩阵。
+2. ✅ SKILL.md 头部已加上能力 Preflight + 自动安装契约，明确宿主运行时负责探测和安装。
+3. README 已同步这个能力矩阵，并把 companion skills 的发现/安装/降级写法统一成“自动发现 + 支持时自动安装 + 否则列缺失命令”。
