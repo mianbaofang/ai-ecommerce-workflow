@@ -228,6 +228,7 @@
       font-size: 24px;
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .mode-num::after {
@@ -242,17 +243,20 @@
     }
 
     .mode svg {
-      position: absolute;
-      top: 24px;
-      right: 26px;
-      opacity: 0.7;
+      opacity: 0.95;
+    }
+
+    .mode > div {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     .mode {
-      padding: 34px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 16px;
       position: relative;
       overflow: hidden;
     }
@@ -387,22 +391,31 @@
     }
 
     .material-card {
-      padding: 34px 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 28px 28px 22px;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
     }
 
     .material-card h3 {
-      margin: 0;
-      font-size: 30px;
+      margin: 4px 0 0;
+      font-size: 28px;
+      line-height: 1.05;
     }
 
     .material-card p {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       color: var(--muted);
       line-height: 1.32;
+    }
+
+    .card-illust {
+      width: 100%;
+      max-height: 132px;
+      display: block;
     }
 
     .brief-box {
@@ -526,19 +539,48 @@
 
     <section class="scene modes" data-scene="1" data-start="4" data-duration="4" data-track-index="1">
       <div class="mode panel" style="--color:var(--orange)">
-        <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="14" fill="none" stroke="var(--orange)" stroke-width="3"/><circle cx="32" cy="32" r="24" fill="none" stroke="var(--orange)" stroke-width="2" opacity="0.4"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 100">
+          <circle cx="60" cy="50" r="26" fill="#fff4e8" stroke="var(--orange)" stroke-width="3"/>
+          <circle cx="60" cy="50" r="38" fill="none" stroke="var(--orange)" stroke-width="2" opacity="0.35" stroke-dasharray="4 4"/>
+          <circle cx="60" cy="50" r="50" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.2"/>
+          <line x1="60" y1="14" x2="60" y2="22" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="60" y1="78" x2="60" y2="86" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="24" y1="50" x2="32" y2="50" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="88" y1="50" x2="96" y2="50" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="60" cy="50" r="8" fill="var(--orange)"/>
+        </svg>
         <div><div class="mode-num">1</div><h3>Quick diagnosis</h3><p>Decide whether the product is worth testing before writing the full package.</p></div>
       </div>
       <div class="mode panel" style="--color:var(--blue)">
-        <svg width="64" height="64" viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="36" rx="3" fill="none" stroke="var(--blue)" stroke-width="3"/><line x1="20" y1="26" x2="44" y2="26" stroke="var(--blue)" stroke-width="2"/><line x1="20" y1="34" x2="38" y2="34" stroke="var(--blue)" stroke-width="2"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 100">
+          <rect x="14" y="22" width="86" height="60" rx="6" fill="#eaf2fc" stroke="var(--blue)" stroke-width="3"/>
+          <rect x="22" y="30" width="34" height="4" fill="var(--blue)" rx="2"/>
+          <rect x="22" y="40" width="50" height="4" fill="var(--blue)" rx="2" opacity="0.6"/>
+          <rect x="22" y="50" width="42" height="4" fill="var(--blue)" rx="2" opacity="0.6"/>
+          <rect x="22" y="60" width="60" height="4" fill="var(--blue)" rx="2" opacity="0.6"/>
+          <circle cx="96" cy="68" r="6" fill="var(--blue)"/>
+          <path d="M92,68 L95,71 L100,65" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
         <div><div class="mode-num">2</div><h3>Complete launch</h3><p>Run the full 15-module workflow and produce role-specific handoffs.</p></div>
       </div>
       <div class="mode panel" style="--color:var(--green)">
-        <svg width="64" height="64" viewBox="0 0 64 64"><rect x="8" y="14" width="48" height="36" rx="3" fill="none" stroke="var(--green)" stroke-width="3"/><circle cx="22" cy="26" r="2.5" fill="var(--green)"/><path d="M14,40 L26,30 L36,38 L50,24" fill="none" stroke="var(--green)" stroke-width="2.5"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 100">
+          <rect x="14" y="24" width="64" height="48" rx="4" fill="none" stroke="var(--green)" stroke-width="3"/>
+          <rect x="20" y="20" width="64" height="48" rx="4" fill="#e6f4ec" stroke="var(--green)" stroke-width="3"/>
+          <rect x="26" y="16" width="64" height="48" rx="4" fill="#fff" stroke="var(--green)" stroke-width="3"/>
+          <circle cx="40" cy="34" r="3" fill="var(--green)"/>
+          <path d="M32,52 L46,38 L60,46 L82,28" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linejoin="round"/>
+        </svg>
         <div><div class="mode-num">3</div><h3>Material production</h3><p>Focus on selling points, main images, detail page, titles, and prompts.</p></div>
       </div>
       <div class="mode panel" style="--color:var(--purple)">
-        <svg width="64" height="64" viewBox="0 0 64 64"><path d="M14,12 L32,38 L50,12 L46,52 L18,52 Z" fill="none" stroke="var(--purple)" stroke-width="3"/><circle cx="32" cy="42" r="3" fill="var(--purple)"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 100">
+          <path d="M16,82 L26,30 L48,30 L42,82 Z" fill="#f3edfd" stroke="var(--purple)" stroke-width="2.5"/>
+          <path d="M48,82 L58,18 L80,18 L72,82 Z" fill="none" stroke="var(--purple)" stroke-width="2.5"/>
+          <path d="M80,82 L92,40 L102,40 L96,82 Z" fill="#f3edfd" stroke="var(--purple)" stroke-width="2.5"/>
+          <line x1="14" y1="82" x2="106" y2="82" stroke="var(--purple)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="69" cy="14" r="3" fill="var(--purple)"/>
+        </svg>
         <div><div class="mode-num">4</div><h3>Post-launch optimization</h3><p>Review weak clicks, conversion, titles, reviews, and service scripts.</p></div>
       </div>
     </section>
@@ -584,15 +626,37 @@
 
     <section class="scene materials" data-scene="4" data-start="18" data-duration="3.5" data-track-index="1">
       <div class="material-card panel">
-        <svg width="44" height="44" viewBox="0 0 48 48" style="position:absolute;top:24px;right:24px;"><rect x="6" y="10" width="36" height="28" rx="3" fill="none" stroke="var(--orange)" stroke-width="2.5"/><circle cx="16" cy="20" r="3" fill="var(--orange)"/><path d="M10,32 L18,24 L24,28 L38,16" fill="none" stroke="var(--orange)" stroke-width="2"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="22" y="18" width="74" height="58" rx="6" fill="#fff8ef" stroke="var(--orange)" stroke-width="3"/>
+          <circle cx="34" cy="28" r="2.6" fill="var(--orange)"/>
+          <path d="M28,68 L42,52 L54,62 L78,38 L86,46" fill="none" stroke="var(--orange)" stroke-width="2.6" stroke-linejoin="round"/>
+          <rect x="14" y="28" width="74" height="58" rx="6" fill="none" stroke="var(--orange)" stroke-width="3" opacity="0.45"/>
+          <rect x="6" y="38" width="74" height="58" rx="6" fill="none" stroke="var(--orange)" stroke-width="2.6" opacity="0.22"/>
+        </svg>
         <h3>Image prompts</h3><p>Main image, detail scene, comparison image, and close-up briefs.</p><div class="brief-box">Confirm tool, ratio, reference, count, text policy, output path.</div>
       </div>
       <div class="material-card panel">
-        <svg width="44" height="44" viewBox="0 0 48 48" style="position:absolute;top:24px;right:24px;"><rect x="6" y="14" width="36" height="24" rx="3" fill="none" stroke="var(--blue)" stroke-width="2.5"/><polygon points="20,18 20,30 32,24" fill="var(--blue)"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="32" width="92" height="56" rx="6" fill="#eef4fc" stroke="var(--blue)" stroke-width="3"/>
+          <polygon points="50,52 50,72 72,62" fill="var(--blue)"/>
+          <line x1="22" y1="40" x2="40" y2="40" stroke="var(--blue)" stroke-width="2" opacity="0.4"/>
+          <line x1="22" y1="46" x2="40" y2="46" stroke="var(--blue)" stroke-width="2" opacity="0.4"/>
+          <line x1="78" y1="80" x2="86" y2="80" stroke="var(--blue)" stroke-width="2.5"/>
+          <line x1="86" y1="76" x2="86" y2="84" stroke="var(--blue)" stroke-width="2.5"/>
+          <circle cx="32" cy="80" r="3" fill="var(--blue)" opacity="0.5"/>
+          <circle cx="48" cy="80" r="3" fill="var(--blue)" opacity="0.5"/>
+          <circle cx="64" cy="80" r="3" fill="var(--blue)" opacity="0.5"/>
+          <circle cx="80" cy="80" r="3" fill="var(--blue)"/>
+        </svg>
         <h3>Video storyboards</h3><p>Main video, short video, detail video, or storyboard-only mode.</p><div class="brief-box">Hook, timeline, shot list, subtitles, motion, forbidden changes.</div>
       </div>
       <div class="material-card panel">
-        <svg width="44" height="44" viewBox="0 0 48 48" style="position:absolute;top:24px;right:24px;"><path d="M24,6 L40,14 L40,30 L24,42 L8,30 L8,14 Z" fill="none" stroke="var(--green)" stroke-width="2.5"/><path d="M18,22 L22,28 L32,16" fill="none" stroke="var(--green)" stroke-width="2"/></svg>
+        <svg class="card-illust" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60,12 L106,30 L106,68 C106,84 86,98 60,108 C34,98 14,84 14,68 L14,30 Z" fill="#ecf7ed" stroke="var(--green)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M40,58 L54,74 L82,42" fill="none" stroke="var(--green)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="60" cy="12" r="3" fill="var(--green)" opacity="0.4"/>
+          <circle cx="60" cy="108" r="3" fill="var(--green)" opacity="0.4"/>
+        </svg>
         <h3>Compliance guardrails</h3><p>Generated media is creative reference, not final listing proof.</p><div class="brief-box">No fake claims. No unauthorized logos. Product appearance must stay true.</div>
       </div>
     </section>

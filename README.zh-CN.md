@@ -1,8 +1,8 @@
 # AI 电商新品上架工作流
 
 <p align="center">
-  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation.html">
-    <img src="docs/assets/intro-animation-preview.gif" alt="35 秒项目介绍动画，含 GPT Image 2 生成的视觉" width="100%">
+  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/project-intro-animation-zh.html">
+    <img src="docs/assets/intro-animation-preview-zh.gif" alt="35 秒项目介绍动画中文版，含 GPT Image 2 生成的视觉" width="100%">
   </a>
 </p>
 

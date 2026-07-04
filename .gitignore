@@ -47,6 +47,8 @@ build/
 .anysearch/
 .multi-search-engine/
 docs/site/frames/
+docs/site/frames-en/
+docs/site/frames-zh/
 
 # Browser session data (cookies, localStorage snapshots)
 *.cookies.json
