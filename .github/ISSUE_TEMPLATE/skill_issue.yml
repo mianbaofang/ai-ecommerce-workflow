@@ -1,0 +1,35 @@
+name: Skill issue
+
+description: Report a problem with the ai-ecommerce-workflow Skill
+
+title: "[Skill] "
+labels: ["skill"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What went wrong or what should improve?
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt or input
+      description: Paste the user prompt or input form if it is safe to share.
+      render: text
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary check
+      options:
+        - label: This issue does not request fake reviews, unauthorized scraping, or direct seller-backend publishing.
+          required: true

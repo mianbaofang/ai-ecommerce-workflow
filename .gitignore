@@ -1,0 +1,43 @@
+# Local generated files
+outputs/
+output/
+.tmp/
+tmp/
+.cache/
+*.log
+*.response.json
+response.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / HyperFrames local work
+node_modules/
+dist/
+build/
+.playwright/
+
+# Media render intermediates
+*.mp4
+*.webm
+*.mov
+*.wav
+*.mp3
+*.palette.png
+
+# Keep README assets tracked
+!docs/assets/*.gif
+!docs/assets/*.png
+!docs/assets/*.jpg
+!docs/assets/*.jpeg
+!docs/assets/*.svg
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+.firecrawl/

@@ -1,0 +1,20 @@
+display_name: AI 电商新品上架工作流
+short_description: 自动调用搜索/抓取 companion skills,完成新品定位、竞品、主图、详情页、标题、客服话术和30天运营计划。
+recommended_companion_skills:
+  - multi-search-engine
+  - anysearch
+  - firecrawl-search
+  - firecrawl-scrape
+  - agent-reach
+optional_companion_tools:
+  - Tavily
+  - browser/Playwright
+  - seller analytics exports
+  - marketplace screenshots
+default_prompt: |
+  【跑电商新品上架流程】
+  运行模式:完整上架
+  产品名称:
+  产品类目:
+  一句话描述:
+  目标平台:淘宝
