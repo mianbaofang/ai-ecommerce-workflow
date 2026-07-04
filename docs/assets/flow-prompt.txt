@@ -1,0 +1,55 @@
+Editorial-grade ecommerce workflow infographic for an open-source AI ecommerce Skill tool. Warm off-white parchment background (like quality paper stock, not bright cream).
+
+Palette: deep burnt amber as primary accent (not candy orange), deep forest green-teal as secondary (a calm mossy color, not vivid blue), muted sage olive green as success and data accents (not vibrant green), muted antique gold for warnings and callouts (not bright yellow), brick terracotta for emergency or urgent items (not bright red), soft lavender-brown for secondary categories (not bright purple), deep warm charcoal text (not pure black). All colors should feel like quality editorial print — slightly desaturated, earthy, mature.
+
+Composition (4:3 landscape, 1600x1200 effective):
+
+Top: a clear masthead. A short burnt amber accent bar (a thick vertical stripe) on the left edge. Next to it, a large bold Chinese title "一个新品,跑完整套上新链路" in deep warm charcoal ink. Subtitle in warm gray below: "从产品定位、竞品价格带、主图详情页,到客服话术和30天测款计划".
+
+Left column: "新品输入" panel with burnt amber header band. Inside, an isometric cardboard package icon in muted gold. Below, a vertical list of four input items with small mono-style icons in burnt amber: 产品信息, 卖点文档, 参考链接, 其他资料.
+
+Center area: a horizontal pipeline of 9 numbered circles, connected by short burnt amber arrows. Each circle has a Chinese label and a small icon below it, using the calibrated palette (depth greens for analysis stages, muted sage for content stages, warm gold or terracotta for customer-facing stages). The 9 steps:
+
+1. 资料接收 — file/document icon
+2. 产品定位 — target icon
+3. 竞品价格带 — chart icon (the icon should be in deep teal, not orange)
+4. 用户痛点 — user with exclamation icon (sage)
+5. 主图策划 — image icon (burnt amber)
+6. 详情页结构 — page icon (deep teal)
+7. 标题关键词 — search/keywords icon (sage)
+8. 客服话术 — chat icon (muted gold)
+9. 30天运营计划 — calendar with 30 icon (deep teal)
+
+Right column: panel titled "完整输出交付" with burnt amber border. Inside, a vertical list of 9 items, each with a small sage-green circle containing a checkmark. Items in warm charcoal text: 定位报告, 竞品价格带分析, 用户痛点清单, 主图策划方案, 详情页结构图, 标题关键词表, 客服话术库(FAQ), 30天运营计划表, 证据与数据说明.
+
+Below the pipeline, a row of small pill labels in muted antique gold with warm charcoal text, listing capabilities: AI自动化引擎, 数据分析, 自然语言处理, 知识库匹配, 内容生成, 证据评估, 任务规划. Each pill should have a small matching icon (robot/chart/text/database/image/shield/list).
+
+Below that, a row of 5 small KPI data cards (white cards with hairline border in warm beige):
+- 竞品数量 36, with a small ascending bar chart (sage)
+- 价格带分布 ¥59-129, with a small donut chart using burnt amber, deep teal, sage, muted gold segments
+- 核心卖点提炼 8, with a horizontal bar chart in deep teal
+- 用户痛点数量 12, with a small descending chart
+- 证据等级分布 12%~28%, with four small shield icons labeled A B C D, each in muted gold or burnt amber
+
+Below KPIs, a row of 5 small feature cards:
+1. 四种运行模式 (rocket icon, burnt amber)
+2. 15项标准输出 (clipboard icon, deep teal)
+3. 文案人味化 (chat bubble icon, sage)
+4. 证据等级 (shield icon, muted gold)
+5. 素材生成包 (palette icon, burnt amber)
+
+Each card has a one-line subtitle in warm gray.
+
+Right bottom: a quote block framed in a thick burnt amber border, with deep warm charcoal text:
+"不是写几句文案,
+而是把新品上架前
+30天变成可执行
+工作流。"
+
+Footer: skill name in burnt amber "ai-ecommerce-workflow" and tag line in warm gray "开源工作流 · 电商运营 · 主图详情页 · 30天测款".
+
+A small code icon precedes the footer brand.
+
+Visual quality: editorial, calm, print-grade. Every color looks slightly desaturated, like quality magazine print. No bright pure-white, no candy color, no neon. No emoji used as icons. No purple gradient or SaaS glow. All icons should be clean mono-style SVGs, not cartoonish.
+
+No people. No copyrighted logos. No private brand marks. No platform brand names like "Taobao" or "Amazon" as readable text. Plain Asian-style typography for Chinese (use Heiti or Songti), Western sans-serif for any numbers.
