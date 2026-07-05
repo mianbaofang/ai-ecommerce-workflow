@@ -244,6 +244,10 @@ Full capability audit: [docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md).
 
 Security audit: [SECURITY_AUDIT.md](SECURITY_AUDIT.md) — confirms no private API keys or caches are tracked.
 
+## Author
+
+Ethan <ethan.zl@hotmail.com>
+
 ## License
 
 MIT.

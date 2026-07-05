@@ -240,6 +240,10 @@ rg -n "legacy Taobao-only naming|old trigger phrase" .
 
 安全审计：[SECURITY_AUDIT.md](SECURITY_AUDIT.md) — 确认仓库没有泄露任何私有 API key 或工具缓存。
 
+## 作者
+
+Ethan <ethan.zl@hotmail.com>
+
 ## License
 
 MIT.
