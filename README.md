@@ -28,6 +28,19 @@
   <a href="CHANGELOG.md">Changelog</a>
 </p>
 
+An Agent Skill for preparing ecommerce new-product launch packages across Taobao, Pinduoduo, Douyin, Amazon, 1688, Kuaishou, and similar channels. It turns product input, market evidence, compliance checks, creative direction, listing copy, customer-service scripts, and launch actions into one reviewable operating packet.
+
+> Read [Disclaimer](DISCLAIMER.md) before use. This Skill prepares drafts and evidence trails; it does not publish products, create fake reviews, bypass platform rules, or guarantee sales performance.
+
+## At A Glance
+
+| Question | Answer |
+|---|---|
+| Who is it for? | Ecommerce operators, founders, designers, service teams, and agents preparing a new-product launch. |
+| What does it output? | Positioning, evidence labels, listing copy, image/video direction, FAQ, service scripts, and an execution plan. |
+| What does it protect? | Platform compliance, claim traceability, budget discipline, and handoff clarity between roles. |
+| Best first use | Give the Skill a product brief and run the complete launch workflow in a Skill-compatible Agent. |
+
 ## Why This Skill Exists
 
 A usable ecommerce launch package is rarely one writing task. It needs positioning, competitor price bands, review-mined pain points, main image logic, a detail page in the user's actual decision order, SEO titles, FAQ, customer-service scripts, and a launch plan that respects budget and inventory.
@@ -37,8 +50,6 @@ I built this Skill because watching a real team prepare a new product still take
 This Skill turns that work into one structured Agent workflow. It validates the input, calls companion search and scrape tools, labels every claim with an evidence level and a source trail, blocks prohibited marketplace terms before any copy goes out, refuses to invent a closed loop when the user cannot afford paid traffic, and packages the answer by who needs to act next. Operators, designers, service and decision makers each get a focused packet instead of one long report.
 
 It does not publish products to seller backends, write fake reviews, scrape without authorization, or guarantee marketplace performance. It prepares a reviewable operating package and stays honest about what data is real, what is observed, and what is only inferred.
-
-An Agent Skill for preparing ecommerce new-product launch packages across Taobao, Pinduoduo, Douyin, Amazon, 1688, Kuaishou, and similar channels. Built for OpenClaw, Hermes, Codex, or any Skill-compatible Agent runtime.
 
 ## Quick Start
 
