@@ -19,6 +19,10 @@
   ·
   <a href="skill/references/compliance-terms.md">Compliance terms</a>
   ·
+  <a href="DISCLAIMER.md">Disclaimer</a>
+  ·
+  <a href="ACKNOWLEDGEMENTS.md">Acknowledgements</a>
+  ·
   <a href="SECURITY_AUDIT.md">Security audit</a>
   ·
   <a href="CHANGELOG.md">Changelog</a>
@@ -190,6 +194,8 @@ Before any generation route is used, the Agent should confirm:
 
 AI-generated images and videos are creative references only, not final marketplace assets.
 
+For the full legal, marketplace, data-access, and business-performance boundaries, read [DISCLAIMER.md](DISCLAIMER.md).
+
 ## Acknowledgements
 
 This workflow stands on a mix of open-source projects, public tooling, and service ecosystems:
@@ -200,6 +206,8 @@ This workflow stands on a mix of open-source projects, public tooling, and servi
 - Marketplace compliance references: public advertising-law, platform-rule, and seller-operation knowledge distilled into `skill/references/compliance-terms.md`.
 
 These tools help with discovery, drafting, and review. Real transaction prices, seller-center data, certificates, and final marketplace assets still need user-provided authorized evidence.
+
+See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for the full attribution list.
 
 ## Repository Layout
 
