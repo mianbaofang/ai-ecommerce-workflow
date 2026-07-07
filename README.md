@@ -190,6 +190,17 @@ Before any generation route is used, the Agent should confirm:
 
 AI-generated images and videos are creative references only, not final marketplace assets.
 
+## Acknowledgements
+
+This workflow stands on a mix of open-source projects, public tooling, and service ecosystems:
+
+- Companion research/fetch tools: `multi-search-engine`, `anysearch`, Firecrawl, `agent-reach`, and Tavily.
+- Humanized Chinese copy review: `humanizer-zh` and the built-in anti-template writing rules in this Skill.
+- Motion-demo tooling: HyperFrames, GPT Image 2 generated scenes, and MiniMax CLI background music.
+- Marketplace compliance references: public advertising-law, platform-rule, and seller-operation knowledge distilled into `skill/references/compliance-terms.md`.
+
+These tools help with discovery, drafting, and review. Real transaction prices, seller-center data, certificates, and final marketplace assets still need user-provided authorized evidence.
+
 ## Repository Layout
 
 ```text
@@ -212,7 +223,7 @@ docs/
 tests/
   TEST-CASES.md                  Trigger/output regression cases
 
-LICENCE                         MIT license
+LICENSE                         MIT license
 CONTRIBUTING.md                 How to contribute without leaking private APIs
 ```
 
@@ -243,6 +254,10 @@ Lightweight eval cases: [tests/TEST-CASES.md](tests/TEST-CASES.md) and [skill/re
 Full capability audit: [docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md).
 
 Security audit: [SECURITY_AUDIT.md](SECURITY_AUDIT.md) — confirms no private API keys or caches are tracked.
+
+## Status
+
+The public package is ready for Skill-style use: workflow instructions, companion-skill policy, compliance references, examples, contribution rules, security audit, and bilingual README files are included. The repository remains provider-neutral and does not ship private API keys or private generation routes.
 
 ## Author
 
