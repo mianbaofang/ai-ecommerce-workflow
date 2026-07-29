@@ -8,7 +8,7 @@
 | Public name | AI Ecommerce Workflow |
 | Skill/package name | `ai-ecommerce-workflow` |
 | Canonical entrypoint | Root `SKILL.md` |
-| Homepage | Repository URL; GitHub Pages is not configured as of 2026-07-29 |
+| Homepage | `https://mianbaofang.github.io/ai-ecommerce-workflow/`, deployed from `docs/site/` by GitHub Pages |
 | Release asset | None currently; do not present the automatic source archive as an install asset without a clean-install check |
 | Maintenance state | Active, provider-neutral, human-reviewed outputs |
 
@@ -40,3 +40,9 @@ Configured GitHub description:
 Configured topics:
 
 `ai`, `agent-skills`, `amazon`, `douyin`, `ecommerce`, `ecommerce-listing`, `ecommerce-research`, `marketplace-compliance`, `product-copywriting`, `product-image-requirements`, `shopify`, `skill`, `taobao`, `workflow`.
+
+## GEO And SEO Surface
+
+The Pages source has English and Chinese entry pages with canonical URLs, reciprocal `hreflang` links, meta descriptions, Open Graph/Twitter metadata, and `SoftwareSourceCode` JSON-LD. `robots.txt`, `sitemap.xml`, and `llms.txt` make the same public scope available to search crawlers and AI agents.
+
+These files improve discoverability and parsing. They do not claim or guarantee indexing, ranking, citation, traffic, downloads, recommendations, or marketplace outcomes.

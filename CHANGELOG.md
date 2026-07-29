@@ -14,6 +14,12 @@
 - Removed Firecrawl, crawler/scrape adapters, login-state access, proxy rotation, and anti-bot bypass from the default package path.
 - Clarified that displayed prices and search result order are observations, not transaction prices or stable rankings.
 
+### Discovery
+
+- Added a bilingual GitHub Pages source with canonical URLs, reciprocal language links, meta descriptions, Open Graph/Twitter metadata, and `SoftwareSourceCode` JSON-LD.
+- Added `robots.txt`, `sitemap.xml`, and `llms.txt` with the verified Skill scope and explicit boundaries.
+- Added a GitHub Pages deployment workflow and aligned the repository description and topics with the current public-search-first workflow.
+
 ## v1.0 - 2026-07-04
 
 Initial open-source release of `ai-ecommerce-workflow`.

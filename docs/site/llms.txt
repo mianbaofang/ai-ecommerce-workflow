@@ -1,0 +1,32 @@
+# AI Ecommerce Workflow
+
+AI Ecommerce Workflow is an evidence-first Agent Skill for public ecommerce market research, platform-specific listing drafts, and marketplace image requirements.
+
+## Start
+
+- Repository: https://github.com/mianbaofang/ai-ecommerce-workflow
+- Canonical Skill: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/SKILL.md
+- English overview: https://mianbaofang.github.io/ai-ecommerce-workflow/
+- Chinese overview: https://mianbaofang.github.io/ai-ecommerce-workflow/index-zh.html
+
+Provide a product description, public product URL, or product image. The first output is a one-page public-market brief. Select a marketplace before requesting platform-specific copy, image requirements, or an optional image brief.
+
+## Supported Scope
+
+- Public comparable-product discovery, observed display-price context, and source-state evidence ledgers.
+- Platform adapters for Taobao/Tmall, JD, Pinduoduo, Douyin, Kuaishou, Amazon, eBay, Etsy, Shopify, and AliExpress.
+- A ten-platform image-requirement matrix and fact, category, claim, and marketplace-field review.
+
+## Boundaries
+
+- No catalog crawling, login-only data, access-control bypass, provider auto-installation, or seller-backend publishing.
+- No fake reviews, invented product facts, certifications, transaction prices, platform approval, ranking, conversion, or sales guarantees.
+- Generated image outputs are drafts and require human fidelity, rights, and marketplace review.
+
+## References
+
+- Disclaimer: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/DISCLAIMER.md
+- Image requirements: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/references/platform-image-specs.md
+- Manual regression evidence: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/reports/manual-simulation/07-workflow-regression.md
+
+Updated: 2026-07-29
