@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Animated English overview of the AI Ecommerce Workflow Skill.">
+  <title>AI Ecommerce Workflow Overview</title>
+  <style>
+    :root { --paper: #f4f1ea; --ink: #1d2528; --muted: #667174; --red: #be4a34; --teal: #2f6d70; --sage: #71885a; --gold: #d7aa4d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 960px; height: 540px; overflow: hidden; background: var(--paper); color: var(--ink); font-family: Arial, sans-serif; }
+    .frame { position: relative; width: 960px; height: 540px; overflow: hidden; padding: 38px 48px 32px; background: linear-gradient(125deg, #fbfaf5 0%, var(--paper) 58%, #e6ece6 100%); }
+    .frame::before { content: ""; position: absolute; top: 0; bottom: 0; left: 24px; width: 2px; background: rgba(29,37,40,.14); }
+    .topline { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; font-size: 14px; font-weight: 700; }
+    .topline b { color: var(--red); }.rule { height: 2px; background: rgba(29,37,40,.25); }.progress { position: absolute; top: 70px; left: 48px; right: 48px; height: 4px; background: rgba(29,37,40,.12); }.progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--red), var(--teal), var(--sage)); }
+    .slides { position: relative; height: 408px; margin-top: 34px; }.slide { position: absolute; inset: 0; display: none; grid-template-columns: 1fr 1.08fr; gap: 42px; align-items: center; }.slide.active { display: grid; }
+    .eyebrow { margin-bottom: 12px; color: var(--red); font-size: 16px; font-weight: 800; }h1 { max-width: 390px; margin: 0; font-size: 46px; line-height: 1.03; }p { max-width: 382px; margin: 18px 0 0; color: var(--muted); font-size: 19px; line-height: 1.42; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }.chip { padding: 8px 11px; border: 1px solid rgba(29,37,40,.2); background: rgba(255,255,255,.64); font-size: 13px; font-weight: 700; }
+    .card { min-height: 280px; padding: 22px; border: 2px solid var(--ink); background: rgba(255,255,255,.88); box-shadow: 12px 14px 0 rgba(47,109,112,.18); }.card-title { display: flex; justify-content: space-between; padding-bottom: 14px; border-bottom: 2px solid var(--ink); font-size: 16px; font-weight: 800; }.card-title span { color: var(--red); }
+    .row { display: grid; grid-template-columns: 106px 1fr; gap: 12px; align-items: center; min-height: 48px; border-bottom: 1px solid rgba(29,37,40,.16); font-size: 14px; }.row strong { color: var(--teal); }.source { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; min-height: 48px; border-bottom: 1px solid rgba(29,37,40,.16); font-size: 14px; }.source i { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--sage); color: white; font-style: normal; font-weight: 800; }.source em { color: var(--muted); font-size: 12px; font-style: normal; }
+    .market-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }.market { padding: 15px 13px; border: 1px solid rgba(29,37,40,.24); font-weight: 800; }.market.active { background: var(--teal); color: white; border-color: var(--teal); }.draft { margin-top: 18px; padding: 16px; border-left: 6px solid var(--gold); background: #f7f4ec; }.draft b { display: block; font-size: 17px; }.draft span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    .package { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }.package div { min-height: 82px; padding: 14px; background: #f7f4ec; border-top: 4px solid var(--red); font-size: 13px; font-weight: 800; }.package div:nth-child(2) { border-color: var(--teal); }.package div:nth-child(3) { border-color: var(--sage); }.package div:nth-child(4) { border-color: var(--gold); }.footer { position: absolute; right: 48px; bottom: 22px; color: rgba(29,37,40,.52); font-size: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <div class="topline"><span><b id="step">01</b> AI Ecommerce Workflow</span><div class="rule"></div><span id="phase">INPUT</span></div><div class="progress"><span id="progress"></span></div>
+    <div class="slides">
+      <section class="slide active" data-phase="INPUT"><div><div class="eyebrow">ONE PRODUCT BRIEF</div><h1>Start with what you already have.</h1><p>A product description, public listing URL, or product image is enough to begin the research flow.</p><div class="chips"><span class="chip">Description</span><span class="chip">Public URL</span><span class="chip">Product image</span></div></div><div class="card"><div class="card-title"><span>01</span> Starting inputs</div><div class="row"><strong>Product</strong><span>Travel mug</span></div><div class="row"><strong>Market</strong><span>Public comparable listings</span></div><div class="row"><strong>Target</strong><span>Marketplace selected next</span></div><div class="row"><strong>Output</strong><span>One-page market brief</span></div></div></section>
+      <section class="slide" data-phase="RESEARCH"><div><div class="eyebrow">PUBLIC MARKET RESEARCH</div><h1>Research before writing copy.</h1><p>Keep comparable links, observed price context, selling points, and recurring complaints in one evidence ledger.</p><div class="chips"><span class="chip">Comparable links</span><span class="chip">Observed prices</span><span class="chip">Customer signals</span></div></div><div class="card"><div class="card-title"><span>02</span> Evidence ledger</div><div class="source"><i>A</i><b>Product brief</b><em>provided</em></div><div class="source"><i>B</i><b>Comparable page</b><em>public link</em></div><div class="source"><i>C</i><b>Price context</b><em>observed</em></div><div class="source"><i>D</i><b>Open question</b><em>review item</em></div></div></section>
+      <section class="slide" data-phase="ADAPT"><div><div class="eyebrow">MARKETPLACE ADAPTER</div><h1>Select the marketplace first.</h1><p>Then shape the title, fields, image requirements, and language for the platform you actually plan to use.</p><div class="chips"><span class="chip">10 platforms</span><span class="chip">Image requirements</span><span class="chip">Listing drafts</span></div></div><div class="card"><div class="card-title"><span>03</span> Marketplace route</div><div class="market-grid"><div class="market active">Taobao / Tmall</div><div class="market">JD</div><div class="market">Douyin</div><div class="market">Amazon</div><div class="market">Shopify</div><div class="market">AliExpress</div></div></div></section>
+      <section class="slide" data-phase="DRAFT"><div><div class="eyebrow">EDITABLE DRAFTS</div><h1>Turn evidence into a usable listing pack.</h1><p>Draft platform-ready copy and image requirements while keeping the source context visible alongside each decision.</p><div class="chips"><span class="chip">Title</span><span class="chip">Selling points</span><span class="chip">Image brief</span></div></div><div class="card"><div class="card-title"><span>04</span> Listing draft</div><div class="draft"><b>Title draft</b><span>Insulated travel mug with an easy-to-carry daily format</span></div><div class="draft"><b>Evidence notes</b><span>Observed competitor language and unresolved product details stay separate.</span></div><div class="draft"><b>Image requirements</b><span>Platform-specific dimensions and asset checklist.</span></div></div></section>
+      <section class="slide" data-phase="HANDOFF"><div><div class="eyebrow">REVIEWABLE HANDOFF</div><h1>Hand off one coherent package.</h1><p>Research, copy, image requirements, and review fields stay together so the next person can continue without reconstructing the work.</p><div class="chips"><span class="chip">Source-linked</span><span class="chip">Editable</span><span class="chip">Platform-ready</span></div></div><div class="card"><div class="card-title"><span>05</span> Delivery package</div><div class="package"><div>One-page market brief</div><div>Evidence ledger</div><div>Platform copy pack</div><div>Image requirements</div></div></div></section>
+    </div><div class="footer">source-linked ecommerce preparation</div>
+  </main>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const step = document.getElementById('step');
+    const phase = document.getElementById('phase');
+    const progress = document.getElementById('progress');
+    window.renderAt = (frame) => { const scene = Math.min(slides.length - 1, Math.floor(frame / 20)); slides.forEach((slide, index) => slide.classList.toggle('active', index === scene)); step.textContent = String(scene + 1).padStart(2, '0'); phase.textContent = slides[scene].dataset.phase; progress.style.width = `${Math.min(100, ((frame + 1) / 100) * 100)}%`; };
+    window.renderAt(0);
+  </script>
+</body>
+</html>
