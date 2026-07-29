@@ -1,0 +1,25 @@
+{
+  "recommended_threshold": 0.40,
+  "negative_patterns": [
+    "批量抓取",
+    "批量爬取",
+    "自动发布",
+    "假评论",
+    "真实买家评价"
+  ],
+  "should_trigger": [
+    {"text": "这是一个便携咖啡杯，帮我查公开竞品、价格区间和链接。", "family": "public_research"},
+    {"text": "我上传了产品图和商品链接，研究一下相似产品并给我平台文案。", "family": "public_research"},
+    {"text": "先看公开市场，再给我淘宝和抖音需要的图片规格。", "family": "platform_assets"},
+    {"text": "给我整理淘宝、京东、拼多多、抖音、快手、Amazon、eBay、Etsy、Shopify 和 AliExpress 的商品图尺寸。", "family": "platform_assets"},
+    {"text": "我只有一张商品图片，先识别可见信息，再搜索类似产品并做平台文案。", "family": "public_research"},
+    {"text": "先识别商品品类，再按品类字段和目标平台写上架文案，不要自由补属性。", "family": "platform_assets"}
+  ],
+  "should_not_trigger": [
+    {"text": "批量抓取某平台全部商品和销量。", "family": "bulk_crawling"},
+    {"text": "登录卖家后台自动发布商品。", "family": "publishing"},
+    {"text": "制造几条真实买家评价。", "family": "fake_reviews"},
+    {"text": "做一个与具体商品无关的泛市场研究。", "family": "generic_research"}
+  ],
+  "near_neighbor": []
+}

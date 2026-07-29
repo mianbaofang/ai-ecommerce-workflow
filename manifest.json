@@ -1,0 +1,25 @@
+{
+  "name": "ai-ecommerce-workflow",
+  "version": "1.1.0",
+  "owner": "mianbaofang",
+  "updated_at": "2026-07-29",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "production",
+  "context_budget_tier": "production",
+  "review_cadence": "monthly",
+  "skill_archetype": "production",
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "factory_components": [
+    "references",
+    "evals",
+    "scripts",
+    "reports"
+  ]
+}

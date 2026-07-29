@@ -1,0 +1,28 @@
+{
+  "backend": "CCAPI",
+  "model": "gpt-image-2",
+  "state": "completed",
+  "planned_output": "E:\\Object\\ai-ecommerce-workflow\\reports\\manual-simulation\\amazon-main-2048x2048.png",
+  "submission": {
+    "created": 1785289419,
+    "data": [
+      {
+        "url": "https://ccapi.us/generated/images/20260729/8de4a7dd-398f-4038-a919-bb75345c0473.png?exp=1785462227&sig=6129c766bfe777626afffc5dc1fb6caf71df3a7d805ecab5a6522a67090e5f26"
+      }
+    ],
+    "usage": {
+      "input_tokens": 160,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 160
+      },
+      "output_tokens": 397,
+      "output_tokens_details": {
+        "image_tokens": 397,
+        "text_tokens": 0
+      },
+      "total_tokens": 557
+    }
+  },
+  "image": "E:\\Object\\ai-ecommerce-workflow\\reports\\manual-simulation\\amazon-main-2048x2048.png"
+}

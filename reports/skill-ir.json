@@ -1,0 +1,69 @@
+{
+  "schema_version": "2.0.0",
+  "name": "ai-ecommerce-workflow",
+  "title": "AI 电商公开市场研究与素材包",
+  "job_to_be_done": "Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, platform-specific listing copy, or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales.",
+  "trigger_surface": {
+    "description": "Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, platform-specific listing copy, or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales.",
+    "should_trigger": [
+      "Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, platform-specific listing copy, or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales."
+    ],
+    "should_not_trigger": [],
+    "edge_cases": []
+  },
+  "workflow": {
+    "steps": [
+      "Understand the request.",
+      "Execute the main task.",
+      "Validate the result."
+    ],
+    "decision_points": [],
+    "failure_modes": []
+  },
+  "resources": {
+    "references": [
+      "references\\asset-output-contract.md",
+      "references\\public-search-policy.md"
+    ],
+    "scripts": [
+      "scripts\\render_intro_gif.sh"
+    ],
+    "assets": [],
+    "reports": [
+      "reports/conformance_matrix.json",
+      "reports/conformance_matrix.md"
+    ]
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals\\trigger-cases.md",
+      "evals\\trigger_cases.json"
+    ],
+    "output": [],
+    "adversarial": [],
+    "baseline": "without_skill"
+  },
+  "risk": {
+    "output_risk": "low",
+    "execution_risk": "medium",
+    "trust_boundary": "team"
+  },
+  "governance": {
+    "owner": "mianbaofang",
+    "maturity": "production",
+    "review_cadence": "monthly",
+    "review_due": ""
+  },
+  "targets": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml"
+  ]
+}

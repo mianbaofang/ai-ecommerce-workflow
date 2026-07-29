@@ -1,0 +1,1451 @@
+{
+  "ok": true,
+  "cases": "E:\\Object\\ai-ecommerce-workflow\\evals\\output_cases.jsonl",
+  "summary": {
+    "case_count": 11,
+    "file_backed_case_count": 0,
+    "near_neighbor_case_count": 0,
+    "boundary_case_count": 0,
+    "baseline_pass_rate": 0.0,
+    "with_skill_pass_rate": 100.0,
+    "delta": 100.0,
+    "regression_count": 0,
+    "gate_pass": true,
+    "failure_taxonomy": [],
+    "blind_pair_count": 11
+  },
+  "results": [
+    {
+      "id": "public-research-contract",
+      "prompt": "这是一个便携咖啡杯，帮我查公开竞品、价格区间和链接。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 3,
+        "checks": [
+          {
+            "id": "has-short-first-output",
+            "description": "Output starts with a short decision-oriented public research result.",
+            "weight": 1.0,
+            "failure_type": "missing_first_value",
+            "passed": false,
+            "missing": [
+              "一页",
+              "公开市场"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "has-source-context",
+            "description": "Price and candidate claims include source context.",
+            "weight": 1.0,
+            "failure_type": "missing_source_context",
+            "passed": false,
+            "missing": [
+              "链接",
+              "观察价格",
+              "时间",
+              "口径"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-transaction-claim",
+            "description": "Output does not present observed prices as transaction prices.",
+            "weight": 1.0,
+            "failure_type": "overclaim_price",
+            "passed": false,
+            "missing": [
+              "不把观察价写成成交价"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "has-short-first-output",
+            "description": "Output starts with a short decision-oriented public research result.",
+            "weight": 1.0,
+            "failure_type": "missing_first_value",
+            "passed": false,
+            "missing": [
+              "一页",
+              "公开市场"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "has-source-context",
+            "description": "Price and candidate claims include source context.",
+            "weight": 1.0,
+            "failure_type": "missing_source_context",
+            "passed": false,
+            "missing": [
+              "链接",
+              "观察价格",
+              "时间",
+              "口径"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-transaction-claim",
+            "description": "Output does not present observed prices as transaction prices.",
+            "weight": 1.0,
+            "failure_type": "overclaim_price",
+            "passed": false,
+            "missing": [
+              "不把观察价写成成交价"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 3,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "has-short-first-output",
+            "description": "Output starts with a short decision-oriented public research result.",
+            "weight": 1.0,
+            "failure_type": "missing_first_value",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "has-source-context",
+            "description": "Price and candidate claims include source context.",
+            "weight": 1.0,
+            "failure_type": "missing_source_context",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-transaction-claim",
+            "description": "Output does not present observed prices as transaction prices.",
+            "weight": 1.0,
+            "failure_type": "overclaim_price",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "provider-and-asset-boundary",
+      "prompt": "研究这个商品后，给我淘宝和抖音需要的图片规格和文案。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 3,
+        "checks": [
+          {
+            "id": "optional-provider",
+            "description": "Optional search providers are offered without automatic installation.",
+            "weight": 1.0,
+            "failure_type": "auto_install_provider",
+            "passed": false,
+            "missing": [
+              "不自动安装",
+              "公开搜索"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "platform-copy",
+            "description": "Platform-specific copy is included after platform selection.",
+            "weight": 1.0,
+            "failure_type": "missing_platform_assets",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "抖音",
+              "标题",
+              "卖点",
+              "图片尺寸"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "image-review-gate",
+            "description": "Image generation preserves a user review gate.",
+            "weight": 1.0,
+            "failure_type": "unsafe_image_autonomy",
+            "passed": false,
+            "missing": [
+              "参考图权利",
+              "人工审核"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "optional-provider",
+            "description": "Optional search providers are offered without automatic installation.",
+            "weight": 1.0,
+            "failure_type": "auto_install_provider",
+            "passed": false,
+            "missing": [
+              "不自动安装",
+              "公开搜索"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "platform-copy",
+            "description": "Platform-specific copy is included after platform selection.",
+            "weight": 1.0,
+            "failure_type": "missing_platform_assets",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "抖音",
+              "标题",
+              "卖点",
+              "图片尺寸"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "image-review-gate",
+            "description": "Image generation preserves a user review gate.",
+            "weight": 1.0,
+            "failure_type": "unsafe_image_autonomy",
+            "passed": false,
+            "missing": [
+              "参考图权利",
+              "人工审核"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 3,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "optional-provider",
+            "description": "Optional search providers are offered without automatic installation.",
+            "weight": 1.0,
+            "failure_type": "auto_install_provider",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "platform-copy",
+            "description": "Platform-specific copy is included after platform selection.",
+            "weight": 1.0,
+            "failure_type": "missing_platform_assets",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "image-review-gate",
+            "description": "Image generation preserves a user review gate.",
+            "weight": 1.0,
+            "failure_type": "unsafe_image_autonomy",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "ten-platform-size-matrix",
+      "prompt": "按指定的两篇色彩韵资料，整理国内五个和跨境五个平台的全部生图要求，不只要主图尺寸。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 4,
+        "checks": [
+          {
+            "id": "all-ten-platforms",
+            "description": "The matrix covers all ten named platforms.",
+            "weight": 2.0,
+            "failure_type": "missing_platform",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "京东",
+              "拼多多",
+              "抖音",
+              "快手",
+              "Amazon",
+              "eBay",
+              "Etsy",
+              "Shopify",
+              "AliExpress"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "domestic-complete-rules",
+            "description": "Domestic coverage includes non-size generation rules and surfaces.",
+            "weight": 2.0,
+            "failure_type": "incomplete_domestic_image_rules",
+            "passed": false,
+            "missing": [
+              "第五张白底主图",
+              "70%",
+              "直通车",
+              "钻展",
+              "京东快车",
+              "场景推广",
+              "信息流",
+              "视频封面",
+              "72 DPI",
+              "80%-85%",
+              "RGB"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-complete-rules",
+            "description": "Cross-border coverage includes secondary assets, content rules and master workflow.",
+            "weight": 2.0,
+            "failure_type": "incomplete_crossborder_image_rules",
+            "passed": false,
+            "missing": [
+              "85%",
+              "副图 1-2",
+              "A+",
+              "Gallery",
+              "500 x 500",
+              "2700 x 2025",
+              "750 x 1334",
+              "Collection",
+              "Blog Featured",
+              "1 视频",
+              "3000 x 3000",
+              "300 DPI",
+              "85%-90%"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-guessed-missing-value",
+            "description": "Missing source values remain explicitly missing.",
+            "weight": 1.0,
+            "failure_type": "invented_size",
+            "passed": false,
+            "missing": [
+              "快手详情页",
+              "资料未列出",
+              "不猜补"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "all-ten-platforms",
+            "description": "The matrix covers all ten named platforms.",
+            "weight": 2.0,
+            "failure_type": "missing_platform",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "京东",
+              "拼多多",
+              "抖音",
+              "快手",
+              "Amazon",
+              "eBay",
+              "Etsy",
+              "Shopify",
+              "AliExpress"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "domestic-complete-rules",
+            "description": "Domestic coverage includes non-size generation rules and surfaces.",
+            "weight": 2.0,
+            "failure_type": "incomplete_domestic_image_rules",
+            "passed": false,
+            "missing": [
+              "第五张白底主图",
+              "70%",
+              "直通车",
+              "钻展",
+              "京东快车",
+              "场景推广",
+              "信息流",
+              "视频封面",
+              "72 DPI",
+              "80%-85%",
+              "RGB"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-complete-rules",
+            "description": "Cross-border coverage includes secondary assets, content rules and master workflow.",
+            "weight": 2.0,
+            "failure_type": "incomplete_crossborder_image_rules",
+            "passed": false,
+            "missing": [
+              "85%",
+              "副图 1-2",
+              "A+",
+              "Gallery",
+              "500 x 500",
+              "2700 x 2025",
+              "750 x 1334",
+              "Collection",
+              "Blog Featured",
+              "1 视频",
+              "3000 x 3000",
+              "300 DPI",
+              "85%-90%"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-guessed-missing-value",
+            "description": "Missing source values remain explicitly missing.",
+            "weight": 1.0,
+            "failure_type": "invented_size",
+            "passed": false,
+            "missing": [
+              "快手详情页",
+              "资料未列出",
+              "不猜补"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 4,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "all-ten-platforms",
+            "description": "The matrix covers all ten named platforms.",
+            "weight": 2.0,
+            "failure_type": "missing_platform",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "domestic-complete-rules",
+            "description": "Domestic coverage includes non-size generation rules and surfaces.",
+            "weight": 2.0,
+            "failure_type": "incomplete_domestic_image_rules",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-complete-rules",
+            "description": "Cross-border coverage includes secondary assets, content rules and master workflow.",
+            "weight": 2.0,
+            "failure_type": "incomplete_crossborder_image_rules",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-guessed-missing-value",
+            "description": "Missing source values remain explicitly missing.",
+            "weight": 1.0,
+            "failure_type": "invented_size",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "image-only-fact-boundary",
+      "prompt": "只有一张白色翻盖杯图片，直接告诉我容量、材质、防漏和保温性能。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 2,
+        "checks": [
+          {
+            "id": "visible-only",
+            "description": "Image analysis stays with visible traits.",
+            "weight": 1.0,
+            "failure_type": "missing_visual_observation",
+            "passed": false,
+            "missing": [
+              "可见",
+              "白色",
+              "翻盖"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-inferred-facts",
+            "description": "Non-visual product facts remain unverified.",
+            "weight": 2.0,
+            "failure_type": "invented_product_fact",
+            "passed": false,
+            "missing": [
+              "容量",
+              "材质",
+              "不能从像素中确认"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "visible-only",
+            "description": "Image analysis stays with visible traits.",
+            "weight": 1.0,
+            "failure_type": "missing_visual_observation",
+            "passed": false,
+            "missing": [
+              "可见",
+              "白色",
+              "翻盖"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-inferred-facts",
+            "description": "Non-visual product facts remain unverified.",
+            "weight": 2.0,
+            "failure_type": "invented_product_fact",
+            "passed": false,
+            "missing": [
+              "容量",
+              "材质",
+              "不能从像素中确认"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 2,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "visible-only",
+            "description": "Image analysis stays with visible traits.",
+            "weight": 1.0,
+            "failure_type": "missing_visual_observation",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-inferred-facts",
+            "description": "Non-visual product facts remain unverified.",
+            "weight": 2.0,
+            "failure_type": "invented_product_fact",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "generated-image-quality-gate",
+      "prompt": "图片接口返回成功了，是不是就能当 Amazon 主图发布？",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 2,
+        "checks": [
+          {
+            "id": "separate-success-levels",
+            "description": "Provider success is separated from platform readiness.",
+            "weight": 1.0,
+            "failure_type": "provider_success_overclaim",
+            "passed": false,
+            "missing": [
+              "生成成功",
+              "尺寸正确",
+              "平台可用",
+              "三件事"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "fidelity-review",
+            "description": "The output keeps a real product-fidelity review gate.",
+            "weight": 2.0,
+            "failure_type": "missing_fidelity_gate",
+            "passed": false,
+            "missing": [
+              "产品保真",
+              "真实商品",
+              "判失败",
+              "不能发布"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "separate-success-levels",
+            "description": "Provider success is separated from platform readiness.",
+            "weight": 1.0,
+            "failure_type": "provider_success_overclaim",
+            "passed": false,
+            "missing": [
+              "生成成功",
+              "尺寸正确",
+              "平台可用",
+              "三件事"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "fidelity-review",
+            "description": "The output keeps a real product-fidelity review gate.",
+            "weight": 2.0,
+            "failure_type": "missing_fidelity_gate",
+            "passed": false,
+            "missing": [
+              "产品保真",
+              "真实商品",
+              "判失败",
+              "不能发布"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 2,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "separate-success-levels",
+            "description": "Provider success is separated from platform readiness.",
+            "weight": 1.0,
+            "failure_type": "provider_success_overclaim",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "fidelity-review",
+            "description": "The output keeps a real product-fidelity review gate.",
+            "weight": 2.0,
+            "failure_type": "missing_fidelity_gate",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "category-module-separation",
+      "prompt": "同一套商品事实流程，分别给一件衬衫和一个 USB-C 充电器写平台文案，需要怎样避免自由发挥？",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 3,
+        "checks": [
+          {
+            "id": "apparel-fields",
+            "description": "Apparel uses apparel-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": false,
+            "missing": [
+              "服装与鞋靴",
+              "面料成分",
+              "尺码",
+              "版型",
+              "洗护"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "electronics-fields",
+            "description": "Electronics uses electronics-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": false,
+            "missing": [
+              "消费电子与数码配件",
+              "型号",
+              "端口",
+              "功率",
+              "协议",
+              "兼容条件"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "fact-ledger-boundary",
+            "description": "Missing attributes stay outside buyer-facing copy.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": false,
+            "missing": [
+              "事实账本",
+              "不自动补全",
+              "消费者文案省略",
+              "内部待确认清单"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "apparel-fields",
+            "description": "Apparel uses apparel-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": false,
+            "missing": [
+              "服装与鞋靴",
+              "面料成分",
+              "尺码",
+              "版型",
+              "洗护"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "electronics-fields",
+            "description": "Electronics uses electronics-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": false,
+            "missing": [
+              "消费电子与数码配件",
+              "型号",
+              "端口",
+              "功率",
+              "协议",
+              "兼容条件"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "fact-ledger-boundary",
+            "description": "Missing attributes stay outside buyer-facing copy.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": false,
+            "missing": [
+              "事实账本",
+              "不自动补全",
+              "消费者文案省略",
+              "内部待确认清单"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 3,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "apparel-fields",
+            "description": "Apparel uses apparel-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "electronics-fields",
+            "description": "Electronics uses electronics-specific fields.",
+            "weight": 1.0,
+            "failure_type": "missing_category_fields",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "fact-ledger-boundary",
+            "description": "Missing attributes stay outside buyer-facing copy.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "marketplace-adapter-separation",
+      "prompt": "同一个已确认商品分别写淘宝、抖音、Amazon、eBay、Etsy 和 Shopify 文案，不能只替换平台名称。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 3,
+        "checks": [
+          {
+            "id": "domestic-adapters",
+            "description": "Taobao and Douyin use distinct structures.",
+            "weight": 1.0,
+            "failure_type": "generic_platform_copy",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "SKU 一致",
+              "抖音",
+              "使用情境",
+              "可口播"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-adapters",
+            "description": "Cross-border marketplaces use their native content structures.",
+            "weight": 2.0,
+            "failure_type": "generic_platform_copy",
+            "passed": false,
+            "missing": [
+              "Amazon",
+              "五条要点",
+              "eBay",
+              "Item specifics",
+              "Etsy",
+              "个性化",
+              "Shopify",
+              "Meta 描述"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "facts-remain-stable",
+            "description": "Platform adaptation preserves the fact ledger.",
+            "weight": 2.0,
+            "failure_type": "platform_fact_drift",
+            "passed": false,
+            "missing": [
+              "同一事实账本",
+              "不改变商品事实"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "domestic-adapters",
+            "description": "Taobao and Douyin use distinct structures.",
+            "weight": 1.0,
+            "failure_type": "generic_platform_copy",
+            "passed": false,
+            "missing": [
+              "淘宝",
+              "SKU 一致",
+              "抖音",
+              "使用情境",
+              "可口播"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-adapters",
+            "description": "Cross-border marketplaces use their native content structures.",
+            "weight": 2.0,
+            "failure_type": "generic_platform_copy",
+            "passed": false,
+            "missing": [
+              "Amazon",
+              "五条要点",
+              "eBay",
+              "Item specifics",
+              "Etsy",
+              "个性化",
+              "Shopify",
+              "Meta 描述"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "facts-remain-stable",
+            "description": "Platform adaptation preserves the fact ledger.",
+            "weight": 2.0,
+            "failure_type": "platform_fact_drift",
+            "passed": false,
+            "missing": [
+              "同一事实账本",
+              "不改变商品事实"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 3,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "domestic-adapters",
+            "description": "Taobao and Douyin use distinct structures.",
+            "weight": 1.0,
+            "failure_type": "generic_platform_copy",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "crossborder-adapters",
+            "description": "Cross-border marketplaces use their native content structures.",
+            "weight": 2.0,
+            "failure_type": "generic_platform_copy",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "facts-remain-stable",
+            "description": "Platform adaptation preserves the fact ledger.",
+            "weight": 2.0,
+            "failure_type": "platform_fact_drift",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "china-category-precedence",
+      "prompt": "GitHub 数据集预测为数码配件，但淘宝后台叶子类目是充电器，并要求品牌、型号、接口和功率。文案按哪个分类？",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 2,
+        "checks": [
+          {
+            "id": "official-category-wins",
+            "description": "Current official marketplace category properties override research taxonomies.",
+            "weight": 2.0,
+            "failure_type": "research_taxonomy_override",
+            "passed": false,
+            "missing": [
+              "淘宝当前叶子类目",
+              "官方必填属性",
+              "不能覆盖平台官方规则"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-property-invention",
+            "description": "Missing category properties are not invented.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": false,
+            "missing": [
+              "不能替商品补值",
+              "缺失属性",
+              "待确认"
+            ],
+            "present_forbidden": [
+              "常见配置补全"
+            ]
+          }
+        ],
+        "failed": [
+          {
+            "id": "official-category-wins",
+            "description": "Current official marketplace category properties override research taxonomies.",
+            "weight": 2.0,
+            "failure_type": "research_taxonomy_override",
+            "passed": false,
+            "missing": [
+              "淘宝当前叶子类目",
+              "官方必填属性",
+              "不能覆盖平台官方规则"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-property-invention",
+            "description": "Missing category properties are not invented.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": false,
+            "missing": [
+              "不能替商品补值",
+              "缺失属性",
+              "待确认"
+            ],
+            "present_forbidden": [
+              "常见配置补全"
+            ]
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 2,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "official-category-wins",
+            "description": "Current official marketplace category properties override research taxonomies.",
+            "weight": 2.0,
+            "failure_type": "research_taxonomy_override",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "no-property-invention",
+            "description": "Missing category properties are not invented.",
+            "weight": 2.0,
+            "failure_type": "invented_category_attribute",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "markdown-evidence-state",
+      "prompt": "公开搜索找到了 8 个商品链接，但两个页面打开失败。先转成证据再分析。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 3,
+        "checks": [
+          {
+            "id": "ledger-fields",
+            "description": "Search evidence is normalized before analysis.",
+            "weight": 1.0,
+            "failure_type": "missing_evidence_ledger",
+            "passed": false,
+            "missing": [
+              "Markdown 证据账本",
+              "查询词",
+              "URL",
+              "观察时间",
+              "限制"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "source-state",
+            "description": "Discovery is not confused with successful extraction.",
+            "weight": 2.0,
+            "failure_type": "false_page_extraction",
+            "passed": false,
+            "missing": [
+              "仅发现",
+              "已读取公开正文",
+              "读取失败",
+              "不能当作读过全文"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "single-page-boundary",
+            "description": "Markdown conversion remains selected-page only.",
+            "weight": 1.0,
+            "failure_type": "crawler_scope_creep",
+            "passed": false,
+            "missing": [
+              "最终引用",
+              "公开单页",
+              "不批量抽取"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "ledger-fields",
+            "description": "Search evidence is normalized before analysis.",
+            "weight": 1.0,
+            "failure_type": "missing_evidence_ledger",
+            "passed": false,
+            "missing": [
+              "Markdown 证据账本",
+              "查询词",
+              "URL",
+              "观察时间",
+              "限制"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "source-state",
+            "description": "Discovery is not confused with successful extraction.",
+            "weight": 2.0,
+            "failure_type": "false_page_extraction",
+            "passed": false,
+            "missing": [
+              "仅发现",
+              "已读取公开正文",
+              "读取失败",
+              "不能当作读过全文"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "single-page-boundary",
+            "description": "Markdown conversion remains selected-page only.",
+            "weight": 1.0,
+            "failure_type": "crawler_scope_creep",
+            "passed": false,
+            "missing": [
+              "最终引用",
+              "公开单页",
+              "不批量抽取"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 3,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "ledger-fields",
+            "description": "Search evidence is normalized before analysis.",
+            "weight": 1.0,
+            "failure_type": "missing_evidence_ledger",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "source-state",
+            "description": "Discovery is not confused with successful extraction.",
+            "weight": 2.0,
+            "failure_type": "false_page_extraction",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "single-page-boundary",
+            "description": "Markdown conversion remains selected-page only.",
+            "weight": 1.0,
+            "failure_type": "crawler_scope_creep",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "humanization-fact-regression",
+      "prompt": "把已确认单 USB-C 口、最高 30W 的淘宝文案改得自然些；协议和线材未知。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 2,
+        "checks": [
+          {
+            "id": "natural-without-invention",
+            "description": "Humanization preserves known facts without adding claims.",
+            "weight": 2.0,
+            "failure_type": "humanization_fact_drift",
+            "passed": false,
+            "missing": [
+              "单 USB-C 口",
+              "最高 30W",
+              "未知协议",
+              "是否含线材",
+              "待确认"
+            ],
+            "present_forbidden": [
+              "全兼容",
+              "附送优质线材"
+            ]
+          },
+          {
+            "id": "post-rewrite-review",
+            "description": "A fact and platform-field review follows the rewrite.",
+            "weight": 2.0,
+            "failure_type": "missing_post_rewrite_review",
+            "passed": false,
+            "missing": [
+              "改写后复核",
+              "数字",
+              "规格",
+              "限制",
+              "平台字段",
+              "禁用词"
+            ],
+            "present_forbidden": []
+          }
+        ],
+        "failed": [
+          {
+            "id": "natural-without-invention",
+            "description": "Humanization preserves known facts without adding claims.",
+            "weight": 2.0,
+            "failure_type": "humanization_fact_drift",
+            "passed": false,
+            "missing": [
+              "单 USB-C 口",
+              "最高 30W",
+              "未知协议",
+              "是否含线材",
+              "待确认"
+            ],
+            "present_forbidden": [
+              "全兼容",
+              "附送优质线材"
+            ]
+          },
+          {
+            "id": "post-rewrite-review",
+            "description": "A fact and platform-field review follows the rewrite.",
+            "weight": 2.0,
+            "failure_type": "missing_post_rewrite_review",
+            "passed": false,
+            "missing": [
+              "改写后复核",
+              "数字",
+              "规格",
+              "限制",
+              "平台字段",
+              "禁用词"
+            ],
+            "present_forbidden": []
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 2,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "natural-without-invention",
+            "description": "Humanization preserves known facts without adding claims.",
+            "weight": 2.0,
+            "failure_type": "humanization_fact_drift",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "post-rewrite-review",
+            "description": "A fact and platform-field review follows the rewrite.",
+            "weight": 2.0,
+            "failure_type": "missing_post_rewrite_review",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    },
+    {
+      "id": "contextual-listing-compliance",
+      "prompt": "审核淘宝标题：全网第一，100% 安全无害，国家级品质，不好用包退。",
+      "input_files": [],
+      "metadata": {},
+      "baseline": {
+        "score": 0.0,
+        "passed_count": 0,
+        "failed_count": 2,
+        "checks": [
+          {
+            "id": "contextual-issues",
+            "description": "Risk review identifies exact phrases, meaning and evidence needs.",
+            "weight": 2.0,
+            "failure_type": "shallow_keyword_scan",
+            "passed": false,
+            "missing": [
+              "修改后复核",
+              "全网第一",
+              "无证据排名",
+              "100% 安全无害",
+              "检测证据",
+              "国家级品质",
+              "官方背书",
+              "可兑现政策"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "repair-loop",
+            "description": "The repaired copy re-enters fact and compliance review without approval guarantees.",
+            "weight": 2.0,
+            "failure_type": "missing_compliance_recheck",
+            "passed": false,
+            "missing": [
+              "重新核对商品事实",
+              "淘宝叶子类目",
+              "平台字段",
+              "风险词",
+              "不得承诺平台审核通过"
+            ],
+            "present_forbidden": [
+              "本店爆款"
+            ]
+          }
+        ],
+        "failed": [
+          {
+            "id": "contextual-issues",
+            "description": "Risk review identifies exact phrases, meaning and evidence needs.",
+            "weight": 2.0,
+            "failure_type": "shallow_keyword_scan",
+            "passed": false,
+            "missing": [
+              "修改后复核",
+              "全网第一",
+              "无证据排名",
+              "100% 安全无害",
+              "检测证据",
+              "国家级品质",
+              "官方背书",
+              "可兑现政策"
+            ],
+            "present_forbidden": []
+          },
+          {
+            "id": "repair-loop",
+            "description": "The repaired copy re-enters fact and compliance review without approval guarantees.",
+            "weight": 2.0,
+            "failure_type": "missing_compliance_recheck",
+            "passed": false,
+            "missing": [
+              "重新核对商品事实",
+              "淘宝叶子类目",
+              "平台字段",
+              "风险词",
+              "不得承诺平台审核通过"
+            ],
+            "present_forbidden": [
+              "本店爆款"
+            ]
+          }
+        ]
+      },
+      "with_skill": {
+        "score": 100.0,
+        "passed_count": 2,
+        "failed_count": 0,
+        "checks": [
+          {
+            "id": "contextual-issues",
+            "description": "Risk review identifies exact phrases, meaning and evidence needs.",
+            "weight": 2.0,
+            "failure_type": "shallow_keyword_scan",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          },
+          {
+            "id": "repair-loop",
+            "description": "The repaired copy re-enters fact and compliance review without approval guarantees.",
+            "weight": 2.0,
+            "failure_type": "missing_compliance_recheck",
+            "passed": true,
+            "missing": [],
+            "present_forbidden": []
+          }
+        ],
+        "failed": []
+      },
+      "delta": 100.0,
+      "winner": "with_skill",
+      "failure_taxonomy": []
+    }
+  ],
+  "failures": [],
+  "blind_review": {
+    "pack": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
+    "answer_key": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json",
+    "pair_count": 11
+  },
+  "artifacts": {
+    "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.json",
+    "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.md",
+    "blind_review_pack_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
+    "blind_review_pack_md": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md",
+    "blind_answer_key_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json"
+  }
+}

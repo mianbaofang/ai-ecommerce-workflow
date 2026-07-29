@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Made the repository-root `SKILL.md` the canonical Agent Skill entrypoint, with `agents/interface.yaml`, `manifest.json`, references, and evaluations following the standard Skill layout.
+- Replaced the default 15-item launch-report route with a public-search-first flow: description, public URL, or images in; market research first; platform copy and image planning only after the user selects a marketplace.
+- Kept the nested `skill/` path as a compatibility redirect for existing links. It no longer activates the former 15-item workflow.
+
+### Search and Trust Boundaries
+
+- Public search providers remain optional and user-configured. The Skill asks about them but never auto-installs a provider or collects API keys in chat.
+- Removed Firecrawl, crawler/scrape adapters, login-state access, proxy rotation, and anti-bot bypass from the default package path.
+- Clarified that displayed prices and search result order are observations, not transaction prices or stable rankings.
+
+### Discovery
+
+- Added a bilingual GitHub Pages source with canonical URLs, reciprocal language links, meta descriptions, Open Graph/Twitter metadata, and `SoftwareSourceCode` JSON-LD.
+- Added `robots.txt`, `sitemap.xml`, and `llms.txt` with the verified Skill scope and explicit boundaries.
+- Added a GitHub Pages deployment workflow and aligned the repository description and topics with the current public-search-first workflow.
+
 ## v1.0 - 2026-07-04
 
 Initial open-source release of `ai-ecommerce-workflow`.

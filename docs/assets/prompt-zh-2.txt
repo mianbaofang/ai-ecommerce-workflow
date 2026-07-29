@@ -1,3 +1,1 @@
-Editorial-grade ecommerce workflow infographic panel for a Chinese open-source AI ecommerce Skill tool. Warm off-white parchment background, slightly desaturated print-grade palette.
-
-Scene 2: 对比页。Show two clean side-by-side cards comparing 零散堆放 and 结构收纳. Make the contrast immediately legible with orderly shelves, containers, labels, and tidy grouping. Use burnt amber as the main accent and deep teal/sage/gold/terracotta for supporting elements. No English labels, no brand logos, no people. Premium print-like composition, 4:3 landscape.
+第 2 幕，4:3 横版：公开搜索结果进入 Markdown 证据账本。清楚展示“仅发现、已读取公开正文、用户提供、读取失败”四种状态，以及查询词、URL、时间和限制。发现链接不等于读过全文。

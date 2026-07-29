@@ -1,103 +1,93 @@
-# Companion Data Skills
+# Optional Companion Capabilities
 
-`ai-ecommerce-workflow` is designed to discover the companion search/scrape and writing Skills automatically when the user's Agent runtime exposes them, and to attempt an auto-install when the runtime supports one.
+The canonical Skill has no required companion Skill. It uses host capabilities when available and offers optional public search, selected-page Markdown extraction, Chinese humanization, and user-selected image generation without auto-installing any of them.
 
-These companion Skills are not bundled as code in this repository. They are runtime capabilities that the user's Agent environment should install or expose.
+## Default behavior
 
-## How Resolution Works
+1. Accept a product description, public product URL, or product images.
+2. Use the host's public search or an already configured public search provider.
+3. Normalize results into the Markdown evidence ledger before analysis.
+4. Return candidate links and visible page observations with query, time, market, and price basis.
+5. Continue without an external provider, but mark competitor and price evidence as `待核验` when public search cannot be run.
 
-The expected behavior is automatic, not manual:
+The Skill does not auto-install providers. It does not ask users to paste API keys into chat.
 
-1. Detect which companion Skills are already installed in the current Agent runtime.
-2. If the runtime supports an installer such as `npx skills add` or an equivalent, attempt to install any missing companion Skill automatically.
-3. Re-run the capability preflight so the final `available / missing` list is accurate.
-4. If the runtime does not support auto-install, or a Skill still fails to install, fall back to a `missing-skill report` and continue the workflow with degraded evidence handling.
+## Public search options
 
-The Skill package itself only declares the dependency manifest in `skill/agents/interface.yaml`. The actual installer and runtime probe are owned by the host Agent runtime (for example OpenClaw, Hermes, or any other Skill-compatible Agent).
+| Tool | User choice | Intended use | Boundary |
+|---|---|---|---|
+| Host public search | Default | Basic web and marketplace discovery | Depends on the host's visible search capability |
+| `anysearch` | Optional | Public web search and recent source discovery | Use search mode; do not batch-extract pages |
+| `multi-search-engine` | Optional | Public multi-engine candidate discovery | Search results only |
+| `Tavily` | Optional | Search and cross-checking | User configures the provider in the host |
+| `Brave Search` | Optional | Independent public web search | User configures the provider in the host |
+| `agent-reach` | Optional | Public web and social discussion discovery | Follow the provider and platform terms |
+| `agentkey` | Optional | Only a host-provided public-search route, if available | The Skill does not define or store its credentials |
 
-## Recommended Default Set
+## Selected-page Markdown extraction
 
-| Companion Skill / tool | Role in this workflow |
-|---|---|
-| `multi-search-engine` | Multi-engine competitor discovery and cross-checking. Useful for Chinese and international search coverage. |
-| `anysearch` | Real-time web search, public source discovery, and page extraction when available. |
-| `firecrawl-search` | Search public pages and optionally scrape result content. |
-| `firecrawl-scrape` | Read specific public URLs as markdown/html/links/screenshot. |
-| `agent-reach` | Cross-platform research: Exa, web reading, Xiaohongshu, Bilibili, Twitter, Reddit, and other content/social sources depending on local setup. |
-| `humanizer-zh` | Final-pass Chinese anti-AI rewriting before delivery. Falls back to built-in humanized-copy rules when not installed. |
-| Tavily or similar search APIs | Optional extra search/page-summary route when the user's environment already provides it. |
+Search results and page bodies have separate evidence states. AnySearch output that is already Markdown should be normalized directly. For a user-provided or selected public HTML page, the host may use an already installed converter:
 
-## How The Skill Uses Them
+| Tool | Intended use | Boundary |
+|---|---|---|
+| `huashu-md-html` | Convert one local HTML file or selected public URL to Markdown | Optional; do not package or auto-install it |
+| `autocli read` | Extract the readable body of one public URL as Markdown | Optional; no pagination or catalog collection |
+| Host page reader | Read an ordinary public page | Record whether the page was actually read |
 
-1. Auto-discover installed companion Skills before the workflow starts.
-2. Attempt auto-install for any missing companion Skill if the host runtime supports it.
-3. Re-run capability preflight so the available / missing list is final.
-4. Use installed Skills during competitor discovery, page reading, content-platform observation, and humanized copy rewrite.
-5. For each missing Skill, mark the affected module as `pending verification` and continue with the available Skills.
+If none is available, retain the search snippet as `仅发现`. Do not add a crawler dependency just to create Markdown.
 
-## Evidence Rules
+## Chinese humanization
 
-Search and scraping tools can produce:
+| Tool | Intended use | Boundary |
+|---|---|---|
+| `anti-ai-tone` | Remove visible template shells while preserving claims | Optional final pass |
+| `renhua` | Rewrite Chinese product copy into direct, concrete language | Optional final pass |
+| `humanizer-zh` | General Chinese humanization | Optional final pass |
 
-- competitor candidate names;
-- public page URLs;
-- public display prices;
-- visible SKU fragments;
-- product titles and selling points;
-- public review snippets;
-- content/social discussions.
+Use at most one primary rewrite pass unless the user explicitly asks for comparison. After any rewrite, revalidate numbers, materials, functions, conditions, marketplace fields, and prohibited claims against the fact ledger. These Skills are never runtime dependencies of the open-source package.
 
-They do not prove:
+## Optional publication review
 
-- real transaction price;
-- coupon-after or live-room price;
-- logged-in member price;
-- regional delivery price;
-- seller-backend sales data;
-- accurate keyword volume;
-- complete review datasets.
+The built-in listing review remains mandatory. It checks fact support, full-sentence risk meaning, category restrictions, marketplace consistency, and volatile rules that require current backend confirmation.
 
-Those require user screenshots, seller tools, third-party analytics exports, or authorized platform APIs.
+| Tool | Intended use | Boundary |
+|---|---|---|
+| `yuwen-publish-precheck` | Final semantic risk review for supported domestic content platforms | Not a Taobao, JD, Pinduoduo, or cross-border marketplace auditor |
+| `media-publish-check` | Review actual short video, cover, subtitles, spoken copy, or livestream media | Use only when those real assets exist |
 
-## Missing Companion Skills
+Any external repair re-enters the built-in fact and compliance review. Never claim guaranteed approval.
 
-If a companion Skill is still missing after auto-install, the Agent must not stop the whole workflow. It must report the missing capability and continue with available evidence.
+## Image generation
 
-Example output:
+The package remains provider-neutral. It records the user's selected model/tool, reference-image rights, ratio, dimensions, count, text policy, output path, and review result. No personal routing Skill or private provider configuration belongs in this repository.
 
-```text
-Data tools available this run:
-- multi-search-engine: installed
-- anysearch: auto-installed
-- firecrawl-search: missing (auto-install not supported by this runtime)
-- firecrawl-scrape: missing (auto-install not supported by this runtime)
-- agent-reach: installed
-- humanizer-zh: auto-installed
+## Removed from the default package
 
-Impact:
-- competitor discovery can proceed;
-- public page verification is limited;
-- price and review claims remain pending verification unless the user provides screenshots or exports.
-```
+The following are intentionally not recommended or auto-installed:
 
-When the runtime does not support auto-install, the Agent should still print a copy-ready install list so the user can install manually:
+- `firecrawl-search`
+- `firecrawl-scrape`
+- browser/Playwright crawler adapters
+- proxy rotation, pagination automation, login-state extraction, or anti-bot bypass
 
-```text
-npx skills add multi-search-engine
-npx skills add anysearch
-npx skills add firecrawl-search
-npx skills add firecrawl-scrape
-npx skills add agent-reach
-npx skills add humanizer-zh
-```
+A user may still provide a public URL for manual review in a host that supports ordinary browsing. That is not permission to crawl the site or collect a catalog.
 
-## Recommended User Inputs
+## Evidence boundaries
 
-For reliable price-band analysis, ask the user for at least one of:
+Public search can find:
 
-- product links for known competitors;
-- screenshots of competitor prices and SKU options;
-- exported tables from seller tools;
-- marketplace analytics screenshots;
-- Keepa/Jungle Scout/Helium 10 exports for Amazon;
-- a list of brands or stores the user already considers competitors.
+- candidate comparable products;
+- public URLs;
+- visible display prices;
+- titles and visible selling points;
+- public review snippets or discussion language.
+
+It cannot prove:
+
+- transaction, coupon-after, member, or live-stream prices;
+- seller-backend sales, inventory, or keyword volume;
+- complete review datasets;
+- stable natural ranking;
+- platform authorization or compliance status.
+
+Those require user-provided screenshots, exports, or authorized APIs and must be labeled separately.

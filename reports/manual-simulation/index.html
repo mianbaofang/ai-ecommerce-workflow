@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Ecommerce Workflow · Manual Simulation</title>
+  <style>
+    :root { color-scheme: light; --ink:#26231f; --muted:#6e685f; --line:#ddd6ca; --paper:#fffdf9; --accent:#b85c2e; --soft:#f2ede5; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#ece8e1; color:var(--ink); font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:40px 24px 72px; }
+    header { background:var(--ink); color:#fffdf9; padding:32px; border-radius:10px; }
+    h1 { margin:0 0 8px; font-size:32px; } h2 { margin:0 0 14px; font-size:22px; } h3 { margin:22px 0 8px; font-size:16px; }
+    .meta { color:#e9dfd4; margin:0; }
+    .grid { display:grid; grid-template-columns:1.1fr 1fr; gap:18px; margin-top:18px; }
+    section { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:24px; }
+    .wide { grid-column:1/-1; }
+    table { width:100%; border-collapse:collapse; } th,td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; } th { color:var(--muted); font-size:12px; text-transform:uppercase; }
+    a { color:#8d3d1e; } code { background:var(--soft); padding:2px 5px; border-radius:4px; }
+    .status { display:inline-block; padding:4px 8px; border-radius:4px; background:#e7f2e8; color:#2e6b37; font-weight:700; }
+    .blocked { background:#f8e6e0; color:#8a321d; }
+    .fixture { width:220px; border:1px solid var(--line); background:#f4f1eb; }
+    .small { color:var(--muted); font-size:13px; }
+    @media (max-width:760px) { main { padding:18px 12px 40px; } .grid { grid-template-columns:minmax(0,1fr); } .wide { grid-column:auto; } table { display:block; max-width:100%; overflow-x:auto; } header { padding:24px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>真实流程模拟：便携咖啡杯</h1>
+    <p class="meta">2026-07-29 · AnySearch 公共搜索 · GPT Image 2 / CCAPI · 测试中，未发布</p>
+  </header>
+  <div class="grid">
+    <section>
+      <h2>输入与第一步价值</h2>
+      <p>测试输入：420 ml、哑光白色、翻盖、无品牌、通勤场景。</p>
+      <p><span class="status">通过</span> 没有要求结构化商品档案，先返回公开市场结论。</p>
+      <p class="small">原始搜索证据：<a href="01-search-results.md">01-search-results.md</a></p>
+    </section>
+    <section>
+      <h2>当前测试结论</h2>
+      <p><span class="status">核心流程通过</span> <span class="status blocked">生图样例质量有失败</span> 搜索、分类文案和十平台完整生图要求已验证；两次 Amazon 适配图被保真 / 纯白背景检查判定为失败草案。</p>
+      <p class="small"><a href="07-workflow-regression.md">查看逐项回归结果</a></p>
+    </section>
+    <section>
+      <h2>CCAPI 生成主图</h2>
+      <img class="fixture" src="ccapi-product-master.png" alt="GPT Image 2 通过 CCAPI 生成的白色便携咖啡杯测试图">
+      <p class="small">GPT Image 2 · CCAPI · 1024×1024；生成物仍需人工审核。</p>
+    </section>
+    <section class="wide">
+      <h2>公开市场观察价</h2>
+      <table><thead><tr><th>候选</th><th>观察价</th><th>证据</th><th>口径</th></tr></thead><tbody>
+        <tr><td>KeepCup Traveler 12oz</td><td>US$34.00</td><td><a href="https://us.keepcup.com/products/traveler-m-12oz-black">公开页面</a></td><td>美国页面观察价；SKU/地区/运费待核对</td></tr>
+        <tr><td>HydroJug Coffee Traveler 20oz</td><td>US$29.99</td><td><a href="https://www.target.com/p/hydrojug-coffee-traveler-20-oz-leak-resistant-ceramic-lined-insulated-travel-coffee-mug-for-hot-or-cold-drinks-with-flip-lid/-/A-1008710657">Target 页面</a></td><td>20oz，不与 420ml 直接等价</td></tr>
+        <tr><td>Contigo Luxe 16oz</td><td>US$39.49</td><td><a href="https://www.coleman.com/mugs/contigo-luxe-travel-mug-with-autoseal-lid-16oz/SAP_2063408.html">Coleman 页面</a></td><td>页面显示价；库存和促销可能变化</td></tr>
+        <tr><td>Corkcicle Commuter Cup 17oz</td><td>US$40.00</td><td><a href="https://corkcicle.com/products/commuter-cup">品牌页面</a></td><td>17oz；不同容量和地区</td></tr>
+        <tr><td>SUNY Tritan 420ml</td><td>NT$459</td><td><a href="https://24h.pchome.com.tw/prod/DEAA58-A900JSHF8">PChome 页面</a></td><td>容量接近；币种、材质和平台不同</td></tr>
+      </tbody></table>
+      <p class="small">美元页面观察价区间：US$29.99-40.00。不是成交价、销量或稳定搜索排名。</p>
+    </section>
+    <section>
+      <h2>机会与风险</h2>
+      <ul><li>公开讨论反复出现密封、拆洗、盖子装配和替换件问题。</li><li>可优先验证密封测试、清洁步骤、杯架适配和携带体验。</li><li>材质、耐温、保温、机洗等均待产品资料确认。</li></ul>
+    </section>
+    <section>
+      <h2>平台文案</h2>
+      <p>咖啡杯和 USB-C 充电器按不同品类字段生成，淘宝与 Amazon 使用不同结构；未知参数移入内部复核，不再塞进消费者正文。</p>
+      <p><strong>保留未确认项：</strong>防漏、保温、不锈钢、可机洗、食品级和认证。</p>
+      <p class="small"><a href="09-category-copy-regression.md">查看分类文案回归</a></p>
+    </section>
+    <section>
+      <h2>十平台图片规格</h2>
+      <p>国内 5 个：淘宝/天猫、京东、拼多多、抖音、快手。</p>
+      <p>跨境 5 个：Amazon、eBay、Etsy、Shopify、AliExpress。</p>
+      <p class="small">尺寸、数量、格式、大小、背景、构图、辅助图和母版规则只使用用户指定的两篇资料。<a href="../../references/platform-image-specs.md">查看十平台完整生图要求表</a></p>
+    </section>
+    <section class="wide">
+      <h2>网页来源实测截图</h2>
+      <p>以下两张图只证明指定网页可以实际访问，是局部可视证据，不代表全文数据覆盖。完整性以全文提取、章节映射和十平台要求表为准，详见 <a href="08-source-extraction-comparison.md">工具读取对照</a>。</p>
+      <img src="source-domestic-10-platforms.png" alt="国内五个平台主图尺寸原网页截图" style="display:block;width:100%;border:1px solid var(--line)">
+      <img src="source-crossborder-10-platforms.png" alt="跨境五个平台主图尺寸原网页截图" style="display:block;width:100%;margin-top:18px;border:1px solid var(--line)">
+    </section>
+    <section class="wide">
+      <h2>生图分支与平台派生</h2>
+      <p><span class="status">真实生成成功</span> 本机使用 <code>GPT Image 2 → CCAPI</code> 生成 1:1 主图和 4:3 变体，再从 1:1 主视觉确定性派生平台尺寸；开源 Skill 不绑定该本机路由。</p>
+      <img src="product-variants-contact-sheet.png" alt="从同一商品主图派生的三个平台尺寸" style="display:block;width:100%;margin-top:18px;border:1px solid var(--line)">
+      <p>淘宝 800×800、案例页 1200×900、抖音内容图 1080×1440。Amazon 2048×2048 首次适配虽然文件生成成功，但因杯盖结构变化和背景并非严格纯白，被判定为失败样例。</p>
+      <p>边界测试记录在 <a href="05-boundary-check.md">05-boundary-check.md</a>。</p>
+      <p class="small">完整图片分支：<a href="04-image-branch.md">04-image-branch.md</a></p>
+    </section>
+  </div>
+</main>
+</body>
+</html>

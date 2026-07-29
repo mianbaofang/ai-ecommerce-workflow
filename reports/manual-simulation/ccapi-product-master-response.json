@@ -1,0 +1,28 @@
+{
+  "backend": "CCAPI",
+  "model": "gpt-image-2",
+  "state": "completed",
+  "planned_output": "E:\\Object\\ai-ecommerce-workflow\\reports\\manual-simulation\\ccapi-product-master.png",
+  "submission": {
+    "created": 1785268516,
+    "data": [
+      {
+        "url": "https://ccapi.us/generated/images/20260729/dbf9ef41-7f62-4be6-9d2d-1f66d2ccefe9.png?exp=1785441319&sig=9686daa4f8627e5d057afe08aed993e3e26421bc60b5d355f5cfdc45544afebc"
+      }
+    ],
+    "usage": {
+      "input_tokens": 241,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 241
+      },
+      "output_tokens": 196,
+      "output_tokens_details": {
+        "image_tokens": 196,
+        "text_tokens": 0
+      },
+      "total_tokens": 437
+    }
+  },
+  "image": "E:\\Object\\ai-ecommerce-workflow\\reports\\manual-simulation\\ccapi-product-master.png"
+}

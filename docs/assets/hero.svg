@@ -67,23 +67,23 @@
 
   <g font-family="Arial, Helvetica, sans-serif">
     <rect x="130" y="590" width="250" height="150" rx="18" fill="#ffffff" stroke="#E0DAC9"/>
-    <text x="160" y="642" font-size="24" font-weight="800" fill="#2B2520">Four run modes</text>
-    <text x="160" y="684" font-size="20" fill="#6B6358">Diagnosis / complete launch</text>
-    <text x="160" y="716" font-size="20" fill="#6B6358">materials / optimization</text>
+    <text x="160" y="642" font-size="24" font-weight="800" fill="#2B2520">Three practical stages</text>
+    <text x="160" y="684" font-size="20" fill="#6B6358">Research first</text>
+    <text x="160" y="716" font-size="20" fill="#6B6358">copy / image brief</text>
 
     <rect x="410" y="590" width="250" height="150" rx="18" fill="#ffffff" stroke="#E0DAC9"/>
-    <text x="440" y="642" font-size="24" font-weight="800" fill="#2B2520">15 outputs</text>
-    <text x="440" y="684" font-size="20" fill="#6B6358">Positioning, images, titles</text>
-    <text x="440" y="716" font-size="20" fill="#6B6358">FAQ, service, launch plan</text>
+    <text x="440" y="642" font-size="24" font-weight="800" fill="#2B2520">Public evidence</text>
+    <text x="440" y="684" font-size="20" fill="#6B6358">Comparable links and prices</text>
+    <text x="440" y="716" font-size="20" fill="#6B6358">Pain points and opportunities</text>
 
     <rect x="690" y="590" width="250" height="150" rx="18" fill="#ffffff" stroke="#E0DAC9"/>
-    <text x="720" y="642" font-size="24" font-weight="800" fill="#2B2520">Evidence levels</text>
-    <text x="720" y="684" font-size="20" fill="#6B6358">A user / B verified</text>
-    <text x="720" y="716" font-size="20" fill="#6B6358">C inferred / D assumption</text>
+    <text x="720" y="642" font-size="24" font-weight="800" fill="#2B2520">Source trail</text>
+    <text x="720" y="684" font-size="20" fill="#6B6358">URL / search / timestamp</text>
+    <text x="720" y="716" font-size="20" fill="#6B6358">Observed / pending review</text>
 
     <rect x="970" y="590" width="500" height="150" rx="18" fill="#F0E8DD" stroke="#D9C4A2"/>
     <text x="1010" y="646" font-size="34" font-weight="800" fill="#2B2520">Not random copy.</text>
-    <text x="1010" y="700" font-size="34" font-weight="800" fill="#B85C2E">A reviewable launch workflow.</text>
+    <text x="1010" y="700" font-size="34" font-weight="800" fill="#B85C2E">A reviewable listing workflow.</text>
   </g>
 
   <text x="130" y="820" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="#B85C2E">ai-ecommerce-workflow</text>

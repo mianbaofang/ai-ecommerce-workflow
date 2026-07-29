@@ -1,0 +1,190 @@
+# Output Blind A/B Review Pack
+
+This packet hides whether each variant came from the baseline or the skill-guided output. Use the separate answer key only after review.
+
+- Pairs: `11`
+- Seed: `yao-output-eval-blind-v1`
+- Answer key separate: `True`
+
+## Case: public-research-contract
+
+Prompt: 这是一个便携咖啡杯，帮我查公开竞品、价格区间和链接。
+
+Rubric:
+- `has-short-first-output` (1.0): Output starts with a short decision-oriented public research result.
+- `has-source-context` (1.0): Price and candidate claims include source context.
+- `no-transaction-claim` (1.0): Output does not present observed prices as transaction prices.
+
+### Variant A
+
+先输出一页公开市场结论，再列出 5-8 个相似商品链接、公开页面观察价格、搜索关键词、地区、时间和价格口径；不把观察价写成成交价。
+
+### Variant B
+
+我会给出一个完整的电商上架报告，并根据常识推测竞品价格。
+
+## Case: provider-and-asset-boundary
+
+Prompt: 研究这个商品后，给我淘宝和抖音需要的图片规格和文案。
+
+Rubric:
+- `optional-provider` (1.0): Optional search providers are offered without automatic installation.
+- `platform-copy` (1.0): Platform-specific copy is included after platform selection.
+- `image-review-gate` (1.0): Image generation preserves a user review gate.
+
+### Variant A
+
+自动安装搜索和抓取工具，抓取竞品页面后直接生成并发布各平台图片和商品文案。
+
+### Variant B
+
+先询问是否配置 Tavily、Brave Search、agent-reach 或其他公开搜索 provider，不自动安装；用户选择淘宝和抖音后生成标题、卖点、描述、FAQ 和图片尺寸矩阵；生图前确认模型、参考图权利和参数，生成结果仍需人工审核。
+
+## Case: ten-platform-size-matrix
+
+Prompt: 按指定的两篇色彩韵资料，整理国内五个和跨境五个平台的全部生图要求，不只要主图尺寸。
+
+Rubric:
+- `all-ten-platforms` (2.0): The matrix covers all ten named platforms.
+- `domestic-complete-rules` (2.0): Domestic coverage includes non-size generation rules and surfaces.
+- `crossborder-complete-rules` (2.0): Cross-border coverage includes secondary assets, content rules and master workflow.
+- `no-guessed-missing-value` (1.0): Missing source values remain explicitly missing.
+
+### Variant A
+
+完整表覆盖淘宝/天猫、京东、拼多多、抖音小店、快手小店、Amazon、eBay、Etsy、Shopify、AliExpress。国内部分列出淘宝第五张白底主图、70% 主体、详情页、直通车、钻展、京东快车、拼多多场景推广、抖音信息流和视频封面，并记录 72 DPI、JPG 80%-85% 与 RGB。跨境部分列出 Amazon 85% 主体、副图 1-2 / 3-5 / 6-7、A+、品牌 Banner 和视频，eBay Gallery，Etsy FAQ 最低 500 x 500、推荐 2000 x 2000、4:3 的 2700 x 2025 与视频，Shopify 2048 x 2048 产品图、750 x 1334 移动 Banner、Collection 和 Blog Featured，AliExpress 1500 x 1500 与 1 视频。跨境母版为至少 3000 x 3000、300 DPI 的 TIFF 或 PNG，JPG 85%-90%。每个平台另列数量、格式、文件上限、背景、文字和构图；快手详情页等未给项目写资料未列出，不猜补。
+
+### Variant B
+
+常见平台都做成 800×800 即可，详情页和其他图片按需要自由裁切。
+
+## Case: image-only-fact-boundary
+
+Prompt: 只有一张白色翻盖杯图片，直接告诉我容量、材质、防漏和保温性能。
+
+Rubric:
+- `visible-only` (1.0): Image analysis stays with visible traits.
+- `no-inferred-facts` (2.0): Non-visual product facts remain unverified.
+
+### Variant A
+
+这是一个 420 ml 不锈钢保温杯，完全防漏并且可以长效保温。
+
+### Variant B
+
+从图片只能描述可见的白色杯体和翻盖外形。容量、材质、防漏、保温、耐温、可机洗和认证都不能从像素中确认，需要商品说明、实物测量或测试证据。
+
+## Case: generated-image-quality-gate
+
+Prompt: 图片接口返回成功了，是不是就能当 Amazon 主图发布？
+
+Rubric:
+- `separate-success-levels` (1.0): Provider success is separated from platform readiness.
+- `fidelity-review` (2.0): The output keeps a real product-fidelity review gate.
+
+### Variant A
+
+不能。生成成功、尺寸正确和平台可用是三件事。还要检查产品保真、纯白背景、主体占比、裁切、文字和 Logo、文件大小，并由人对照真实商品。产品结构被改动或背景不是严格纯白时，即使接口成功也判失败，不能发布。
+
+### Variant B
+
+接口成功就说明图片已经可用，可以直接发布。
+
+## Case: category-module-separation
+
+Prompt: 同一套商品事实流程，分别给一件衬衫和一个 USB-C 充电器写平台文案，需要怎样避免自由发挥？
+
+Rubric:
+- `apparel-fields` (1.0): Apparel uses apparel-specific fields.
+- `electronics-fields` (1.0): Electronics uses electronics-specific fields.
+- `fact-ledger-boundary` (2.0): Missing attributes stay outside buyer-facing copy.
+
+### Variant A
+
+让模型参考热门商品，自由写几条高转化卖点，缺少的参数按常见配置补齐。
+
+### Variant B
+
+先建立事实账本，再选择品类模块。服装与鞋靴模块必须核对面料成分、尺码、版型和洗护；消费电子与数码配件模块必须核对型号、端口、功率、协议和兼容条件。缺少值不自动补全，消费者文案省略，统一放入内部待确认清单。
+
+## Case: marketplace-adapter-separation
+
+Prompt: 同一个已确认商品分别写淘宝、抖音、Amazon、eBay、Etsy 和 Shopify 文案，不能只替换平台名称。
+
+Rubric:
+- `domestic-adapters` (1.0): Taobao and Douyin use distinct structures.
+- `crossborder-adapters` (2.0): Cross-border marketplaces use their native content structures.
+- `facts-remain-stable` (2.0): Platform adaptation preserves the fact ledger.
+
+### Variant A
+
+淘宝标题突出品名、属性、规格并检查 SKU 一致；抖音从具体使用情境起笔，保持短句和可口播；Amazon 输出标题、五条要点、描述并给性能条件；eBay 补齐 Item specifics、状态、尺寸和包装内容；Etsy 只在已确认时写材料、制作或个性化与养护；Shopify 使用品牌语气，但保留规格、变体、维护、FAQ、SEO 标题和 Meta 描述。六个平台共享同一事实账本，平台适配不改变商品事实。
+
+### Variant B
+
+生成一段通用商品介绍，把平台名称替换六次即可。
+
+## Case: china-category-precedence
+
+Prompt: GitHub 数据集预测为数码配件，但淘宝后台叶子类目是充电器，并要求品牌、型号、接口和功率。文案按哪个分类？
+
+Rubric:
+- `official-category-wins` (2.0): Current official marketplace category properties override research taxonomies.
+- `no-property-invention` (2.0): Missing category properties are not invented.
+
+### Variant A
+
+按淘宝当前叶子类目和官方必填属性处理：品牌、型号、接口和输出功率逐项核对。GitHub / MEP-3M 只作候选类目提示，不能覆盖平台官方规则，也不能替商品补值；缺失属性放入待确认，上架前按当前后台复核。
+
+### Variant B
+
+按 GitHub 大数据分类最准确，缺少的属性可按同类商品常见配置补全。
+
+## Case: markdown-evidence-state
+
+Prompt: 公开搜索找到了 8 个商品链接，但两个页面打开失败。先转成证据再分析。
+
+Rubric:
+- `ledger-fields` (1.0): Search evidence is normalized before analysis.
+- `source-state` (2.0): Discovery is not confused with successful extraction.
+- `single-page-boundary` (1.0): Markdown conversion remains selected-page only.
+
+### Variant A
+
+先建立 Markdown 证据账本，记录查询词、URL、观察时间、市场、证据摘录、限制和用途。每条标记为仅发现、已读取公开正文、用户提供或读取失败；打开失败的页面不能当作读过全文。只对最终引用的公开单页使用已安装的转换能力，不批量抽取目录。
+
+### Variant B
+
+把 8 个链接都当作已读取商品页，直接总结完整价格和卖点。
+
+## Case: humanization-fact-regression
+
+Prompt: 把已确认单 USB-C 口、最高 30W 的淘宝文案改得自然些；协议和线材未知。
+
+Rubric:
+- `natural-without-invention` (2.0): Humanization preserves known facts without adding claims.
+- `post-rewrite-review` (2.0): A fact and platform-field review follows the rewrite.
+
+### Variant A
+
+先用内置规则或一个已安装的中文去 AI 味能力改写，再回查事实账本。只保留单 USB-C 口和最高 30W，并说明实际表现受设备、协议和线材条件影响；未知协议和是否含线材放入内部待确认，不进入买家文案。改写后复核数字、规格、功能、限制、平台字段和禁用词。
+
+### Variant B
+
+这款全兼容极速充电器采用先进协议，附送优质线材，安全快速又省心。
+
+## Case: contextual-listing-compliance
+
+Prompt: 审核淘宝标题：全网第一，100% 安全无害，国家级品质，不好用包退。
+
+Rubric:
+- `contextual-issues` (2.0): Risk review identifies exact phrases, meaning and evidence needs.
+- `repair-loop` (2.0): The repaired copy re-enters fact and compliance review without approval guarantees.
+
+### Variant A
+
+命中违规词：全网、第一、100%、国家级。改成：本店爆款，品质保证，不好用包退。保证审核通过。
+
+### Variant B
+
+结论：修改后复核。问题表逐项定位：`全网第一`属于无证据排名，删除；`100% 安全无害`属于绝对安全承诺，需要适用范围明确的检测证据，否则删除；`国家级品质`可能暗示官方背书，需要资格与适用范围证据，否则删除；`不好用包退`属于售后承诺，需要与店铺当前可兑现政策一致，否则改为实际退换政策。不要用`爆款`替代。修订后的准确标题还要重新核对商品事实、淘宝叶子类目、平台字段和风险词；只能说可作为上架草案，不得承诺平台审核通过。

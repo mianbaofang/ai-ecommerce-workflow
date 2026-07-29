@@ -1,0 +1,47 @@
+{
+  "score": 95,
+  "band": "high",
+  "gate_passed": true,
+  "strengths": [
+    "The recurring job is concrete enough to anchor the package.",
+    "Real input shape is explicit.",
+    "The hand-back output is concrete.",
+    "Boundary exclusions are already explicit.",
+    "Operational constraints are visible."
+  ],
+  "gaps": [],
+  "follow_up_questions": [],
+  "anchor_sentence": "Turn a product description, public product URL, or product images into a sourced public-market research brief and, after platform selection, a reviewable listing and asset pack. Primary output: A one-page conclusion, comparable product links, observed price range with source/time/market context, public selling-point patterns, risks, platform copy, and image-size or generation brief.. Exclusions: Bulk crawling or scraping, Login-only or protected-page access, Automatic marketplace publishing, Fake reviews, invented product facts, or unsupported claims, Transaction-price, sales, keyword-volume, or ranking guarantees.",
+  "recommended_action": "Intent is clear enough to package the first routeable version.",
+  "context": {
+    "job": "Turn a product description, public product URL, or product images into a sourced public-market research brief and, after platform selection, a reviewable listing and asset pack.",
+    "real_inputs": [
+      "Product description",
+      "Public product URL",
+      "One or more product images",
+      "Optional target platform, region, language, brand voice, and image-generation request"
+    ],
+    "primary_output": "A one-page conclusion, comparable product links, observed price range with source/time/market context, public selling-point patterns, risks, platform copy, and image-size or generation brief.",
+    "description": "Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, platform-specific listing copy, or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales.",
+    "exclusions": [
+      "Bulk crawling or scraping",
+      "Login-only or protected-page access",
+      "Automatic marketplace publishing",
+      "Fake reviews, invented product facts, or unsupported claims",
+      "Transaction-price, sales, keyword-volume, or ranking guarantees"
+    ],
+    "constraints": [
+      "Public search providers are optional and user-configured.",
+      "No provider auto-install and no API-key collection in chat.",
+      "Every price and competitor claim records source, query, time, market, and observation basis.",
+      "Generated images must preserve the real product and require human review before publishing."
+    ],
+    "standards": [
+      "A first useful result should not require a structured product-facts form.",
+      "Unsupported claims are marked pending confirmation instead of being guessed.",
+      "Platform copy and image generation wait for the user's platform and tool choice."
+    ],
+    "correction": "",
+    "user_references": []
+  }
+}

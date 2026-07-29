@@ -1,3 +1,1 @@
-Editorial-grade ecommerce workflow infographic panel for a Chinese open-source AI ecommerce Skill tool. Warm off-white parchment background, slightly desaturated print-grade palette.
-
-Scene 4: 核心指标看板。Show a refined, compact KPI board with four cards: CTR, 转化, ROAS, ACoS, plus restrained small charts and summary labels. The look should be clean and businesslike, not flashy. Use burnt amber, deep teal, sage, antique gold, and muted terracotta. No people, no logos, no English-heavy layout; only the metric labels can use Latin abbreviations. 4:3 landscape.
+第 4 幕，4:3 横版：自然文案之后执行内置审核。逐句定位“全网第一、100% 安全无害、不好用包退”等风险表达，说明证据缺口并给最小修改。修订后重新检查事实、品类和平台，不承诺平台一定通过。

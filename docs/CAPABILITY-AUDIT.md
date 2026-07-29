@@ -1,55 +1,52 @@
 # Capability Audit
 
-## 审计目的
+## Canonical package
 
-确保 SKILL.md 和 README 里描述的所有功能，在用户拿到仓库后确实能够使用，而不是只有文字没有执行路径。
+The standard Skill package is rooted at:
 
-## 审计标准
+- `SKILL.md`
+- `agents/interface.yaml`
+- `manifest.json`
 
-| 状态 | 含义 |
-|---|---|
-| ✅ **内置可执行** | 不依赖任何外部工具，纯 SKILL.md 流程指令即可运行 |
-| ⚠️ **需 Companion Skill** | 需要在宿主 Agent 环境安装特定 companion skill 才能执行；宿主在支持时尝试自动安装，不支持时输出缺失清单与降级影响 |
-| 🔧 **需用户提供** | 需要用户提供具体模型、API、工具或授权数据才能执行；开源 skill 只定义 preflight 和 prompt 规范 |
-| ❌ **未实现** | 有描述但没有任何可执行路径 |
+The former `skill/` entrypoint remains only as a compatibility redirect for older links; it does not run the legacy 15-item workflow.
 
-## 逐项审计
+## Current contract
 
-| # | 模块 | 状态 | 说明 |
+| # | Module | Status | Boundary |
 |---|---|---|---|
-| 1 | 输入验证（必填项检查） | ✅ 内置可执行 | 纯 LLM 逻辑，无外部依赖 |
-| 2 | 四种运行模式选择 | ✅ 内置可执行 | 纯 LLM 逻辑 |
-| 3 | 分层交付（决策摘要 + 详情 + 交付包） | ✅ 内置可执行 | 纯输出格式控制 |
-| 4 | 证据等级标注（A/B/C/D） | ✅ 内置可执行 | 纯标注规则 |
-| 5 | 竞品价格来源规则 | ⚠️ 需 Companion Skill | 预检 + 自动发现/自动安装（anysearch/firecrawl/agent-reach/multi-search-engine）；缺失且安装失败时降为待核验假设 |
-| 6 | 15项标准输出 | ✅ 内置可执行 | 纯输出合同框架 |
-| 7 | 类目适配矩阵 | ✅ 内置可执行 | 静态规则表 |
-| 8 | 执行交付包 | ✅ 内置可执行 | 纯输出重组 |
-| 9 | 差异化机会判断框架 | ✅ 内置可执行 | 静态判断框架 |
-| 10 | 平台差异化规则 | ✅ 内置可执行 | 6大平台规则表 |
-| 11 | 主图5套方案+输出 | ✅ 内置可执行 | 创意框架+文案输出 |
-| 12 | 详情页5屏结构 | ✅ 内置可执行 | 标准结构+顺序规则 |
-| 13 | 标题公式+20个测试池 | ✅ 内置可执行 | 标题生成规则 |
-| 14 | 30天运营推进计划 | ✅ 内置可执行 | 三阶段运营框架 |
-| 15 | 文案人味化质检 | ✅ 内置可执行 | 内置5条原则+禁用词表；humanizer-zh 为可选增强 |
-| 16 | 生图前交互 | ✅ 内置可执行 | 只在 preflight 询问，不执行生成 |
-| 17 | 生图 Prompt 规范 | ✅ 内置可执行 | 通用的 prompt 结构模板 |
-| 18 | 产品视频分支 | ✅ 内置可执行 | 判断是否需要视频+输出分镜/prompt 建议 |
-| 19 | 竞品数据自动获取 | ⚠️ 需 Companion Skill | 宿主运行时自动发现/安装搜索抓取 companion skills；缺失且安装失败时标注待核验 |
-| 20 | humanizer-zh 自动调用 | ⚠️ 需 Companion Skill | 宿主运行时自动发现/安装 humanizer-zh；缺失且安装失败时用内置人味化规则 |
-| 21 | 主图/详情图生成 | 🔧 需用户提供 | 不绑定私有工具；用户必须显式选择模型/API/路径 |
-| 22 | 产品渲染/种草视频生成 | 🔧 需用户提供 | 不绑定私有视频工具；用户必须显式选择 |
-| 23 | 飞书数据落库 | ⚠️ 需 Companion Skill | 需要 feishu_bitable 等飞书集成 skill |
+| 1 | Description/link/image intake | ✅ Built-in | Accept one natural product input; ask focused clarification only when identification fails |
+| 2 | Public market research flow | ✅ Built-in | Search public sources and return candidate links, visible observations, and opportunities |
+| 3 | Price evidence labels | ✅ Built-in | Page observation only; never call it transaction price without authorized evidence |
+| 4 | Public-search provider question | ✅ Built-in | Ask user at first use; no auto-install and no key collection in chat |
+| 5 | Platform asset pack | ✅ Representative run passed | Category framework plus Taobao and Amazon regressions are recorded under `reports/manual-simulation/` |
+| 6 | Compliance and claim caution | ✅ Built-in | Unsupported claims stay out of buyer-facing copy and move to the internal `待确认` review list |
+| 7 | Image preflight | ✅ Built-in | Confirm model, reference rights, size, ratio, count, and delivery |
+| 8 | Actual image generation | ⚠️ Route passed, asset QA mixed | GPT Image 2 through CCAPI produced saved 1:1 and 4:3 files; two Amazon adaptations were rejected for fidelity / white-background failures |
+| 9 | Optional public search providers | ⚠️ Optional | `anysearch`, `multi-search-engine`, Tavily, Brave Search, agent-reach, agentkey |
+| 10 | Crawler/scrape adapters | ❌ Removed from default | No Firecrawl, crawler, login-state, proxy, or anti-bot path |
+| 11 | Legacy 15-item SOP | ❌ Retired | Nested `skill/` path redirects to the root Skill |
 
-## 结论
+## Original built-in rules
 
-- 23 个模块中，15 个 ✅ 内置可执行。
-- 5 个 ⚠️ 需 Companion Skill，且已写明缺失降级（除了 2.1.1 和工具协同 5.1 节已覆盖，其余在 SKILL.md 相关段落已有标注）。
-- 2 个 🔧 需用户提供，这是设计选择（开源版不绑定私有生成工具）。
-- 0 个 ❌ 未实现——所有描述的模块都有执行路径，只是有些需要外部依赖。
+The original Skill already included useful operating rules. They were reviewed individually instead of being discarded with the former product flow.
 
-## 仍需补的
+| Original rule group | Current treatment | Reason |
+|---|---|---|
+| Evidence grades and source trails | Kept and rebuilt as a Markdown evidence ledger | Public observations remain traceable without pretending to be transaction data |
+| Category adaptation | Kept and expanded to Chinese leaf-category precedence plus ten marketplace adapters | Prevents one generic template from being reused across products and platforms |
+| First-image focus and five-screen persuasion path | Kept as a buyer-decision sequence; fixed counts are no longer mandatory | Preserves the useful visual logic while respecting each platform's actual surfaces and limits |
+| Humanized copy and prohibited-claim gate | Kept; naturalization is followed by fact, full-sentence risk, category, marketplace, and target-market review | A word hit locates risk but does not by itself prove a violation |
+| Image-generation preflight and fidelity review | Kept and strengthened | The user chooses the tool; generated products must preserve the approved source and pass per-asset checks |
+| Mandatory 15-item report, required intake form, auto-install, crawler routes, fixed title folklore, and default 30-day operations plan | Retired | These caused the high-friction product logic, legal exposure, stale platform claims, or work the user did not request |
 
-1. 工具协同 5.3 和 5.4 需要统一标注为 【🔧 需用户提供】，目前只写了不绑定但没有明确标"开源版只到 preflight 和 prompt 建议为止"。
-2. ✅ SKILL.md 头部已加上能力 Preflight + 自动安装契约，明确宿主运行时负责探测和安装。
-3. README 已同步这个能力矩阵，并把 companion skills 的发现/安装/降级写法统一成“自动发现 + 支持时自动安装 + 否则列缺失命令”。
+## Verification expectations
+
+- Positive trigger accepts a description, public URL, or image.
+- Negative trigger rejects bulk crawling, protected-page access, automatic publishing, fake reviews, and unrelated generic market research.
+- Every price and candidate claim includes URL/tool, query, time, market, and observation basis.
+- Missing public search capability causes `待核验`, not invented data.
+- Platform copy and image generation wait for the user's platform and tool choice.
+
+## Current release status
+
+Core workflow status is `PASS`; generated-asset QA is `MIXED`. Trigger evaluation passes 6/6 positive and 4/4 negative cases; output evaluation passes 11/11 cases with a 0% baseline, 100% with-Skill rate, and no regressions. Public search, category copy, the complete ten-platform image-generation matrix, contextual listing review, CCAPI invocation, responsive browser views, and HyperFrames evidence have real artifacts. Publishing and seller-console access are out of scope. Human blind review is optional extra evidence, not a release blocker. See `reports/manual-simulation/07-workflow-regression.md`.
