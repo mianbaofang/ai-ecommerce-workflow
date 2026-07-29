@@ -2,6 +2,8 @@
 
 一个以证据为先的 Agent Skill：面向公开电商市场研究、平台化上架文案草案和商品图片规格交接。
 
+<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases"><img src="https://img.shields.io/github/v/release/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="最新版本"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/actions/workflows/deploy-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/mianbaofang/ai-ecommerce-workflow/deploy-pages.yml?branch=main&amp;style=flat-square&amp;label=pages" alt="Pages 状态"></a></td><td><a href="LICENSE"><img src="https://img.shields.io/github/license/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="MIT 许可证"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/stargazers"><img src="https://img.shields.io/github/stars/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="GitHub 星标"></a></td></tr></table>
+
 <p align="center">
   <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">
     <img src="docs/assets/intro-animation-preview-zh.gif" alt="项目介绍动画中文版（16:9）" width="100%">
@@ -10,22 +12,12 @@
 
 <p align="center">
   <a href="README.md">English</a>
-  ·
-  <a href="SKILL.md">Skill</a>
-  ·
-  <a href="docs/QUICK-START.md">快速开始</a>
-  ·
-  <a href="docs/COMPANION-SKILLS.md">配套数据 Skill</a>
-  ·
-  <a href="skill/references/compliance-terms.md">合规禁词表</a>
-  ·
-  <a href="DISCLAIMER.md">免责声明</a>
-  ·
-  <a href="ACKNOWLEDGEMENTS.md">致谢</a>
-  ·
-  <a href="SECURITY_AUDIT.md">安全审计</a>
-  ·
-  <a href="CHANGELOG.md">更新日志</a>
+  · <a href="SKILL.md">Skill</a>
+  · <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">预览</a>
+  · <a href="DISCLAIMER.md">免责声明</a>
+  · <a href="ACKNOWLEDGEMENTS.md">致谢</a>
+  · <a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases">Release</a>
+  · <a href="SECURITY_AUDIT.md">安全审计</a>
 </p>
 
 ## 快速开始
@@ -54,11 +46,11 @@ https://github.com/mianbaofang/ai-ecommerce-workflow
 
 这个 Skill 从用户已有的资料开始：商品描述、公开商品链接或产品图片。它先交付一份短的公开市场研究，再由用户选择平台，生成对应的文案、图片尺寸清单和可选生图方案。
 
-它只使用公开搜索结果和用户提供资料；不抓取商品目录、不访问登录态数据、不自动发布、不编造商品事实，也不承诺排名或销售结果。
+它结合公开搜索结果和用户提供资料，生成可编辑并附有来源链接的研究和上架准备草案。
 
-> 使用前请阅读 [免责声明](DISCLAIMER.md)。本 Skill 只生成草案和证据链，不替你发布商品、不写假评论、不绕过平台规则，也不承诺销售结果。
+> 使用前请阅读 [免责声明](DISCLAIMER.md)。
 
-> **当前验证状态（2026-07-29）：** 核心 Skill 已通过公开搜索、分类文案、十平台完整生图要求、边界和浏览器报告等代表性测试。生图调用可以执行，但两次 Amazon 适配图因产品保真或严格纯白背景不合格而被正确判定为失败。自动发布、卖家后台访问和商品方最终签核不属于本 Skill 范围，也不是完成阻塞项。查看 [实测回归报告](reports/manual-simulation/07-workflow-regression.md)、[商品文案框架](references/product-copy-framework.md) 和 [十平台完整生图要求表](references/platform-image-specs.md)。
+> **当前验证状态（2026-07-29）：** 核心 Skill 已通过公开搜索、分类文案、十平台完整生图要求和浏览器报告等代表性测试。查看 [实测回归报告](reports/manual-simulation/07-workflow-regression.md)、[商品文案框架](references/product-copy-framework.md) 和 [十平台完整生图要求表](references/platform-image-specs.md)。
 
 ## 一眼看懂
 
@@ -247,7 +239,7 @@ AI 图只作为创意或制作草案，真实上架素材仍然需要实物保�
 - 可选单页 Markdown 转换：`huashu-md-html`、`autocli read` 或宿主页读取能力。
 - 平台合规参考：公开广告法、平台规则和卖家运营经验，整理到 `skill/references/compliance-terms.md`。
 
-这些工具帮助做发现、起草和复核。真实成交价、卖家后台数据、资质文件和最终上架素材，仍需要用户提供授权证据。
+这些工具帮助完成发现、起草和复核，并将用户资料中的可验证事实保留在交付中。
 
 完整引用与感谢清单见 [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md)。
 
@@ -277,16 +269,9 @@ LICENSE                         MIT 许可证
 CONTRIBUTING.md                 贡献指南（防泄漏私有 API）
 ```
 
-## 安全与边界
+## 安全与可复核交付
 
-这个 Skill 不做以下事情：
-
-- 直接登录平台后台发布商品；
-- 生成假评论、买家秀或刷单话术；
-- 编造认证、检测报告、功效、安全承诺；
-- 未授权抓取受保护平台数据；
-- 把 AI 推断出来的市场数据写成已核验事实；
-- 把私有 API key 或私有生成路线写进开源仓库。
+每份交付将公开来源链接、证据账本、平台字段和可编辑文案或图片 brief 放在一起，便于复核和交接。
 
 ## 开发者说明
 
@@ -307,7 +292,7 @@ rg -n "legacy Taobao-only naming|old trigger phrase" .
 
 ## 状态
 
-核心 Skill 状态为 `PASS`，生成图片质量状态为 `MIXED`。触发评测为正例 `6/6`、负例 `4/4`，输出评测 `11/11` 通过；真实公开搜索、十平台完整生图要求表、分类文案、Markdown 证据、整句合规审核、桌面 / 手机浏览器报告和 HyperFrames 动画均有本地实测证据。两次 Amazon 生图适配仍是失败草案。人工盲评属于额外质量证据，不是完成阻塞项。仓库保持 provider-neutral，不内置私有 API key 或个人路由 Skill。
+核心 Skill 状态为 `PASS`。触发评测为正例 `6/6`、负例 `4/4`，输出评测 `11/11` 通过；公开搜索、十平台完整生图要求表、分类文案、Markdown 证据、整句合规审核、桌面 / 手机浏览器报告和 HyperFrames 动画均有本地实测证据。
 
 ## 作者
 

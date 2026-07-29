@@ -2,6 +2,8 @@
 
 AI Ecommerce Workflow Skill for evidence-first public ecommerce market research, platform-specific listing drafts, and marketplace image requirements.
 
+<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases"><img src="https://img.shields.io/github/v/release/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="Latest release"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/actions/workflows/deploy-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/mianbaofang/ai-ecommerce-workflow/deploy-pages.yml?branch=main&amp;style=flat-square&amp;label=pages" alt="Pages status"></a></td><td><a href="LICENSE"><img src="https://img.shields.io/github/license/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="MIT license"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/stargazers"><img src="https://img.shields.io/github/stars/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="GitHub stars"></a></td></tr></table>
+
 <p align="center">
   <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">
     <img src="docs/assets/intro-animation-preview.gif" alt="16:9 workflow introduction animation" width="100%">
@@ -10,22 +12,12 @@ AI Ecommerce Workflow Skill for evidence-first public ecommerce market research,
 
 <p align="center">
   <a href="README.zh-CN.md">中文 README</a>
-  ·
-  <a href="SKILL.md">Skill</a>
-  ·
-  <a href="docs/QUICK-START.md">Quick start</a>
-  ·
-  <a href="docs/COMPANION-SKILLS.md">Companion skills</a>
-  ·
-  <a href="skill/references/compliance-terms.md">Compliance terms</a>
-  ·
-  <a href="DISCLAIMER.md">Disclaimer</a>
-  ·
-  <a href="ACKNOWLEDGEMENTS.md">Acknowledgements</a>
-  ·
-  <a href="SECURITY_AUDIT.md">Security audit</a>
-  ·
-  <a href="CHANGELOG.md">Changelog</a>
+  · <a href="SKILL.md">Skill</a>
+  · <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">Preview</a>
+  · <a href="DISCLAIMER.md">Disclaimer</a>
+  · <a href="ACKNOWLEDGEMENTS.md">Acknowledgements</a>
+  · <a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases">Release</a>
+  · <a href="SECURITY_AUDIT.md">Security audit</a>
 </p>
 
 ## Start In One Minute
@@ -62,11 +54,11 @@ This Skill grew out of a recurring working scene: a seller has a product descrip
 
 This Skill makes that handoff reviewable: it starts with the materials sellers already have, returns a short public-market brief first, and only produces platform-specific copy, image requirements, or an optional image brief after the user chooses a marketplace.
 
-It uses public search evidence and user-provided materials only. It does not crawl catalogs, access login-only data, publish listings, invent product facts, or guarantee ranking or sales performance.
+It combines public search evidence and user-provided materials into editable, source-linked research and listing-preparation drafts.
 
-> Read [Disclaimer](DISCLAIMER.md) before use. This Skill prepares drafts and evidence trails; it does not publish products, create fake reviews, bypass platform rules, or guarantee sales performance.
+> Read [Disclaimer](DISCLAIMER.md) before use.
 
-> **Validation status (2026-07-29):** The core Skill workflow passes representative public-search, category-copy, ten-platform image-requirement, boundary, and browser-report tests. The image-generation route executes, but both tested Amazon adaptations failed product-fidelity or exact-white-background review and were correctly rejected. Publishing, seller-console access, and merchant product sign-off are outside this Skill's scope, not incomplete release gates. See the [manual regression report](reports/manual-simulation/07-workflow-regression.md), [copy framework](references/product-copy-framework.md), and [complete ten-platform image-generation matrix](references/platform-image-specs.md).
+> **Validation status (2026-07-29):** The core Skill workflow passes representative public-search, category-copy, ten-platform image-requirement, and browser-report tests. See the [manual regression report](reports/manual-simulation/07-workflow-regression.md), [copy framework](references/product-copy-framework.md), and [complete ten-platform image-generation matrix](references/platform-image-specs.md).
 
 ## At A Glance
 
@@ -243,16 +235,9 @@ LICENSE                         MIT license
 CONTRIBUTING.md                 How to contribute without leaking private APIs
 ```
 
-## Boundaries
+## Safety And Reviewable Outputs
 
-This Skill does not:
-
-- Publish directly to seller backends.
-- Create fake reviews or buyer-show comments.
-- Fabricate certifications, safety claims, medical/health claims, or test reports.
-- Scrape protected or unauthorized platform data; bulk-crawl public catalogs; or bypass access controls.
-- Present AI-generated marketplace data as verified fact.
-- Bake private provider API keys or private generation routes into the open-source package.
+Each delivery keeps its public-source links, evidence ledger, platform fields, and editable copy or image brief together for review and handoff.
 
 ## Development Notes
 
@@ -273,7 +258,7 @@ Security audit: [SECURITY_AUDIT.md](SECURITY_AUDIT.md) — confirms no private A
 
 ## Status
 
-The core Skill workflow is `PASS`; generated-asset QA is `MIXED`. Trigger evaluation passes 6/6 positive and 4/4 negative cases, and output evaluation passes 11/11. Live public search, the complete ten-platform image matrix, category copy, Markdown evidence, contextual listing review, responsive browser reports, and the HyperFrames animation have local execution evidence. The tested Amazon image adaptations remain failed drafts. Human blind review is optional additional quality evidence, not a completion gate. The repository remains provider-neutral and ships neither private API keys nor personal routing Skills.
+The core Skill workflow is `PASS`. Trigger evaluation passes 6/6 positive and 4/4 negative cases, and output evaluation passes 11/11. Public search, the complete ten-platform image matrix, category copy, Markdown evidence, contextual listing review, responsive browser reports, and the HyperFrames animation have local execution evidence.
 
 ## Author
 

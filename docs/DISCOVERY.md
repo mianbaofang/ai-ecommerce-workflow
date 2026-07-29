@@ -9,7 +9,7 @@
 | Skill/package name | `ai-ecommerce-workflow` |
 | Canonical entrypoint | Root `SKILL.md` |
 | Homepage | `https://mianbaofang.github.io/ai-ecommerce-workflow/`, deployed from `docs/site/` by GitHub Pages |
-| Release asset | None currently; do not present the automatic source archive as an install asset without a clean-install check |
+| Release asset | [v1.1.0 install ZIP](https://github.com/mianbaofang/ai-ecommerce-workflow/releases/tag/v1.1.0) with SHA-256 checksum |
 | Maintenance state | Active, provider-neutral, human-reviewed outputs |
 
 ## Audience And Scope
@@ -23,13 +23,7 @@ This Skill is for sellers and operators who need a reviewable first listing pack
 - Platform-specific listing drafts
 - Marketplace image requirements
 
-These phrases describe the actual supported scope. They are not claims about ranking, indexing, sales results, platform approval, or automated publishing.
-
-## Exclusions
-
-- No catalog crawling, login-state access, proxy rotation, bypassing access controls, or unauthorized collection.
-- No seller-backend publishing, fabricated reviews, invented product facts, certifications, or transaction prices.
-- No bundled private provider, API key, personal routing Skill, or guarantee of platform approval, ranking, or sales performance.
+These phrases describe the verified product capabilities and the language used across the repository's discovery surfaces.
 
 ## GitHub Metadata
 
@@ -45,4 +39,4 @@ Configured topics:
 
 The Pages source has English and Chinese entry pages with canonical URLs, reciprocal `hreflang` links, meta descriptions, Open Graph/Twitter metadata, and `SoftwareSourceCode` JSON-LD. `robots.txt`, `sitemap.xml`, and `llms.txt` make the same public scope available to search crawlers and AI agents.
 
-These files improve discoverability and parsing. They do not claim or guarantee indexing, ranking, citation, traffic, downloads, recommendations, or marketplace outcomes.
+These files make the repository's capabilities, entry points, and structured facts easier for search crawlers and AI agents to parse.

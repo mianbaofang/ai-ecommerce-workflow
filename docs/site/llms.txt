@@ -17,11 +17,11 @@ Provide a product description, public product URL, or product image. The first o
 - Platform adapters for Taobao/Tmall, JD, Pinduoduo, Douyin, Kuaishou, Amazon, eBay, Etsy, Shopify, and AliExpress.
 - A ten-platform image-requirement matrix and fact, category, claim, and marketplace-field review.
 
-## Boundaries
+## Delivery
 
-- No catalog crawling, login-only data, access-control bypass, provider auto-installation, or seller-backend publishing.
-- No fake reviews, invented product facts, certifications, transaction prices, platform approval, ranking, conversion, or sales guarantees.
-- Generated image outputs are drafts and require human fidelity, rights, and marketplace review.
+- A source-state evidence ledger, comparable-product context, and editable marketplace copy drafts.
+- Platform image requirements and optional image briefs for the selected marketplace.
+- Fact, category, claim, and marketplace-field review items alongside each draft.
 
 ## References
 
