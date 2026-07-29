@@ -1,0 +1,67 @@
+{
+  "fallback_positive_concepts": [
+    "public_research",
+    "platform_assets"
+  ],
+  "positive_concepts": {
+    "public_research": {
+      "weight": 0.55,
+      "phrases": [
+        "public market research",
+        "公开市场研究",
+        "公开竞品",
+        "相似商品",
+        "观察价格",
+        "竞品链接",
+        "商品链接",
+        "产品图片"
+      ]
+    },
+    "platform_assets": {
+      "weight": 0.45,
+      "phrases": [
+        "platform-specific listing copy",
+        "平台文案",
+        "上架文案",
+        "按品类",
+        "图片规格",
+        "商品图尺寸",
+        "十个平台",
+        "素材包",
+        "生图",
+        "image-generation brief"
+      ]
+    }
+  },
+  "negative_concepts": {
+    "bulk_crawling": {
+      "weight": 0.6,
+      "exclusive": true,
+      "phrases": [
+        "bulk crawl",
+        "批量抓取",
+        "批量爬取",
+        "抓取全部商品",
+        "bulk scrape"
+      ]
+    },
+    "publishing": {
+      "weight": 0.6,
+      "exclusive": true,
+      "phrases": [
+        "自动发布",
+        "publish listings",
+        "seller backend"
+      ]
+    },
+    "fake_reviews": {
+      "weight": 0.6,
+      "exclusive": true,
+      "phrases": [
+        "fake reviews",
+        "假评论",
+        "真实买家评价"
+      ]
+    }
+  }
+}

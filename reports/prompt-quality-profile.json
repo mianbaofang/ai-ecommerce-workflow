@@ -1,0 +1,151 @@
+{
+  "skill_name": "ai-ecommerce-workflow",
+  "relevance": "prompt-heavy",
+  "primary_task_family": {
+    "key": "creative_generation",
+    "label": "Creative generation",
+    "matched_keywords": [
+      "copy",
+      "创意",
+      "文案",
+      "标题",
+      "内容"
+    ]
+  },
+  "task_families": [
+    {
+      "key": "creative_generation",
+      "label": "Creative generation",
+      "score": 5,
+      "matched_keywords": [
+        "copy",
+        "创意",
+        "文案",
+        "标题",
+        "内容"
+      ],
+      "role_guidance": "Use a taste-aware creator role with clear audience, tone, and originality boundaries.",
+      "task_guidance": "Generate variants, explain selection logic, and preserve the user's distinctive constraints.",
+      "format_guidance": "Return options with rationale, selection criteria, and refinement paths."
+    },
+    {
+      "key": "execution_operation",
+      "label": "Execution operation",
+      "score": 4,
+      "matched_keywords": [
+        "workflow",
+        "流程",
+        "执行",
+        "清单"
+      ],
+      "role_guidance": "Use an operator role with explicit boundaries, inputs, outputs, and failure handling.",
+      "task_guidance": "Convert the job into ordered steps with validation checks and stop conditions.",
+      "format_guidance": "Return a runbook-like handoff with commands, checks, owners, and next actions when relevant."
+    },
+    {
+      "key": "dialogue_interaction",
+      "label": "Dialogue interaction",
+      "score": 3,
+      "matched_keywords": [
+        "support",
+        "chat",
+        "对话"
+      ],
+      "role_guidance": "Use a conversational role that asks only high-leverage questions and remembers the user's goal.",
+      "task_guidance": "Clarify intent, resolve uncertainty, and converge toward a recommendation instead of a long option list.",
+      "format_guidance": "Return concise prompts, decision points, and reviewer-visible assumptions."
+    },
+    {
+      "key": "prompt_engineering",
+      "label": "Prompt engineering",
+      "score": 1,
+      "matched_keywords": [
+        "prompt"
+      ],
+      "role_guidance": "Use a prompt engineer role only when role design materially improves execution.",
+      "task_guidance": "Map Role, Task, and Format into skill behavior rather than copying a large prompt template.",
+      "format_guidance": "Return a compact prompt contract plus tests, quality matrix, and usage notes."
+    }
+  ],
+  "complexity": {
+    "band": "expert",
+    "score": 22,
+    "reason": "multiple task families plus governance, evaluation, or expert-level constraints"
+  },
+  "need_model": {
+    "explicit_need": "Turn a product description, public product URL, or product images into a sourced public-market research brief and, after platform selection, a reviewable listing and asset pack.",
+    "implicit_need": "The reusable skill needs a stable role, task, and output contract rather than a one-off prompt.",
+    "scenario": "Product description, Public product URL, One or more product images, Optional target platform, region, language, brand voice, and image-generation request",
+    "user_level": "infer from examples and standards; ask only if it changes output depth",
+    "success_standard": "A first useful result should not require a structured product-facts form., Unsupported claims are marked pending confirmation instead of being guessed., Platform copy and image generation wait for the user's platform and tool choice."
+  },
+  "rtf_to_skill": {
+    "role": "Use a taste-aware creator role with clear audience, tone, and originality boundaries.",
+    "task": "Generate variants, explain selection logic, and preserve the user's distinctive constraints.",
+    "format": "Return options with rationale, selection criteria, and refinement paths."
+  },
+  "quality_matrix": [
+    {
+      "key": "completeness",
+      "label": "Completeness",
+      "score": 100,
+      "matched_signals": [
+        "output",
+        "输入",
+        "输出"
+      ],
+      "repair": "Name missing inputs, outputs, constraints, or success standards before deepening the package."
+    },
+    {
+      "key": "clarity",
+      "label": "Clarity",
+      "score": 90,
+      "matched_signals": [
+        "specific",
+        "明确"
+      ],
+      "repair": "Replace broad verbs with observable actions and define what done means."
+    },
+    {
+      "key": "consistency",
+      "label": "Consistency",
+      "score": 90,
+      "matched_signals": [
+        "一致",
+        "边界"
+      ],
+      "repair": "Check that role, task, format, exclusions, and examples do not contradict each other."
+    },
+    {
+      "key": "practicality",
+      "label": "Practicality",
+      "score": 95,
+      "matched_signals": [
+        "use",
+        "workflow",
+        "执行",
+        "使用"
+      ],
+      "repair": "Add runnable steps, examples, or verification cues instead of abstract advice."
+    },
+    {
+      "key": "specificity",
+      "label": "Specificity",
+      "score": 90,
+      "matched_signals": [
+        "用户",
+        "场景"
+      ],
+      "repair": "Anchor wording in the user's audience, domain nouns, and target outcome."
+    }
+  ],
+  "overall_quality_score": 93.0,
+  "self_repair_checks": [
+    "Check explicit need, implicit need, scenario, user level, and success standard before deepening.",
+    "Map Role, Task, and Format into skill behavior, not decorative prompt labels.",
+    "Ask one focused clarification only when missing information changes the package boundary.",
+    "Add tests or examples for prompt-heavy behavior before treating it as reusable.",
+    "Keep prompt methodology in references and reports instead of bloating SKILL.md."
+  ],
+  "reviewer_note": "Use this profile when the package depends on prompt behavior, role design, output contracts, or conversation quality."
+}

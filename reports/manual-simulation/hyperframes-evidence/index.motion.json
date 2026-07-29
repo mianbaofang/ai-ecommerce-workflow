@@ -1,0 +1,18 @@
+{
+  "duration": 20,
+  "maxStaticSec": 2.5,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#input-title", "bySec": 0.8 },
+    { "kind": "appearsBy", "selector": "#domestic-sheet", "bySec": 4.9 },
+    { "kind": "appearsBy", "selector": "#fixture-photo", "bySec": 9.0 },
+    { "kind": "appearsBy", "selector": "#audit-stamp", "bySec": 14.4 },
+    { "kind": "appearsBy", "selector": "#delivery-wall", "bySec": 18.3 },
+    { "kind": "before", "a": "#input-title", "b": "#domestic-sheet" },
+    { "kind": "before", "a": "#domestic-sheet", "b": "#fixture-photo" },
+    { "kind": "before", "a": "#fixture-photo", "b": "#audit-stamp" },
+    { "kind": "before", "a": "#audit-stamp", "b": "#delivery-wall" },
+    { "kind": "staysInFrame", "selector": "#product-sheet" },
+    { "kind": "staysInFrame", "selector": "#delivery-wall" },
+    { "kind": "keepsMoving", "withinSelector": "#root" }
+  ]
+}

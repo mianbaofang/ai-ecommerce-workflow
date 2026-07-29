@@ -2,17 +2,27 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-LANG="${1:-en}"
+LANG="${1:-zh}"
+PROJECT="$ROOT/reports/manual-simulation/hyperframes-evidence"
+SOURCE="$PROJECT/renders/ai-ecommerce-workflow-promo-16x9.gif"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Node.js 22 or newer is required to render the README GIF." >&2
+  exit 1
+fi
+
+NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
+if [[ "$NODE_MAJOR" -lt 22 ]]; then
+  echo "HyperFrames 0.7.80 requires Node.js 22 or newer; found $(node --version)." >&2
+  exit 1
+fi
+
 case "$LANG" in
   en)
-    HTML="$ROOT/docs/site/index.html"
     OUTPUT="$ROOT/docs/assets/intro-animation-preview.gif"
-    FRAMES="$ROOT/docs/site/frames-en"
     ;;
   zh)
-    HTML="$ROOT/docs/site/project-intro-animation-zh.html"
     OUTPUT="$ROOT/docs/assets/intro-animation-preview-zh.gif"
-    FRAMES="$ROOT/docs/site/frames-zh"
     ;;
   *)
     echo "Usage: $0 [en|zh]" >&2
@@ -20,17 +30,20 @@ case "$LANG" in
     ;;
 esac
 
-mkdir -p "$FRAMES"
-rm -f "$FRAMES"/frame-*.png
+(
+  cd "$PROJECT"
+  npx --yes hyperframes@0.7.80 render \
+    --format gif \
+    --fps 10 \
+    --gif-loop 0 \
+    --quality high \
+    --output "$SOURCE"
+)
 
-HTML_URL="file:///$(cygpath -m "$HTML")"
-TOTAL=175
-for i in $(seq 0 $((TOTAL - 1))); do
-  p=$(python -c "print(f'{${i}/(${TOTAL}-1):.5f}')")
-  frame=$(printf "%s/frame-%04d.png" "$FRAMES" "$i")
-  npx playwright screenshot "${HTML_URL}?p=$p" "$frame" --viewport-size=1600,900 >/dev/null
-done
-
-ffmpeg -y -framerate 5 -i "$FRAMES/frame-%04d.png" \
-  -vf "scale=1200:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128[p];[s1][p]paletteuse=dither=bayer:bayer_scale=4" \
+ffmpeg -y -i "$SOURCE" \
+  -filter_complex "fps=5,scale=960:540:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=96:stats_mode=diff[p];[s1][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle" \
   "$OUTPUT"
+
+if [[ "$LANG" == "zh" ]]; then
+  cp "$OUTPUT" "$ROOT/docs/assets/intro-animation-preview-zh-960.gif"
+fi

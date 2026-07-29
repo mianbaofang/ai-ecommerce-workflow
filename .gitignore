@@ -21,6 +21,7 @@ build/
 .playwright/
 
 # Media render intermediates
+/mp4/
 *.mp4
 *.webm
 *.mov

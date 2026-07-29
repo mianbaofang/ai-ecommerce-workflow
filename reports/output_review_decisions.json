@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "",
+  "reviewed_at": "",
+  "review_integrity": {
+    "blind_pack_sha256": "9a272273614c72b0ef2db52d48b430d28b43d1c99945cebc5dda32f9ac044d7b",
+    "case_count": 11,
+    "case_ids": [
+      "public-research-contract",
+      "provider-and-asset-boundary",
+      "ten-platform-size-matrix",
+      "image-only-fact-boundary",
+      "generated-image-quality-gate",
+      "category-module-separation",
+      "marketplace-adapter-separation",
+      "china-category-precedence",
+      "markdown-evidence-state",
+      "humanization-fact-regression",
+      "contextual-listing-compliance"
+    ],
+    "prompt_sha256_by_case": {
+      "public-research-contract": "bc02156f01ef010c1592cd0235e29a61192f3bc5650072b146b98cd2fa055134",
+      "provider-and-asset-boundary": "aa191b1ca79198a27abcb00a365ab8b59b3b7addde3cf3a245cd0524d9533cf1",
+      "ten-platform-size-matrix": "9e9af98a9050e6138f997f8bda57ecac1d906859c64a10f82cc5298307111c34",
+      "image-only-fact-boundary": "ed5cde23b1146bd87cd60d13bd30d06089f1085d51f7c36d6b4318f79abc15f2",
+      "generated-image-quality-gate": "e87fbc896b1a209a7ba11fb831a7c6ac1a5e4647259237af8838293dfc165341",
+      "category-module-separation": "55ff5443730ce0677b7ba7930cbc56ee6fced8b6d573d3fda3601db3a4ee048c",
+      "marketplace-adapter-separation": "c167c749b7091367dba401c5f6fc9cef485e572012338f30447cc84a94444ed3",
+      "china-category-precedence": "a99678053afa97e9eb2d349bc19a6c3ff2efa467001c3e32c9bcdd10899daf05",
+      "markdown-evidence-state": "ac9b5b57ee63a281ca9a3c3f712d5f6595dc8d5ad8464c99962f7fdfd3fcad5c",
+      "humanization-fact-regression": "3b43232a3d3418393e4a90fe3273ef5bd70692f7775b7d55bebfd0aa0b9c1a59",
+      "contextual-listing-compliance": "040f2001ee5371e6c23c1ab8f1652d7a05d739bb46327881e0f4a7614bfcb1b8"
+    }
+  },
+  "reviewer_attestation": {
+    "blind_review_completed_before_answer_key": false,
+    "answer_key_not_opened_before_decisions": false,
+    "raw_content_excluded": true,
+    "reviewer_reason_required": true
+  },
+  "decision_contract": {
+    "winner_variant": "Use A or B after reading the blind review pack. Leave blank when pending.",
+    "confidence": "Optional number from 0 to 1.",
+    "reason": "Required reviewer rationale. Do not reveal baseline or with-skill labels before adjudication.",
+    "reviewer_attestation": "Set blind_review_completed_before_answer_key and answer_key_not_opened_before_decisions to true only after a real blind review."
+  },
+  "decisions": [
+    {
+      "case_id": "public-research-contract",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "provider-and-asset-boundary",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "ten-platform-size-matrix",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "image-only-fact-boundary",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "generated-image-quality-gate",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "category-module-separation",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "marketplace-adapter-separation",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "china-category-precedence",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "markdown-evidence-state",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "humanization-fact-regression",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    },
+    {
+      "case_id": "contextual-listing-compliance",
+      "winner_variant": "",
+      "confidence": null,
+      "reason": ""
+    }
+  ]
+}

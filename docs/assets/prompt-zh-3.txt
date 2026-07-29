@@ -1,3 +1,1 @@
-Editorial-grade ecommerce workflow infographic panel for a Chinese open-source AI ecommerce Skill tool. Warm off-white parchment background, slightly desaturated print-grade palette.
-
-Scene 3: 证据分级页。Create a source-evidence hierarchy with four clearly separated cards labeled A / B / C / D in Chinese context: 用户截图, 授权工具, 搜索结果, 专家推断. Keep the visuals clear, structured, and trustworthy, with calm editorial styling and mono-style icons. No people, no brand logos, no English labels. 4:3 landscape.
+第 3 幕，4:3 横版：中国平台类目路由。从通用大类走到用户已选的当前叶子类目，再核对品牌、型号、接口、功率和 SKU。官方平台字段优先，GitHub 分类只能提示候选，不能替商品补值。

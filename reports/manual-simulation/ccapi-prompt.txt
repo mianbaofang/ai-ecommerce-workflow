@@ -1,0 +1,7 @@
+Use case: product-mockup
+Asset type: ecommerce product image
+Primary request: Create one realistic product photograph of the same matte white 420 ml portable coffee cup shown in the reference fixture, with a simple sealed flip lid, centered upright on a clean neutral studio background.
+Reference image: test-product-fixture.svg is a synthetic product-shape reference only; preserve the cup silhouette and white color but do not add a brand, logo, text, certification, or performance claim.
+Composition: 4:3 landscape catalog hero, generous side margins, soft daylight, subtle contact shadow, clean edges.
+Invariants: keep one cup, the same lid structure, white body, no extra accessories, no packaging text, no watermark.
+Avoid: invented material claims, temperature claims, leakproof guarantee, logos, slogans, platform marks, and unrelated props.

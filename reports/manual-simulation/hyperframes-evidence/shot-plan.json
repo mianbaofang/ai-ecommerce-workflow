@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "category": "stat",
+  "duration": 20,
+  "resolution": "1920x1080",
+  "asset_needs": [
+    "A second-category product fixture so the demo is not visually tied to one cup",
+    "A tactile proofreading surface without invented readable copy"
+  ],
+  "assets": [
+    "assets/product-master.png",
+    "assets/source-domestic.png",
+    "assets/source-crossborder.png",
+    "assets/charger-fixture.png",
+    "assets/proofreading-desk.png"
+  ],
+  "beats": [
+    {
+      "start": 0,
+      "end": 4,
+      "message": "A description, URL, or image is enough to start",
+      "rules": ["masked-rise", "paper-tabs", "scale-settle"]
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "message": "Real public source clippings become a Markdown evidence ledger before analysis",
+      "rules": ["paper-drop", "offset-clippings", "ledger-rise"]
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "message": "Current Chinese marketplace leaf-category properties override research taxonomies",
+      "rules": ["fixture-settle", "route-line", "staggered-fields"]
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "message": "Natural language is followed by contextual prohibited-claim review",
+      "rules": ["proof-focus", "strike-reveal", "review-stamp"]
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "message": "One evidence source becomes a publishing wall of copy, image requirements, and review states",
+      "rules": ["wall-slide", "deliverable-stagger", "status-lock"]
+    }
+  ]
+}

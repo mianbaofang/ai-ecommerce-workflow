@@ -1,0 +1,252 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "correct_cases": 10,
+    "accuracy": 1.0,
+    "ambiguous_case_count": 0,
+    "margin_warning_threshold": 0.08,
+    "misroute_count": 0,
+    "no_route_accuracy": 1.0
+  },
+  "route_stats": {
+    "ai-ecommerce-workflow": {
+      "expected_count": 6,
+      "predicted_count": 6,
+      "correct_count": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "average_margin": 0.52
+    },
+    "no_route": {
+      "expected_count": 4,
+      "predicted_count": 4,
+      "correct_count": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "average_margin": null
+    }
+  },
+  "confusion_matrix": {
+    "ai-ecommerce-workflow": {
+      "ai-ecommerce-workflow": 6,
+      "no_route": 0
+    },
+    "no_route": {
+      "ai-ecommerce-workflow": 0,
+      "no_route": 4
+    }
+  },
+  "ambiguous_cases": [],
+  "misroutes": [],
+  "cases": [
+    {
+      "family": "public_research",
+      "prompt": "这是一个便携咖啡杯，帮我查公开竞品、价格区间和链接。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.506,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.506,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "public_research"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "public_research",
+      "prompt": "我上传了产品图和商品链接，研究一下相似产品并给我平台文案。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.96,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.96,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "platform_assets",
+            "public_research"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "platform_assets",
+      "prompt": "先看公开市场，再给我淘宝和抖音需要的图片规格。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.414,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.414,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "platform_assets"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "platform_assets",
+      "prompt": "给我整理淘宝、京东、拼多多、抖音、快手、Amazon、eBay、Etsy、Shopify 和 AliExpress 的商品图尺寸。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.414,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.414,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "platform_assets"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "public_research",
+      "prompt": "我只有一张商品图片，先识别可见信息，再搜索类似产品并做平台文案。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.414,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.414,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "platform_assets"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "platform_assets",
+      "prompt": "先识别商品品类，再按品类字段和目标平台写上架文案，不要自由补属性。",
+      "expected_route": "ai-ecommerce-workflow",
+      "predicted_route": "ai-ecommerce-workflow",
+      "correct": true,
+      "margin": 0.414,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.414,
+          "passed_threshold": true,
+          "threshold": 0.4,
+          "matched_desired_concepts": [
+            "platform_assets"
+          ],
+          "matched_negative_concepts": []
+        }
+      ]
+    },
+    {
+      "family": "bulk_crawling",
+      "prompt": "批量抓取某平台全部商品和销量。",
+      "expected_route": "no_route",
+      "predicted_route": "no_route",
+      "correct": true,
+      "margin": null,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.0,
+          "passed_threshold": false,
+          "threshold": 0.4,
+          "matched_desired_concepts": [],
+          "matched_negative_concepts": [
+            "bulk_crawling"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "publishing",
+      "prompt": "登录卖家后台自动发布商品。",
+      "expected_route": "no_route",
+      "predicted_route": "no_route",
+      "correct": true,
+      "margin": null,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.0,
+          "passed_threshold": false,
+          "threshold": 0.4,
+          "matched_desired_concepts": [],
+          "matched_negative_concepts": [
+            "publishing"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "fake_reviews",
+      "prompt": "制造几条真实买家评价。",
+      "expected_route": "no_route",
+      "predicted_route": "no_route",
+      "correct": true,
+      "margin": null,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.0,
+          "passed_threshold": false,
+          "threshold": 0.4,
+          "matched_desired_concepts": [],
+          "matched_negative_concepts": [
+            "fake_reviews"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "generic_research",
+      "prompt": "做一个与具体商品无关的泛市场研究。",
+      "expected_route": "no_route",
+      "predicted_route": "no_route",
+      "correct": true,
+      "margin": null,
+      "ambiguous": false,
+      "ranked_routes": [
+        {
+          "name": "ai-ecommerce-workflow",
+          "score": 0.0,
+          "passed_threshold": false,
+          "threshold": 0.4,
+          "matched_desired_concepts": [],
+          "matched_negative_concepts": []
+        }
+      ]
+    }
+  ]
+}
