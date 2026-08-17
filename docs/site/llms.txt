@@ -1,13 +1,19 @@
 # AI Ecommerce Workflow
 
-AI Ecommerce Workflow is an evidence-first Agent Skill for public ecommerce market research, platform-specific listing drafts, and marketplace image requirements.
+AI Ecommerce Workflow is an evidence-first Agent Skill for public ecommerce market research, editable platform-specific listing drafts (marketplace listing copy), and marketplace image requirements.
 
 ## Start
 
 - Repository: https://github.com/mianbaofang/ai-ecommerce-workflow
-- Canonical Skill: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/SKILL.md
+- Published v1.1.1 Skill entrypoint: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/v1.1.1/skills/ai-ecommerce-workflow/SKILL.md
 - English overview: https://mianbaofang.github.io/ai-ecommerce-workflow/
 - Chinese overview: https://mianbaofang.github.io/ai-ecommerce-workflow/index-zh.html
+- English workflow demo: https://mianbaofang.github.io/ai-ecommerce-workflow/readme-animation-en.html
+- Chinese workflow demo: https://mianbaofang.github.io/ai-ecommerce-workflow/hyperframes-promo/
+
+## Release status
+
+- Latest public release: v1.1.1, using the `skills/ai-ecommerce-workflow/` install layout.
 
 Provide a product description, public product URL, or product image. The first output is a one-page public-market brief. Select a marketplace before requesting platform-specific copy, image requirements, or an optional image brief.
 
@@ -22,11 +28,12 @@ Provide a product description, public product URL, or product image. The first o
 - A source-state evidence ledger, comparable-product context, and editable marketplace copy drafts.
 - Platform image requirements and optional image briefs for the selected marketplace.
 - Fact, category, claim, and marketplace-field review items alongside each draft.
+- Provider-neutral operation: no bundled API keys, login-only access, bulk crawling, or auto-publishing.
 
 ## References
 
 - Disclaimer: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/DISCLAIMER.md
-- Image requirements: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/references/platform-image-specs.md
+- Image requirements in the published v1.1.1 layout: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/v1.1.1/skills/ai-ecommerce-workflow/references/platform-image-specs.md
 - Manual regression evidence: https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/reports/manual-simulation/07-workflow-regression.md
 
-Updated: 2026-07-29
+Updated: 2026-08-17

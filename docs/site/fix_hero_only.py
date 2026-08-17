@@ -1,10 +1,11 @@
 """Comprehensive layout fixes for index.html and animation HTML files."""
 from pathlib import Path
 
+SITE_ROOT = Path(__file__).resolve().parent
 paths = [
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/index.html'),
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/project-intro-animation.html'),
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/project-intro-animation-zh.html'),
+    SITE_ROOT / 'index.html',
+    SITE_ROOT / 'project-intro-animation.html',
+    SITE_ROOT / 'project-intro-animation-zh.html',
 ]
 
 

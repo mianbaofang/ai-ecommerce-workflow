@@ -3,7 +3,7 @@
   "routes": [
     {
       "name": "ai-ecommerce-workflow",
-      "description_file": "E:\\Object\\ai-ecommerce-workflow\\SKILL.md",
+      "description_file": "E:\\Object\\ai-ecommerce-workflow\\skills\\ai-ecommerce-workflow\\SKILL.md",
       "semantic_config": "E:\\Object\\ai-ecommerce-workflow\\evals\\semantic_config.json",
       "threshold": 0.4
     }

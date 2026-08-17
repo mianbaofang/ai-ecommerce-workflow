@@ -1,32 +1,47 @@
 # AI 电商公开市场研究与素材包
 
-一个以证据为先的 Agent Skill：面向公开电商市场研究、平台化上架文案草案和商品图片规格交接。
+AI 电商公开市场研究与素材包是一个电商市场研究 Skill：从商品描述、公开链接或产品图片开始，整理带来源的竞品与页面观察价格证据，再按目标平台准备上架文案和商品图片规格。它用于研究和可编辑交接，不会自动发布商品。
 
-<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases"><img src="https://img.shields.io/github/v/release/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="最新版本"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/actions/workflows/deploy-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/mianbaofang/ai-ecommerce-workflow/deploy-pages.yml?branch=main&amp;style=flat-square&amp;label=pages" alt="Pages 状态"></a></td><td><a href="LICENSE"><img src="https://img.shields.io/github/license/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="MIT 许可证"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/stargazers"><img src="https://img.shields.io/github/stars/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="GitHub 星标"></a></td></tr></table>
+<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases"><img src="https://img.shields.io/github/v/release/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="最新版本"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/actions/workflows/deploy-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/mianbaofang/ai-ecommerce-workflow/deploy-pages.yml?branch=main&amp;style=flat-square&amp;label=pages" alt="Pages 部署状态"></a></td><td><a href="LICENSE"><img src="https://img.shields.io/github/license/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="MIT 许可证"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/stargazers"><img src="https://img.shields.io/github/stars/mianbaofang/ai-ecommerce-workflow?style=flat-square" alt="GitHub 星标"></a></td></tr></table>
 
 <p align="center">
-  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">
+  <img src="https://img.shields.io/badge/公开市场研究-2f6d70?style=flat-square" alt="公开市场研究">
+  <img src="https://img.shields.io/badge/竞品证据-be4a34?style=flat-square" alt="竞品证据">
+  <img src="https://img.shields.io/badge/平台上架文案-71885a?style=flat-square" alt="平台上架文案">
+  <img src="https://img.shields.io/badge/商品图片规格-d7aa4d?style=flat-square" alt="商品图片规格">
+  <img src="https://img.shields.io/badge/不绑定供应商-667174?style=flat-square" alt="不绑定供应商">
+</p>
+
+<p align="center">
+  <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/hyperframes-promo/">
     <img src="docs/assets/intro-animation-preview-zh.gif" alt="项目介绍动画中文版（16:9）" width="100%">
   </a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a>
-  · <a href="SKILL.md">Skill</a>
-  · <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/docs/site/hyperframes-promo/index.html">预览</a>
+  · <a href="https://github.com/mianbaofang/ai-ecommerce-workflow/blob/v1.1.1/skills/ai-ecommerce-workflow/SKILL.md">已发布 Skill（v1.1.1）</a>
+  · <a href="https://mianbaofang.github.io/ai-ecommerce-workflow/hyperframes-promo/">流程演示</a>
   · <a href="DISCLAIMER.md">免责声明</a>
   · <a href="ACKNOWLEDGEMENTS.md">致谢</a>
-  · <a href="https://github.com/mianbaofang/ai-ecommerce-workflow/releases">Release</a>
+  · <a href="CHANGELOG.md">更新日志</a>
   · <a href="SECURITY_AUDIT.md">安全审计</a>
 </p>
 
 ## 快速开始
 
-普通用户不需要安装代码。把仓库根目录交给支持 Skill 的 Agent：
+普通用户不需要安装代码。当前已经公开的 `v1.1.1` 入口是 `skills/ai-ecommerce-workflow/`。把仓库交给支持 Skill 的 Agent，也可以用 GitHub CLI 预览或安装这个已发布入口：
 
 ```text
 https://github.com/mianbaofang/ai-ecommerce-workflow
 ```
+
+```bash
+gh skill preview mianbaofang/ai-ecommerce-workflow skills/ai-ecommerce-workflow@v1.1.1
+gh skill install mianbaofang/ai-ecommerce-workflow skills/ai-ecommerce-workflow@v1.1.1 --agent universal --scope user
+```
+
+源码中的包路径与 v1.1.1 发布资产一致。需要独立压缩包时，请使用 Release 中的 ZIP 和校验文件；GitHub 自动生成的源代码 ZIP 不是安装包。
 
 然后直接提出任务：
 
@@ -38,19 +53,15 @@ https://github.com/mianbaofang/ai-ecommerce-workflow
 
 ## 为什么做这个 Skill
 
-这个 Skill 来自一类反复出现的工作场景：卖家手里只有商品描述、公开链接或手机照片，却需要先判断能否准备上架。搜索标签页、平台字段、文案草稿和图片规格常常分散，页面观察与未经确认的推断也容易混在一起。
+电商工作经常从三种不完整的输入开始：一条商品链接、一张手机照片，或者几句产品描述。真正写标题之前，还要先分清公开页面展示了什么、哪些只是推测，以及目标平台还缺哪些字段。现实交接里，这些内容往往散在搜索标签页、截图和文案草稿中，页面观察价格也容易被误写成成交价。
 
-它把这段交接收窄为可复核的流程：先用已有材料完成一页公开市场结论，再在用户选定平台后准备对应文案、图片规格或可选的生图 brief。
+这个 Skill 把第一步缩小成一份可以复核的工作：记录公开竞品链接、价格语境和来源状态，先给一页结论，等用户选定平台后再准备平台文案、图片规格和可选生图 brief。交付的是可编辑的上架准备材料，不把未经确认的内容包装成成品。
 
-卖家最先需要回答的问题，通常不是完整上架 SOP，而是：公开搜索里有哪些相似商品、页面显示什么价格、这个商品怎样适配目标平台。
-
-这个 Skill 从用户已有的资料开始：商品描述、公开商品链接或产品图片。它先交付一份短的公开市场研究，再由用户选择平台，生成对应的文案、图片尺寸清单和可选生图方案。
-
-它结合公开搜索结果和用户提供资料，生成可编辑并附有来源链接的研究和上架准备草案。
+它面向商家、运营人员和 Agent 用户，保持供应商中立，不登录、不代发布；缺少证据的地方会明确留给人工复核。
 
 > 使用前请阅读 [免责声明](DISCLAIMER.md)。
 
-> **当前验证状态（2026-07-29）：** 核心 Skill 已通过公开搜索、分类文案、十平台完整生图要求和浏览器报告等代表性测试。查看 [实测回归报告](reports/manual-simulation/07-workflow-regression.md)、[商品文案框架](references/product-copy-framework.md) 和 [十平台完整生图要求表](references/platform-image-specs.md)。
+> **实测工作流记录（2026-07-29）：** 核心 Skill 已通过公开搜索、分类文案、十平台图片要求和浏览器报告等代表性测试。查看 [实测回归报告](reports/manual-simulation/07-workflow-regression.md)、[商品文案框架](skills/ai-ecommerce-workflow/references/product-copy-framework.md) 和 [十平台图片要求表](skills/ai-ecommerce-workflow/references/platform-image-specs.md)。
 
 ## 一眼看懂
 
@@ -123,18 +134,26 @@ https://github.com/mianbaofang/ai-ecommerce-workflow
 | 市场层 | 相似商品链接和页面观察价格 | 宿主公开搜索或可选 provider | ⚠️ 无搜索时待核验 |
 | 证据 | Markdown 证据账本与来源状态 | 无 | ✅ 内置规则 |
 | 类目 | 中国平台叶子类目 / 必填属性优先 | 官方公开文档或用户后台类目 | ⚠️ 动态规则需复核 |
-| 文案 | 去AI味质检 | 无（内置规则） | ✅ 内置可执行 |
-| 文案 | 增强去AI味 | `anti-ai-tone` / `renhua` / `humanizer-zh` | ⚠️ 可选 Skill |
+| 文案 | 去 AI 味质检 | 无（内置规则） | ✅ 内置可执行 |
+| 文案 | 增强去 AI 味 | `anti-ai-tone` / `renhua` / `humanizer-zh` | ⚠️ 可选 Skill |
 | 审核 | 事实、违规词语义、品类与平台发布前审核 | 内置规则 | ✅ 内置可执行 |
 | 审核 | 国内内容平台 / 实际媒体复核 | `yuwen-publish-precheck` / `media-publish-check` | ⚠️ 可选 Skill |
 | 网页 | 选中公开页面转 Markdown | `huashu-md-html` / `autocli read` / 宿主页读取 | ⚠️ 可选能力 |
 | 合规 | 输出前禁词与宣称复核 | 内置禁词表 | ✅ 内置规则 |
-| 来源 | 来源迹追溯 | 手动 URL/时间标签 | ✅ 内置可执行 |
+| 来源 | 来源可追溯 | 手动 URL/时间标签 | ✅ 内置可执行 |
 | 生图 | 图片尺寸矩阵、保持产品一致性的 brief 和 preflight | 无 | ✅ 内置可执行 |
 | 生图 | 实际生成图片 | 用户指定模型/工具 | 🔧 需用户提供 |
 | 数据 | 成交价/销量 | 用户截图或授权工具导出 | 🔧 需用户提供 |
 
 默认行为：首次使用时非阻塞询问是否以后配置可选公开搜索 provider，同时用宿主现有能力开始；不自动安装。没有公开搜索能力时，竞品链接和价格标注【待核验】，不按常识补成事实。
+
+## 效果预览
+
+第一行是真实流程模拟的桌面截图和一次生成的商品输出；第二行是工作流与证据示意图，用来解释输出合同，不是正在运行的应用界面。点击图片可以查看仓库中的原尺寸文件。
+
+<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/docs/site/run-report-zh.png"><img src="docs/site/run-report-zh.png" alt="真实流程模拟的中文桌面报告截图" width="100%"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/reports/manual-simulation/showcase-1200x900.png"><img src="reports/manual-simulation/showcase-1200x900.png" alt="生成的白色便携咖啡杯商品图" width="100%"></a></td></tr></table>
+
+<table align="center"><tr><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/docs/site/workflow-zh.png"><img src="docs/site/workflow-zh.png" alt="从商品输入到可编辑交接的工作流示意图" width="100%"></a></td><td><a href="https://github.com/mianbaofang/ai-ecommerce-workflow/blob/main/docs/site/evidence-zh.png"><img src="docs/site/evidence-zh.png" alt="证据来源与复核状态示意图" width="100%"></a></td></tr></table>
 
 ## 可选公开搜索工具
 
@@ -150,7 +169,7 @@ Skill 使用 Agent 宿主已有的公开搜索能力。首次使用时只作一�
 
 以下能力不再作为默认依赖：`firecrawl-search`、`firecrawl-scrape`、浏览器爬虫、登录态读取、代理轮换和反爬绕过。
 
-> **迁移说明：** `skill/SKILL.md` 仅保留为旧链接的兼容跳转。请使用仓库根目录的 `SKILL.md`；旧版 15 项上架流程不再作为可执行路径。
+> **包路径说明：** 当前公开版本是 `v1.1.1`，自动发现入口是 [`skills/ai-ecommerce-workflow/SKILL.md`](skills/ai-ecommerce-workflow/SKILL.md)。根目录 `manifest.json` 只是供仓库工具读取的包元数据副本，旧根目录和 `skill/` 不是两个产品。
 
 ### 公开数据发现
 
@@ -168,7 +187,7 @@ Skill 使用 Agent 宿主已有的公开搜索能力。首次使用时只作一�
 
 分析前先建立 Markdown 证据账本，但不保存整站 HTML。AnySearch 已返回 Markdown 时直接规范化；用户给出的公开 HTML / URL 或最终引用页面，可在宿主已经安装时调用 `huashu-md-html`、`autocli read` 或等价页面读取能力。只处理选中的单页，不自动安装、不翻页抓目录；读取失败就保留搜索摘要并标记 `仅发现`。
 
-### 去AI味
+### 去 AI 味
 
 | Companion Skill | 作用 |
 |---|---|
@@ -194,14 +213,14 @@ Skill 使用 Agent 宿主已有的公开搜索能力。首次使用时只作一�
 
 所有文案输出前必须按词表和商品证据复核。规则包括：
 
-- 广告法红线词：最、第一、顶级、100%、纯天然、零添加、永不、永久、国家级、世界级、全网、全国、全球 等极限词和绝对词——检测到直接退回改写，不配警告标签。
+- 广告法红线词：最、第一、顶级、100%、纯天然、零添加、永不、永久、国家级、世界级、全网、全国、全球等极限词和绝对词。检测到直接退回改写，不配警告标签。
 - 平台特定禁词：淘宝、拼多多、抖音、亚马逊、快手、1688 各有不同的标题和描述规则，输出时按目标平台自动匹配。
 - 功效/认证/安全类宣称，没有官方资质文件时标注【人工复核】、不允许直接输出。
-- 完整规则表和平台差异：[skill/references/compliance-terms.md](skill/references/compliance-terms.md)。
+- 完整规则表和平台差异：[compliance-terms.md](skills/ai-ecommerce-workflow/references/compliance-terms.md)。
 
-## 来源迹追溯
+## 来源可追溯
 
-每条涉及竞品、价格、销量、评论、认证、材质来源的结论，必须附带来源迹：
+每条涉及竞品、价格、销量、评论、认证、材质来源的结论，必须附带来源记录：
 
 ```text
 [来源: 观察路径 + 时间 + 口径]
@@ -229,6 +248,10 @@ AI 图只作为创意或制作草案，真实上架素材仍然需要实物保�
 
 完整的法律、平台规则、数据获取和商业结果边界见 [DISCLAIMER.md](DISCLAIMER.md)。
 
+## 安全与可复核交付
+
+每份交付都把公开来源、证据账本、平台字段和可编辑的文案或图片 brief 放在一起，便于复核和交接。Skill 不证明成交价、销量、关键词量、排名、商品资质或平台审核结果；使用前请阅读 [免责声明](DISCLAIMER.md)。
+
 ## 致谢
 
 这个工作流建立在开源项目、公开工具和服务生态之上：
@@ -237,7 +260,7 @@ AI 图只作为创意或制作草案，真实上架素材仍然需要实物保�
 - 可选中文文案改写：`anti-ai-tone`、`renhua`、`humanizer-zh`，以及本 Skill 内置的反模板写作规则。
 - 可选发布前复核：`yuwen-publish-precheck`（其支持的国内内容平台）和 `media-publish-check`（实际媒体）。
 - 可选单页 Markdown 转换：`huashu-md-html`、`autocli read` 或宿主页读取能力。
-- 平台合规参考：公开广告法、平台规则和卖家运营经验，整理到 `skill/references/compliance-terms.md`。
+- 平台合规参考：公开广告法、平台规则和卖家运营经验，整理到 `skills/ai-ecommerce-workflow/references/compliance-terms.md`。
 
 这些工具帮助完成发现、起草和复核，并将用户资料中的可验证事实保留在交付中。
 
@@ -246,36 +269,34 @@ AI 图只作为创意或制作草案，真实上架素材仍然需要实物保�
 ## 仓库结构
 
 ```text
-SKILL.md                        标准 Skill 主入口
-agents/interface.yaml          Skill 界面元数据
-manifest.json                  包版本、维护和治理元数据
-references/                    公开搜索、文案框架、素材合同和十平台完整生图要求表
+skills/ai-ecommerce-workflow/   已发布的 v1.1.1 自包含 Skill 包
+  SKILL.md                      Skill 主入口
+  VERSION                       包版本
+  LICENSE                       包许可证
+  manifest.json                 可安装包元数据
+  agents/interface.yaml         Skill 界面元数据
+  references/                   搜索、文案、素材和图片规格要求
 evals/                         触发与输出评测
 reports/manual-simulation/     真实搜索、生图、浏览器和回归证据
-skill/                         旧链接兼容跳转与历史参考
+docs/                           指南、视觉素材和 Pages 页面
 
-docs/
-  QUICK-START.md                 中文快速上手
-  COMPANION-SKILLS.md            配套 Skill 说明和缺失降级
-  CAPABILITY-AUDIT.md            每个功能模块的可执行性审计
-  assets/                        README 封面 SVG、动画 GIF、1K 视觉图
-  site/                          项目介绍页面与历史演示素材
-  history/                       PM 迭代记录和文章方法论融合记录
+docs/QUICK-START.md             中文快速上手
+docs/COMPANION-SKILLS.md        配套 Skill 说明和缺失降级
+docs/CAPABILITY-AUDIT.md        每个功能模块的可执行性审计
+docs/assets/                    README 封面 SVG 和动画 GIF
+docs/site/                      项目介绍页面和原尺寸截图
 
 tests/
   TEST-CASES.md                  触发与输出回归用例
 
 LICENSE                         MIT 许可证
+manifest.json                   包元数据的仓库副本
 CONTRIBUTING.md                 贡献指南（防泄漏私有 API）
 ```
 
-## 安全与可复核交付
-
-每份交付将公开来源链接、证据账本、平台字段和可编辑文案或图片 brief 放在一起，便于复核和交接。
-
 ## 开发者说明
 
-普通使用不需要安装依赖。标准 Skill 包从仓库根目录的 `SKILL.md`、`agents/interface.yaml` 和 `manifest.json` 开始。
+普通使用不需要安装依赖。安装边界是 `skills/ai-ecommerce-workflow/`；其中的 `SKILL.md`、`VERSION`、`LICENSE`、`manifest.json`、`agents/interface.yaml` 和 `references/*.md` 会一起安装。评测用例、报告、测试、脚本、文档、媒体和发布材料留在源码仓库，不进入安装包。根目录 `manifest.json` 是包元数据的仓库副本，供仓库工具读取，不是第二个安装入口。
 
 发布前建议跑两类检查：
 
@@ -284,20 +305,26 @@ rg -n "API_KEY|SECRET|TOKEN|Bearer|sk-" .
 rg -n "legacy Taobao-only naming|old trigger phrase" .
 ```
 
-轻量评测用例：[tests/TEST-CASES.md](tests/TEST-CASES.md) 和 [skill/references/trigger-output-eval.md](skill/references/trigger-output-eval.md)。
+轻量评测用例：[tests/TEST-CASES.md](tests/TEST-CASES.md) 和 [evals/trigger-cases.md](evals/trigger-cases.md)。
 
 完整的能力审计：[docs/CAPABILITY-AUDIT.md](docs/CAPABILITY-AUDIT.md)。
 
-安全审计：[SECURITY_AUDIT.md](SECURITY_AUDIT.md) — 确认仓库没有泄露任何私有 API key 或工具缓存。
+安全审计：[SECURITY_AUDIT.md](SECURITY_AUDIT.md)，确认仓库没有泄露任何私有 API key 或工具缓存。
 
-## 状态
+## 发布状态
 
-核心 Skill 状态为 `PASS`。触发评测为正例 `6/6`、负例 `4/4`，输出评测 `11/11` 通过；公开搜索、十平台完整生图要求表、分类文案、Markdown 证据、整句合规审核、桌面 / 手机浏览器报告和 HyperFrames 动画均有本地实测证据。
+- 已公开版本：[`v1.1.1`](https://github.com/mianbaofang/ai-ecommerce-workflow/releases/tag/v1.1.1)。安装边界是 [`skills/ai-ecommerce-workflow/`](skills/ai-ecommerce-workflow/)；v1.1.0 使用的是旧根目录布局。
+- 安装资产命名为 `ai-ecommerce-workflow-v1.1.1.zip`，旁边附同名 `.sha256` 校验文件；GitHub 自动生成的源代码 ZIP 不是安装包。
+- 本地检查：正例触发 `6/6`、负例触发 `4/4`、输出评测 `11/11`，并已通过 Yao 生产治理校验、包校验、干净解压安装校验和官方 Agent Skills 格式校验。
 
-## 作者
-
-Ethan <ethan.zl@hotmail.com>
-
-## License
+## 许可证
 
 MIT.
+
+<p align="center">
+  维护者：<a href="https://github.com/mianbaofang">mianbaofang</a>
+  &middot;
+  <a href="mailto:ethan.zl@hotmail.com">ethan.zl@hotmail.com</a>
+  &middot;
+  <a href="https://github.com/mianbaofang/ai-ecommerce-workflow/issues">反馈 / 联系</a>
+</p>

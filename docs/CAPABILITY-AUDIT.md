@@ -2,13 +2,15 @@
 
 ## Canonical package
 
-The standard Skill package is rooted at:
+The standard, automatically discoverable Skill package is rooted at:
 
-- `SKILL.md`
-- `agents/interface.yaml`
-- `manifest.json`
+- `skills/ai-ecommerce-workflow/SKILL.md`
+- `skills/ai-ecommerce-workflow/VERSION`
+- `skills/ai-ecommerce-workflow/LICENSE`
+- `skills/ai-ecommerce-workflow/agents/interface.yaml`
+- `skills/ai-ecommerce-workflow/references/`
 
-The former `skill/` entrypoint remains only as a compatibility redirect for older links; it does not run the legacy 15-item workflow.
+The repository-root and package `manifest.json` files carry matching metadata. The older `skill/` directory contains historical examples and notes; it is not an installable or discoverable entry.
 
 ## Current contract
 
@@ -24,7 +26,7 @@ The former `skill/` entrypoint remains only as a compatibility redirect for olde
 | 8 | Actual image generation | ⚠️ Route passed, asset QA mixed | GPT Image 2 through CCAPI produced saved 1:1 and 4:3 files; two Amazon adaptations were rejected for fidelity / white-background failures |
 | 9 | Optional public search providers | ⚠️ Optional | `anysearch`, `multi-search-engine`, Tavily, Brave Search, agent-reach, agentkey |
 | 10 | Crawler/scrape adapters | ❌ Removed from default | No Firecrawl, crawler, login-state, proxy, or anti-bot path |
-| 11 | Legacy 15-item SOP | ❌ Retired | Nested `skill/` path redirects to the root Skill |
+| 11 | Legacy 15-item SOP | ❌ Retired | No root or nested `SKILL.md` remains; only `skills/ai-ecommerce-workflow/` is installable |
 
 ## Original built-in rules
 

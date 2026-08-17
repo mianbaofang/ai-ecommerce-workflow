@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Ecommerce Workflow · Manual Simulation</title>
+  <style>
+    :root { color-scheme: light; --ink:#26231f; --muted:#6e685f; --line:#ddd6ca; --paper:#fffdf9; --accent:#b85c2e; --soft:#f2ede5; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#ece8e1; color:var(--ink); font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:40px 24px 72px; }
+    header { background:var(--ink); color:#fffdf9; padding:32px; border-radius:10px; }
+    h1 { margin:0 0 8px; font-size:32px; } h2 { margin:0 0 14px; font-size:22px; } h3 { margin:22px 0 8px; font-size:16px; }
+    .meta { color:#e9dfd4; margin:0; }
+    .grid { display:grid; grid-template-columns:1.1fr 1fr; gap:18px; margin-top:18px; }
+    section { min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:24px; }
+    .wide { grid-column:1/-1; }
+    table { width:100%; border-collapse:collapse; } th,td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; } th { color:var(--muted); font-size:12px; text-transform:uppercase; }
+    a { color:#8d3d1e; } code { background:var(--soft); padding:2px 5px; border-radius:4px; }
+    .status { display:inline-block; padding:4px 8px; border-radius:4px; background:#e7f2e8; color:#2e6b37; font-weight:700; }
+    .blocked { background:#f8e6e0; color:#8a321d; }
+    .fixture { width:220px; border:1px solid var(--line); background:#f4f1eb; }
+    .small { color:var(--muted); font-size:13px; }
+    @media (max-width:760px) { main { padding:18px 12px 40px; } .grid { grid-template-columns:minmax(0,1fr); } .wide { grid-column:auto; } table { display:block; max-width:100%; overflow-x:auto; } header { padding:24px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Manual run: portable coffee cup</h1>
+    <p class="meta">2026-07-29 · AnySearch public search · GPT Image 2 / CCAPI · test run, not published</p>
+  </header>
+  <div class="grid">
+    <section>
+      <h2>Input and first value</h2>
+      <p>Test input: 420 ml, matte white, flip lid, unbranded, commuting use.</p>
+      <p><span class="status">Passed</span> No structured product brief was required, so the run returned a public-market conclusion first.</p>
+      <p class="small">Raw search evidence: <a href="01-search-results.md">01-search-results.md</a></p>
+    </section>
+    <section>
+      <h2>Current test conclusion</h2>
+      <p><span class="status">Core flow passed</span> <span class="status blocked">Image sample quality failed</span> Search, category copy, and the complete ten-platform image brief were verified; two Amazon adaptations were rejected as drafts because the product fidelity and pure-white-background checks failed.</p>
+      <p class="small"><a href="07-workflow-regression.md">View the itemized regression results</a></p>
+    </section>
+    <section>
+      <h2>CCAPI generated hero image</h2>
+      <img class="fixture" src="ccapi-product-master.png" alt="White portable coffee cup test image generated with GPT Image 2 through CCAPI">
+      <p class="small">GPT Image 2 · CCAPI · 1024×1024; generated media still requires human review.</p>
+    </section>
+    <section class="wide">
+      <h2>Observed public-market prices</h2>
+      <table><thead><tr><th>Candidate</th><th>Observed price</th><th>Evidence</th><th>Scope</th></tr></thead><tbody>
+        <tr><td>KeepCup Traveler 12oz</td><td>US$34.00</td><td><a href="https://us.keepcup.com/products/traveler-m-12oz-black">Public page</a></td><td>US page observation; SKU, region, and shipping still need checking</td></tr>
+        <tr><td>HydroJug Coffee Traveler 20oz</td><td>US$29.99</td><td><a href="https://www.target.com/p/hydrojug-coffee-traveler-20-oz-leak-resistant-ceramic-lined-insulated-travel-coffee-mug-for-hot-or-cold-drinks-with-flip-lid/-/A-1008710657">Target page</a></td><td>20oz; not directly equivalent to 420ml</td></tr>
+        <tr><td>Contigo Luxe 16oz</td><td>US$39.49</td><td><a href="https://www.coleman.com/mugs/contigo-luxe-travel-mug-with-autoseal-lid-16oz/SAP_2063408.html">Coleman page</a></td><td>Displayed page price; stock and promotions can change</td></tr>
+        <tr><td>Corkcicle Commuter Cup 17oz</td><td>US$40.00</td><td><a href="https://corkcicle.com/products/commuter-cup">Brand page</a></td><td>17oz; different capacity and region</td></tr>
+        <tr><td>SUNY Tritan 420ml</td><td>NT$459</td><td><a href="https://24h.pchome.com.tw/prod/DEAA58-A900JSHF8">PChome page</a></td><td>Similar capacity; currency, material, and marketplace differ</td></tr>
+      </tbody></table>
+      <p class="small">Observed US-page range: US$29.99–40.00. This is not a transaction price, sales volume, or stable search ranking.</p>
+    </section>
+    <section>
+      <h2>Opportunities and risks</h2>
+      <ul><li>Public discussions repeatedly mention sealing, cleaning, lid assembly, and replacement-part issues.</li><li>Prioritize checks for leak testing, cleaning steps, cup-holder fit, and carrying comfort.</li><li>Material, temperature rating, insulation, and dishwasher claims still need product-source confirmation.</li></ul>
+    </section>
+    <section>
+      <h2>Marketplace copy</h2>
+      <p>Cups and USB-C chargers use different category fields; Taobao and Amazon receive different structures. Unknown parameters stay in internal review instead of being inserted into consumer-facing copy.</p>
+      <p><strong>Unconfirmed items retained:</strong> leak-proof, insulation, stainless steel, dishwasher-safe, food-grade, and certification claims.</p>
+      <p class="small"><a href="09-category-copy-regression.md">View category-copy regression</a></p>
+    </section>
+    <section>
+      <h2>Ten-platform image specifications</h2>
+      <p>Domestic five: Taobao/Tmall, JD, Pinduoduo, Douyin, and Kuaishou.</p>
+      <p>Cross-border five: Amazon, eBay, Etsy, Shopify, and AliExpress.</p>
+      <p class="small">Size, count, format, file-size, background, composition, supporting-image, and master-image rules use only the two specified source documents. <a href="../../references/platform-image-specs.md">View the complete ten-platform image requirements</a></p>
+    </section>
+    <section class="wide">
+      <h2>Observed source-page screenshots</h2>
+      <p>These two images only show that the specified pages were reachable in the test run. They are partial visual evidence, not proof of full data coverage. Fullness is determined by extraction, section mapping, and the ten-platform requirements table; see <a href="08-source-extraction-comparison.md">the tool comparison</a>.</p>
+      <img src="source-domestic-10-platforms.png" alt="Source-page screenshot for domestic marketplace image specifications" style="display:block;width:100%;border:1px solid var(--line)">
+      <img src="source-crossborder-10-platforms.png" alt="Source-page screenshot for cross-border marketplace image specifications" style="display:block;width:100%;margin-top:18px;border:1px solid var(--line)">
+    </section>
+    <section class="wide">
+      <h2>Image branch and marketplace derivatives</h2>
+      <p><span class="status">Real generation succeeded</span> The local test used <code>GPT Image 2 → CCAPI</code> to generate a 1:1 hero image and a 4:3 variant, then derived marketplace sizes from the 1:1 visual. The open-source Skill does not bind to this local route.</p>
+      <img src="product-variants-contact-sheet.png" alt="Three marketplace-sized derivatives from one product hero image" style="display:block;width:100%;margin-top:18px;border:1px solid var(--line)">
+      <p>Taobao 800×800, case page 1200×900, and Douyin content image 1080×1440. The first Amazon 2048×2048 adaptation rendered successfully but failed review because the lid structure changed and the background was not strict pure white.</p>
+      <p>Boundary checks are recorded in <a href="05-boundary-check.md">05-boundary-check.md</a>.</p>
+      <p class="small">Full image branch: <a href="04-image-branch.md">04-image-branch.md</a></p>
+    </section>
+  </div>
+</main>
+</body>
+</html>

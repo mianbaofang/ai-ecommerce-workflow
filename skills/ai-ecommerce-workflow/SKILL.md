@@ -1,13 +1,9 @@
 ---
 name: ai-ecommerce-workflow
-description: Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, platform-specific listing copy, or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales.
-metadata:
-  author: mianbaofang
+description: Use when a user provides an ecommerce product description, public product URL, or product images and wants public-market research, observed price ranges, comparable product links, editable platform-specific listing drafts (listing copy), or optional image-generation briefs. Use public search results and user-provided materials only. Do not crawl or scrape in bulk, access login-only or protected pages, publish listings, invent product facts, or guarantee sales.
 ---
 
 # AI 电商公开市场研究与素材包
-
-用户只需给商品描述、公开链接或产品图片并说“研究同类商品”；直接开始，不要求模板或预先配置工具。
 
 ## 工作边界
 
@@ -25,7 +21,7 @@ metadata:
 
 ## 首次搜索能力询问
 
-首次使用时非阻塞询问以后是否配置额外公开搜索（宿主搜索、AnySearch、Tavily、Brave、agent-reach、agentkey 等）；本次先用现有能力。只记录选择，不自动安装、不在对话中收集密钥。
+首次使用时非阻塞询问是否配置额外公开搜索；本次先用现有能力。只记录选择，不自动安装，也不收集密钥。
 
 无搜索能力时继续流程，但把竞品、价格和讨论标为“未完成公开核验”，不用常识补事实。默认只搜索；仅单页读取用户提供或最终引用的公开链接，不批量读取。
 
@@ -75,7 +71,7 @@ metadata:
 
 每条外部结论带 `[来源: URL/搜索工具 + 关键词 + 时间 + 观察口径]`。来源不支持的内容只能标为推断或待核验。
 
-`skill/SKILL.md` 只兼容旧链接；不执行旧版 15 项 SOP。
+旧版 15 项上架 SOP 不属于当前 Skill；当前流程只覆盖公开市场研究、平台文案草案和素材规格交接。
 
 ## 参考资料
 
@@ -86,4 +82,5 @@ metadata:
 - `references/product-copy-framework.md`：事实账本、通用文案骨架、品类模块、十平台适配和硬校验。
 - `references/listing-compliance-review.md`：自然化后的事实、违规词语义、品类和平台发布前审核。
 - `references/copy-research-basis.md`：平台公开指南与 GitHub 开源实现的研究依据。
-- `skill/references/compliance-terms.md`：现有平台合规词表，按需读取。
+- `references/compliance-terms.md`：现有平台合规词表，按需读取。
+- `evals/`、`reports/`：仅用于发布前回归，不进入用户任务。

@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.1.1 - 2026-08-17
+
+### Changed
+
+- Consolidated the discoverable and installable Skill boundary under `skills/ai-ecommerce-workflow/`.
+- Limited the canonical `SKILL.md` frontmatter to the required `name` and `description` fields; version and governance metadata remain in the repository package files.
+- Added local package validation and deterministic flat-archive checks so a future Release cannot silently restore the retired root or nested entry.
+- Rebuilt the English README animation as a five-stage, automatically looping 960x540 workflow while retaining deterministic frame rendering for GIF export.
+- Added language-matched manual-run screenshots and linked README/demo navigation directly to the canonical English and Chinese animations.
+
 ## v1.1.0 - 2026-07-29
 
 ### Changed

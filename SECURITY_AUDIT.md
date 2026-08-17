@@ -36,9 +36,9 @@ Searched for raw image-generation response payloads:
 |---|---|
 | `"b64_json": "<base64>"` | Image API response with embedded image |
 | `"image_url": "https://..."` | Image API response with hosted URL |
-| `*.response.json` | Raw response output |
+| `*.response.json` / `*-response.json` | Raw response output |
 
-Result: no matches in tracked files. The repository-wide `*.response.json` rule in `.gitignore` blocks future accidental adds too.
+Result: no raw response receipts are tracked in the release candidate. Local copies may remain for private regression review, but both dot- and hyphen-named response files are ignored and will not enter a future commit or release asset.
 
 ### 3. Local tool caches
 
@@ -78,7 +78,7 @@ No tracked file is a build artifact.
 | File | Reason |
 |---|---|
 | `docs/site/*.png` (1K GPT Image 2 visuals) | Public project introduction imagery. Generated locally for README animation. |
-| `docs/assets/intro-animation-preview.gif` | Public 35-second animation preview. |
+| `docs/assets/intro-animation-preview.gif` | Public 20-second animation preview. |
 | `docs/assets/hero.svg` | Public SVG hero (kept as static fallback). |
 | `docs/history/` | PM iteration history and source-article references. Public. |
 
@@ -89,7 +89,7 @@ Generated images and the GIF are creative references, not marketplace assets. Th
 The repository follows these rules:
 
 1. **No API keys in source.** All keys for `YAIROUTER`, `CCAPI`, `APIMART`, `ANYSEARCH`, `OPENAI`, etc. must stay in environment variables.
-2. **No response payloads.** `*.response.json` and any embedded base64 image responses must never be committed.
+2. **No response payloads.** `*.response.json`, `*-response.json`, and any embedded base64 image responses must never be committed.
 3. **No local tool caches.** `.firecrawl/`, `.mcp/`, `.anysearch/`, `.multi-search-engine/`, browser session data must never be committed.
 4. **No fake reviews, fabricated certifications, or unauthorized scraped data.**
 5. **Generated images are creative references.** Real marketplace assets still need user-provided product photos or licensed sources.
@@ -101,6 +101,7 @@ The repository follows these rules:
 git ls-files | xargs grep -lE "(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]+|Bearer [A-Za-z0-9]+)" 2>/dev/null
 
 # Response payload scan
+git ls-files | grep -E '(^|/).*response\.json$' || true
 git ls-files | xargs grep -l '"b64_json":' 2>/dev/null
 
 # Untracked file scan

@@ -1,0 +1,33 @@
+name: Validate Skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Agent Skill validator
+        run: python -m pip install skills-ref==0.1.1
+      - name: Validate source metadata and canonical discovery entry
+        run: python scripts/validate_package.py
+      - name: Validate canonical Agent Skill
+        run: agentskills validate "$GITHUB_WORKSPACE/skills/ai-ecommerce-workflow"
+      - name: Build and clean-install-test Skill archive
+        run: python scripts/package_skill.py
+      - name: Upload installable Skill archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-ecommerce-workflow-skill
+          path: |
+            dist/ai-ecommerce-workflow-v*.zip
+            dist/ai-ecommerce-workflow-v*.zip.sha256
+          if-no-files-found: error

@@ -13,20 +13,20 @@
     "failure_count": 0
   },
   "artifacts": {
-    "reviewer_kit_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.json",
-    "reviewer_kit_markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.md",
-    "reviewer_kit_html": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.html",
-    "blind_pack_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-    "blind_pack_markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md",
-    "decisions": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+    "reviewer_kit_json": ".\\reports\\output_review_kit.json",
+    "reviewer_kit_markdown": ".\\reports\\output_review_kit.md",
+    "reviewer_kit_html": ".\\reports\\output_review_kit.html",
+    "blind_pack_json": ".\\reports\\output_blind_review_pack.json",
+    "blind_pack_markdown": ".\\reports\\output_blind_review_pack.md",
+    "decisions": ".\\reports\\output_review_decisions.json",
     "adjudication_json": "reports/output_review_adjudication.json",
     "adjudication_markdown": "reports/output_review_adjudication.md"
   },
   "template_written": false,
   "review_contract": {
     "reviewer_steps": [
-      "Open E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md or this kit and compare Variant A vs Variant B for each case.",
-      "Record choices in E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json without opening the answer key.",
+      "Open .\\reports\\output_blind_review_pack.md or this kit and compare Variant A vs Variant B for each case.",
+      "Record choices in .\\reports\\output_review_decisions.json without opening the answer key.",
       "Use winner_variant A or B, confidence from 0 to 1, and a short reason for every case.",
       "Set reviewer_attestation truthfully after choices are recorded and before adjudication.",
       "Run python3 scripts/yao.py output-review-import --input <reviewer-decisions.json> --blind-review-attested --run-adjudication after choices are recorded.",

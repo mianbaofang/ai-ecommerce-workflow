@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "cases": "E:\\Object\\ai-ecommerce-workflow\\evals\\output_cases.jsonl",
+  "cases": ".\\evals\\output_cases.jsonl",
   "summary": {
     "case_count": 11,
     "file_backed_case_count": 0,
@@ -1437,15 +1437,15 @@
   ],
   "failures": [],
   "blind_review": {
-    "pack": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-    "answer_key": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json",
+    "pack": ".\\reports\\output_blind_review_pack.json",
+    "answer_key": ".\\reports\\output_blind_answer_key.json",
     "pair_count": 11
   },
   "artifacts": {
-    "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.json",
-    "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.md",
-    "blind_review_pack_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-    "blind_review_pack_md": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md",
-    "blind_answer_key_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json"
+    "json": ".\\reports\\output_quality_scorecard.json",
+    "markdown": ".\\reports\\output_quality_scorecard.md",
+    "blind_review_pack_json": ".\\reports\\output_blind_review_pack.json",
+    "blind_review_pack_md": ".\\reports\\output_blind_review_pack.md",
+    "blind_answer_key_json": ".\\reports\\output_blind_answer_key.json"
   }
 }

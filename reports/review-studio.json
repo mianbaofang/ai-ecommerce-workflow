@@ -247,7 +247,7 @@
       "status": "warn",
       "detail": "promotion decisions are missing; release notes need reviewer confirmation",
       "evidence": "reports/promotion_decisions.json + reports/upgrade_check.json + docs/migration-v2.md",
-      "link": "C:\\Users\\Ethan\\.agents\\skills\\yao-meta-skill\\docs\\migration-v2.md",
+      "link": "yao-meta-skill\\docs\\migration-v2.md",
       "review_action_id": "review-action-release-notes",
       "review_action_status": "warn",
       "review_action_title": "发布路线",
@@ -430,7 +430,7 @@
       "status": "warn",
       "detail": "promotion decisions are missing; release notes need reviewer confirmation",
       "evidence": "reports/promotion_decisions.json + reports/upgrade_check.json + docs/migration-v2.md",
-      "link": "C:\\Users\\Ethan\\.agents\\skills\\yao-meta-skill\\docs\\migration-v2.md",
+      "link": "yao-meta-skill\\docs\\migration-v2.md",
       "review_action_id": "review-action-release-notes",
       "review_action_status": "warn",
       "review_action_title": "发布路线",
@@ -908,7 +908,7 @@
         }
       ],
       "evidence": "reports/promotion_decisions.json + reports/upgrade_check.json + docs/migration-v2.md",
-      "evidence_link": "C:\\Users\\Ethan\\.agents\\skills\\yao-meta-skill\\docs\\migration-v2.md",
+      "evidence_link": "yao-meta-skill\\docs\\migration-v2.md",
       "verification_command": "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json",
       "evidence_steps": []
     }
@@ -1259,7 +1259,7 @@
     },
     "output_quality": {
       "ok": true,
-      "cases": "E:\\Object\\ai-ecommerce-workflow\\evals\\output_cases.jsonl",
+      "cases": ".\\evals\\output_cases.jsonl",
       "summary": {
         "case_count": 11,
         "file_backed_case_count": 0,
@@ -2696,16 +2696,16 @@
       ],
       "failures": [],
       "blind_review": {
-        "pack": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-        "answer_key": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json",
+        "pack": ".\\reports\\output_blind_review_pack.json",
+        "answer_key": ".\\reports\\output_blind_answer_key.json",
         "pair_count": 11
       },
       "artifacts": {
-        "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.json",
-        "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_quality_scorecard.md",
-        "blind_review_pack_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-        "blind_review_pack_md": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md",
-        "blind_answer_key_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json"
+        "json": ".\\reports\\output_quality_scorecard.json",
+        "markdown": ".\\reports\\output_quality_scorecard.md",
+        "blind_review_pack_json": ".\\reports\\output_blind_review_pack.json",
+        "blind_review_pack_md": ".\\reports\\output_blind_review_pack.md",
+        "blind_answer_key_json": ".\\reports\\output_blind_answer_key.json"
       }
     },
     "output_execution": {},
@@ -3067,20 +3067,20 @@
         "failure_count": 0
       },
       "artifacts": {
-        "reviewer_kit_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.json",
-        "reviewer_kit_markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.md",
-        "reviewer_kit_html": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_kit.html",
-        "blind_pack_json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-        "blind_pack_markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md",
-        "decisions": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+        "reviewer_kit_json": ".\\reports\\output_review_kit.json",
+        "reviewer_kit_markdown": ".\\reports\\output_review_kit.md",
+        "reviewer_kit_html": ".\\reports\\output_review_kit.html",
+        "blind_pack_json": ".\\reports\\output_blind_review_pack.json",
+        "blind_pack_markdown": ".\\reports\\output_blind_review_pack.md",
+        "decisions": ".\\reports\\output_review_decisions.json",
         "adjudication_json": "reports/output_review_adjudication.json",
         "adjudication_markdown": "reports/output_review_adjudication.md"
       },
       "template_written": false,
       "review_contract": {
         "reviewer_steps": [
-          "Open E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.md or this kit and compare Variant A vs Variant B for each case.",
-          "Record choices in E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json without opening the answer key.",
+          "Open .\\reports\\output_blind_review_pack.md or this kit and compare Variant A vs Variant B for each case.",
+          "Record choices in .\\reports\\output_review_decisions.json without opening the answer key.",
           "Use winner_variant A or B, confidence from 0 to 1, and a short reason for every case.",
           "Set reviewer_attestation truthfully after choices are recorded and before adjudication.",
           "Run python3 scripts/yao.py output-review-import --input <reviewer-decisions.json> --blind-review-attested --run-adjudication after choices are recorded.",
@@ -3566,11 +3566,11 @@
       },
       "reviewer_attestation": {},
       "artifacts": {
-        "blind_pack": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-        "answer_key": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_answer_key.json",
-        "decisions": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
-        "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_adjudication.json",
-        "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_adjudication.md"
+        "blind_pack": ".\\reports\\output_blind_review_pack.json",
+        "answer_key": ".\\reports\\output_blind_answer_key.json",
+        "decisions": ".\\reports\\output_review_decisions.json",
+        "json": ".\\reports\\output_review_adjudication.json",
+        "markdown": ".\\reports\\output_review_adjudication.md"
       },
       "template_written": true,
       "pairs": [
@@ -3694,8 +3694,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "bc02156f01ef010c1592cd0235e29a61192f3bc5650072b146b98cd2fa055134",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3726,8 +3726,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "aa191b1ca79198a27abcb00a365ab8b59b3b7addde3cf3a245cd0524d9533cf1",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3758,8 +3758,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "9e9af98a9050e6138f997f8bda57ecac1d906859c64a10f82cc5298307111c34",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3790,8 +3790,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "ed5cde23b1146bd87cd60d13bd30d06089f1085d51f7c36d6b4318f79abc15f2",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3822,8 +3822,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "e87fbc896b1a209a7ba11fb831a7c6ac1a5e4647259237af8838293dfc165341",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3854,8 +3854,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "55ff5443730ce0677b7ba7930cbc56ee6fced8b6d573d3fda3601db3a4ee048c",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3886,8 +3886,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "c167c749b7091367dba401c5f6fc9cef485e572012338f30447cc84a94444ed3",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3918,8 +3918,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "a99678053afa97e9eb2d349bc19a6c3ff2efa467001c3e32c9bcdd10899daf05",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3950,8 +3950,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "ac9b5b57ee63a281ca9a3c3f712d5f6595dc8d5ad8464c99962f7fdfd3fcad5c",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -3982,8 +3982,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "3b43232a3d3418393e4a90fe3273ef5bd70692f7775b7d55bebfd0aa0b9c1a59",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -4014,8 +4014,8 @@
           "reviewer_winner_variant": "",
           "answer_key_visible": false,
           "prompt_sha256": "040f2001ee5371e6c23c1ab8f1652d7a05d739bb46327881e0f4a7614bfcb1b8",
-          "blind_pack_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_blind_review_pack.json",
-          "decisions_path": "E:\\Object\\ai-ecommerce-workflow\\reports\\output_review_decisions.json",
+          "blind_pack_path": ".\\reports\\output_blind_review_pack.json",
+          "decisions_path": ".\\reports\\output_review_decisions.json",
           "commands": {
             "prepare_review_kit": "python3 scripts/yao.py output-review-kit",
             "write_template": "python3 scripts/adjudicate_output_review.py --write-template",
@@ -4094,14 +4094,14 @@
         "fail_count": 0
       },
       "artifacts": {
-        "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\conformance_matrix.json",
-        "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\conformance_matrix.md"
+        "json": ".\\reports\\conformance_matrix.json",
+        "markdown": ".\\reports\\conformance_matrix.md"
       }
     },
     "runtime_permissions": {},
     "trust": {
       "ok": true,
-      "skill_dir": "E:\\Object\\ai-ecommerce-workflow",
+      "skill_dir": ".",
       "summary": {
         "scanned_files": 32,
         "script_count": 0,
@@ -4180,8 +4180,8 @@
         "remote_metadata_policy": "allow-metadata-only"
       },
       "artifacts": {
-        "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\security_trust_report.json",
-        "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\security_trust_report.md"
+        "json": ".\\reports\\security_trust_report.json",
+        "markdown": ".\\reports\\security_trust_report.md"
       }
     },
     "python_compatibility": {},

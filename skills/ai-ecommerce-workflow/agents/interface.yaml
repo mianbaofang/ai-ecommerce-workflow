@@ -1,7 +1,7 @@
 interface:
   display_name: "AI 电商公开市场研究与素材包"
   short_description: "给描述、链接或产品图，先查公开同类和页面价格，再做平台文案与图片规格。"
-  default_prompt: "研究这个商品的公开同类、页面观察价格和用户痛点；先给一页结论，需要时再按目标平台生成文案与图片规格。"
+  default_prompt: "使用 $ai-ecommerce-workflow 研究这个商品的公开同类、页面观察价格和用户痛点；先给一页结论，需要时再按目标平台生成文案与图片规格。"
 compatibility:
   canonical_format: "agent-skills"
   adapter_targets:

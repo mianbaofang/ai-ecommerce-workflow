@@ -4,7 +4,7 @@ Please read this before using AI Ecommerce Workflow. By using this project, you 
 
 ## English
 
-This project is provided for learning, research, and workflow assistance. It prepares reviewable ecommerce launch materials, such as positioning, competitor observations, claim checks, listing copy drafts, FAQ drafts, service scripts, image/video briefs, and launch plans. It does not provide legal, tax, accounting, advertising-law, platform-compliance, financial, or business-performance advice.
+This project is provided for learning, research, and workflow assistance. It prepares reviewable ecommerce research and listing-preparation materials, such as product summaries, competitor observations, displayed-price context, claim checks, listing copy drafts, FAQ drafts, marketplace image requirements, and optional image briefs. It does not provide legal, tax, accounting, advertising-law, platform-compliance, financial, or business-performance advice.
 
 Users are responsible for complying with all applicable laws, marketplace rules, advertising standards, intellectual-property rules, consumer-protection rules, data-protection rules, platform Terms of Service, robots.txt, developer agreements, and seller policies.
 
@@ -25,7 +25,7 @@ This project does not guarantee sales, conversion, ROI, ranking, review quality,
 
 ## 中文
 
-本项目仅供学习、研究和工作流辅助使用。它用于准备可复核的电商新品上架资料，例如定位、竞品观察、卖点审查、标题与详情页草稿、FAQ、客服话术、图片/视频 brief 和运营计划。本项目不提供法律、税务、会计、广告法、平台合规、金融或商业收益建议。
+本项目仅供学习、研究和工作流辅助使用。它用于准备可复核的电商研究和上架准备资料，例如商品摘要、竞品观察、页面观察价格、卖点审查、标题与详情页草稿、FAQ、平台图片规格和可选生图 brief。本项目不提供法律、税务、会计、广告法、平台合规、金融或商业收益建议。
 
 用户必须自行遵守适用法律法规、平台规则、广告规范、知识产权规则、消费者保护规则、数据保护规则、平台服务条款、robots.txt、开发者协议和卖家政策。
 

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-08-16",
+  "capabilities": {
+    "network": {
+      "decision": "not_required",
+      "reviewer": "mianbaofang",
+      "scope": "No executable scripts are distributed in this package.",
+      "reason": "The Skill describes a workflow and does not ship a network-capable script.",
+      "expires_at": "2026-11-16",
+      "evidence": ["reports/security_trust_report.md"],
+      "target_enforcement": {}
+    },
+    "file_write": {
+      "decision": "not_required",
+      "reviewer": "mianbaofang",
+      "scope": "No executable scripts are distributed in this package.",
+      "reason": "The Skill does not write files during activation; generated deliverables remain user-controlled outputs.",
+      "expires_at": "2026-11-16",
+      "evidence": ["reports/security_trust_report.md"],
+      "target_enforcement": {}
+    },
+    "subprocess": {
+      "decision": "not_required",
+      "reviewer": "mianbaofang",
+      "scope": "No executable scripts are distributed in this package.",
+      "reason": "The Skill does not spawn local commands during activation.",
+      "expires_at": "2026-11-16",
+      "evidence": ["reports/security_trust_report.md"],
+      "target_enforcement": {}
+    },
+    "interactive": {
+      "decision": "not_required",
+      "reviewer": "mianbaofang",
+      "scope": "No executable scripts are distributed in this package.",
+      "reason": "The Skill relies on the host agent conversation and does not ship an interactive executable.",
+      "expires_at": "2026-11-16",
+      "evidence": ["SKILL.md"],
+      "target_enforcement": {}
+    }
+  }
+}

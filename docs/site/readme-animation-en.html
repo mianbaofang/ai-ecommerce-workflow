@@ -4,42 +4,213 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Animated English overview of the AI Ecommerce Workflow Skill.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://mianbaofang.github.io/ai-ecommerce-workflow/readme-animation-en.html">
+  <link rel="alternate" hreflang="en" href="https://mianbaofang.github.io/ai-ecommerce-workflow/readme-animation-en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://mianbaofang.github.io/ai-ecommerce-workflow/hyperframes-promo/">
+  <link rel="alternate" hreflang="x-default" href="https://mianbaofang.github.io/ai-ecommerce-workflow/readme-animation-en.html">
+  <meta property="og:type" content="video.other">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Ecommerce Workflow Overview">
+  <meta property="og:description" content="An animated overview of public ecommerce market research, marketplace listing drafts, and image requirements.">
+  <meta property="og:url" content="https://mianbaofang.github.io/ai-ecommerce-workflow/readme-animation-en.html">
+  <meta property="og:image" content="https://mianbaofang.github.io/ai-ecommerce-workflow/workflow-1k.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Ecommerce Workflow Overview">
+  <meta name="twitter:description" content="An animated overview of public ecommerce market research, marketplace listing drafts, and image requirements.">
+  <meta name="twitter:image" content="https://mianbaofang.github.io/ai-ecommerce-workflow/workflow-1k.png">
   <title>AI Ecommerce Workflow Overview</title>
   <style>
-    :root { --paper: #f4f1ea; --ink: #1d2528; --muted: #667174; --red: #be4a34; --teal: #2f6d70; --sage: #71885a; --gold: #d7aa4d; }
+    :root {
+      --paper: #f4f1ea;
+      --ink: #1d2528;
+      --muted: #667174;
+      --red: #be4a34;
+      --teal: #2f6d70;
+      --sage: #71885a;
+      --gold: #d7aa4d;
+      --white: #fffdf8;
+    }
     * { box-sizing: border-box; }
-    html, body { margin: 0; width: 960px; height: 540px; overflow: hidden; background: var(--paper); color: var(--ink); font-family: Arial, sans-serif; }
-    .frame { position: relative; width: 960px; height: 540px; overflow: hidden; padding: 38px 48px 32px; background: linear-gradient(125deg, #fbfaf5 0%, var(--paper) 58%, #e6ece6 100%); }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--paper); }
+    body { position: relative; color: var(--ink); font-family: Arial, sans-serif; }
+    .frame {
+      position: absolute;
+      width: 960px;
+      height: 540px;
+      overflow: hidden;
+      background: linear-gradient(125deg, #fbfaf5 0%, var(--paper) 58%, #e6ece6 100%);
+      transform-origin: left top;
+    }
     .frame::before { content: ""; position: absolute; top: 0; bottom: 0; left: 24px; width: 2px; background: rgba(29,37,40,.14); }
-    .topline { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; font-size: 14px; font-weight: 700; }
-    .topline b { color: var(--red); }.rule { height: 2px; background: rgba(29,37,40,.25); }.progress { position: absolute; top: 70px; left: 48px; right: 48px; height: 4px; background: rgba(29,37,40,.12); }.progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--red), var(--teal), var(--sage)); }
-    .slides { position: relative; height: 408px; margin-top: 34px; }.slide { position: absolute; inset: 0; display: none; grid-template-columns: 1fr 1.08fr; gap: 42px; align-items: center; }.slide.active { display: grid; }
-    .eyebrow { margin-bottom: 12px; color: var(--red); font-size: 16px; font-weight: 800; }h1 { max-width: 390px; margin: 0; font-size: 46px; line-height: 1.03; }p { max-width: 382px; margin: 18px 0 0; color: var(--muted); font-size: 19px; line-height: 1.42; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }.chip { padding: 8px 11px; border: 1px solid rgba(29,37,40,.2); background: rgba(255,255,255,.64); font-size: 13px; font-weight: 700; }
-    .card { min-height: 280px; padding: 22px; border: 2px solid var(--ink); background: rgba(255,255,255,.88); box-shadow: 12px 14px 0 rgba(47,109,112,.18); }.card-title { display: flex; justify-content: space-between; padding-bottom: 14px; border-bottom: 2px solid var(--ink); font-size: 16px; font-weight: 800; }.card-title span { color: var(--red); }
-    .row { display: grid; grid-template-columns: 106px 1fr; gap: 12px; align-items: center; min-height: 48px; border-bottom: 1px solid rgba(29,37,40,.16); font-size: 14px; }.row strong { color: var(--teal); }.source { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; min-height: 48px; border-bottom: 1px solid rgba(29,37,40,.16); font-size: 14px; }.source i { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--sage); color: white; font-style: normal; font-weight: 800; }.source em { color: var(--muted); font-size: 12px; font-style: normal; }
-    .market-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }.market { padding: 15px 13px; border: 1px solid rgba(29,37,40,.24); font-weight: 800; }.market.active { background: var(--teal); color: white; border-color: var(--teal); }.draft { margin-top: 18px; padding: 16px; border-left: 6px solid var(--gold); background: #f7f4ec; }.draft b { display: block; font-size: 17px; }.draft span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.35; }
-    .package { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }.package div { min-height: 82px; padding: 14px; background: #f7f4ec; border-top: 4px solid var(--red); font-size: 13px; font-weight: 800; }.package div:nth-child(2) { border-color: var(--teal); }.package div:nth-child(3) { border-color: var(--sage); }.package div:nth-child(4) { border-color: var(--gold); }.footer { position: absolute; right: 48px; bottom: 22px; color: rgba(29,37,40,.52); font-size: 12px; font-weight: 700; }
+    .topline { position: absolute; top: 28px; left: 48px; right: 48px; z-index: 20; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; font-size: 14px; font-weight: 700; }
+    .topline b { color: var(--red); }
+    .rule { height: 2px; background: rgba(29,37,40,.25); }
+    .progress { position: absolute; top: 66px; left: 48px; right: 48px; z-index: 20; height: 4px; background: rgba(29,37,40,.12); }
+    .progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--red), var(--teal), var(--sage)); }
+    .slides { position: absolute; top: 98px; right: 48px; bottom: 40px; left: 48px; }
+    .slide { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 34px; align-items: center; visibility: hidden; opacity: 0; }
+    .slide.active { visibility: visible; }
+    .copy { min-width: 0; }
+    .eyebrow { margin-bottom: 12px; color: var(--red); font-size: 14px; font-weight: 800; letter-spacing: .02em; }
+    h1 { max-width: 350px; margin: 0; font-size: 39px; line-height: 1.05; }
+    p { max-width: 356px; margin: 16px 0 0; color: var(--muted); font-size: 16px; line-height: 1.42; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .chip { padding: 7px 9px; border: 1px solid rgba(29,37,40,.2); background: rgba(255,255,255,.64); font-size: 11px; font-weight: 700; }
+    .visual { position: relative; min-width: 0; height: 304px; overflow: hidden; border: 2px solid var(--ink); background: var(--white); box-shadow: 12px 14px 0 rgba(47,109,112,.18); }
+    .visual::before { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 12px; z-index: 2; background: var(--teal); }
+    .visual-kicker { position: absolute; top: 22px; left: 20px; z-index: 5; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+    .visual-label { position: absolute; right: 14px; bottom: 14px; z-index: 5; padding: 7px 9px; background: var(--red); color: white; font-size: 11px; font-weight: 800; }
+    .product-visual img { position: absolute; top: 42px; right: 46px; bottom: 22px; left: 46px; width: calc(100% - 92px); height: calc(100% - 64px); object-fit: cover; object-position: 50% 51%; }
+    .product-visual .measure { position: absolute; top: 76px; left: 22px; width: 2px; height: 150px; background: var(--gold); }
+    .product-visual .measure::before, .product-visual .measure::after { content: ""; position: absolute; left: -5px; width: 12px; height: 2px; background: var(--gold); }
+    .product-visual .measure::before { top: 0; }.product-visual .measure::after { bottom: 0; }
+    .source-card { position: absolute; width: 76%; height: 170px; overflow: hidden; border: 2px solid var(--ink); background: white; box-shadow: 8px 9px 0 rgba(29,37,40,.14); }
+    .source-card img { width: 100%; height: 100%; object-fit: cover; }
+    .source-card.domestic { top: 54px; left: 18px; transform: rotate(-2deg); }
+    .source-card.crossborder { right: 16px; bottom: 18px; transform: rotate(2deg); }
+    .source-tag { position: absolute; z-index: 6; padding: 6px 8px; color: white; background: var(--ink); font-size: 10px; font-weight: 800; }
+    .source-tag.domestic { top: 45px; left: 28px; }.source-tag.crossborder { right: 26px; bottom: 20px; background: var(--red); }
+    .ledger-strip { position: absolute; right: 20px; bottom: 24px; z-index: 7; width: 42%; padding: 9px 10px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: rgba(255,253,248,.94); font-size: 10px; line-height: 1.6; }
+    .ledger-strip b { color: var(--teal); }.ledger-strip span { display: block; color: var(--muted); }
+    .category-visual { background: #f7f4ec; }
+    .category-visual img { position: absolute; top: 28px; left: 18px; width: 48%; height: 226px; object-fit: cover; object-position: 38% 50%; border: 2px solid var(--ink); }
+    .route { position: absolute; top: 58px; right: 20px; width: 41%; }
+    .route-line { position: absolute; top: 8px; bottom: 8px; left: 10px; width: 2px; background: var(--teal); }
+    .route-node { position: relative; display: grid; grid-template-columns: 20px 1fr; gap: 7px; min-height: 53px; font-size: 11px; }
+    .route-node i { display: block; width: 14px; height: 14px; margin-top: 3px; border: 3px solid var(--teal); border-radius: 50%; background: var(--white); }
+    .route-node span { color: var(--muted); }.route-node strong { display: block; color: var(--ink); font-size: 14px; }
+    .route-node.active i { border-color: var(--red); background: var(--red); }.route-node.active strong { color: var(--red); }
+    .field-list { position: absolute; right: 20px; bottom: 22px; left: 52%; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .field-list div { padding: 7px 8px; border-top: 3px solid var(--gold); background: var(--white); font-size: 10px; font-weight: 700; }.field-list div:nth-child(2) { border-color: var(--teal); }.field-list div:nth-child(3) { border-color: var(--red); }.field-list div:nth-child(4) { border-color: var(--sage); }
+    .copy-visual { background: #e9dfc8; }.copy-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 34% 46%; opacity: .82; }
+    .copy-visual::after { content: ""; position: absolute; inset: 0; background: rgba(255,253,248,.38); }
+    .claim { position: absolute; top: 80px; right: 22px; z-index: 5; width: 62%; padding: 12px 14px; border-left: 5px solid var(--red); background: rgba(255,253,248,.94); font-size: 13px; font-weight: 800; line-height: 1.5; }
+    .claim del { color: var(--red); text-decoration-thickness: 2px; }.claim small { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; font-weight: 700; }
+    .review-stamp { position: absolute; right: 32px; bottom: 28px; z-index: 6; padding: 7px 10px; border: 2px solid var(--red); color: var(--red); font-size: 12px; font-weight: 900; transform: rotate(-6deg); }
+    .handoff-visual { background: #eef1ed; }.handoff-visual .report-shot { position: absolute; top: 30px; left: 20px; width: 59%; height: 232px; overflow: hidden; border: 2px solid var(--ink); background: white; box-shadow: 8px 9px 0 rgba(29,37,40,.15); transform: rotate(-2deg); }.report-shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+    .handoff-visual .thumb { position: absolute; right: 20px; bottom: 24px; width: 31%; height: 128px; overflow: hidden; border: 2px solid var(--ink); background: white; box-shadow: 6px 7px 0 rgba(47,109,112,.2); transform: rotate(3deg); }.thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .handoff-visual .pack-list { position: absolute; right: 18px; top: 42px; z-index: 5; width: 36%; padding: 10px; border: 2px solid var(--ink); background: rgba(255,253,248,.95); font-size: 10px; line-height: 1.7; }.pack-list b { display: block; margin-bottom: 3px; color: var(--red); font-size: 11px; }.pack-list span { display: block; }.pack-list span::before { content: "01  "; color: var(--teal); font-weight: 800; }.pack-list span:nth-child(3)::before { content: "02  "; }.pack-list span:nth-child(4)::before { content: "03  "; }.pack-list span:nth-child(5)::before { content: "04  "; }
+    [data-motion] { will-change: opacity, transform; }
+    .footer { position: absolute; right: 48px; bottom: 16px; color: rgba(29,37,40,.52); font-size: 11px; font-weight: 700; }
+    @media (prefers-reduced-motion: reduce) { .footer::after { content: " / static preview"; } }
   </style>
 </head>
 <body>
-  <main class="frame">
-    <div class="topline"><span><b id="step">01</b> AI Ecommerce Workflow</span><div class="rule"></div><span id="phase">INPUT</span></div><div class="progress"><span id="progress"></span></div>
+  <main class="frame" data-animation-fps="5" data-animation-frames="100">
+    <div class="topline"><span><b id="step">01</b> AI Ecommerce Workflow</span><div class="rule"></div><span id="phase">INPUT</span></div>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
     <div class="slides">
-      <section class="slide active" data-phase="INPUT"><div><div class="eyebrow">ONE PRODUCT BRIEF</div><h1>Start with what you already have.</h1><p>A product description, public listing URL, or product image is enough to begin the research flow.</p><div class="chips"><span class="chip">Description</span><span class="chip">Public URL</span><span class="chip">Product image</span></div></div><div class="card"><div class="card-title"><span>01</span> Starting inputs</div><div class="row"><strong>Product</strong><span>Travel mug</span></div><div class="row"><strong>Market</strong><span>Public comparable listings</span></div><div class="row"><strong>Target</strong><span>Marketplace selected next</span></div><div class="row"><strong>Output</strong><span>One-page market brief</span></div></div></section>
-      <section class="slide" data-phase="RESEARCH"><div><div class="eyebrow">PUBLIC MARKET RESEARCH</div><h1>Research before writing copy.</h1><p>Keep comparable links, observed price context, selling points, and recurring complaints in one evidence ledger.</p><div class="chips"><span class="chip">Comparable links</span><span class="chip">Observed prices</span><span class="chip">Customer signals</span></div></div><div class="card"><div class="card-title"><span>02</span> Evidence ledger</div><div class="source"><i>A</i><b>Product brief</b><em>provided</em></div><div class="source"><i>B</i><b>Comparable page</b><em>public link</em></div><div class="source"><i>C</i><b>Price context</b><em>observed</em></div><div class="source"><i>D</i><b>Open question</b><em>review item</em></div></div></section>
-      <section class="slide" data-phase="ADAPT"><div><div class="eyebrow">MARKETPLACE ADAPTER</div><h1>Select the marketplace first.</h1><p>Then shape the title, fields, image requirements, and language for the platform you actually plan to use.</p><div class="chips"><span class="chip">10 platforms</span><span class="chip">Image requirements</span><span class="chip">Listing drafts</span></div></div><div class="card"><div class="card-title"><span>03</span> Marketplace route</div><div class="market-grid"><div class="market active">Taobao / Tmall</div><div class="market">JD</div><div class="market">Douyin</div><div class="market">Amazon</div><div class="market">Shopify</div><div class="market">AliExpress</div></div></div></section>
-      <section class="slide" data-phase="DRAFT"><div><div class="eyebrow">EDITABLE DRAFTS</div><h1>Turn evidence into a usable listing pack.</h1><p>Draft platform-ready copy and image requirements while keeping the source context visible alongside each decision.</p><div class="chips"><span class="chip">Title</span><span class="chip">Selling points</span><span class="chip">Image brief</span></div></div><div class="card"><div class="card-title"><span>04</span> Listing draft</div><div class="draft"><b>Title draft</b><span>Insulated travel mug with an easy-to-carry daily format</span></div><div class="draft"><b>Evidence notes</b><span>Observed competitor language and unresolved product details stay separate.</span></div><div class="draft"><b>Image requirements</b><span>Platform-specific dimensions and asset checklist.</span></div></div></section>
-      <section class="slide" data-phase="HANDOFF"><div><div class="eyebrow">REVIEWABLE HANDOFF</div><h1>Hand off one coherent package.</h1><p>Research, copy, image requirements, and review fields stay together so the next person can continue without reconstructing the work.</p><div class="chips"><span class="chip">Source-linked</span><span class="chip">Editable</span><span class="chip">Platform-ready</span></div></div><div class="card"><div class="card-title"><span>05</span> Delivery package</div><div class="package"><div>One-page market brief</div><div>Evidence ledger</div><div>Platform copy pack</div><div>Image requirements</div></div></div></section>
-    </div><div class="footer">source-linked ecommerce preparation</div>
+      <section class="slide active" data-phase="INPUT" aria-hidden="false">
+        <div class="copy" data-motion data-motion-x="-18" data-motion-y="8"><div class="eyebrow">01 / ONE PRODUCT BRIEF</div><h1>Start with what you already have.</h1><p>A product description, public listing URL, or product image is enough to begin the research flow.</p><div class="chips"><span class="chip">Description</span><span class="chip">Public URL</span><span class="chip">Product image</span></div></div>
+        <div class="visual product-visual" data-motion data-motion-x="24" data-motion-y="12"><div class="visual-kicker">INPUT / PRODUCT MASTER</div><div class="measure"></div><img src="hyperframes-promo/assets/product-master.png" alt="White travel cup product master image"><div class="visual-label">details to confirm</div></div>
+      </section>
+      <section class="slide" data-phase="EVIDENCE" aria-hidden="true">
+        <div class="copy" data-motion data-motion-x="-18" data-motion-y="8"><div class="eyebrow">02 / PUBLIC MARKET RESEARCH</div><h1>Keep the source before the claim.</h1><p>Capture public comparable pages, observed price context, and open questions in an evidence ledger before writing copy.</p><div class="chips"><span class="chip">Public pages</span><span class="chip">Observed facts</span><span class="chip">Review status</span></div></div>
+        <div class="visual evidence-visual" data-motion data-motion-x="24" data-motion-y="12"><div class="visual-kicker">EVIDENCE / SOURCE CLIPPINGS</div><div class="source-card domestic"><img src="hyperframes-promo/assets/source-domestic.png" alt="Public ecommerce image specification source screenshot"></div><div class="source-card crossborder"><img src="hyperframes-promo/assets/source-crossborder.png" alt="Cross-border ecommerce image specification source screenshot"></div><div class="source-tag domestic">public source</div><div class="source-tag crossborder">cross-border source</div><div class="ledger-strip"><b>research-evidence.md</b><span>URL / read state / intended use</span><span>Observed, not assumed.</span></div></div>
+      </section>
+      <section class="slide" data-phase="CATEGORY" aria-hidden="true">
+        <div class="copy" data-motion data-motion-x="-18" data-motion-y="8"><div class="eyebrow">03 / CATEGORY FIELDS</div><h1>Complete the route before the title.</h1><p>Confirm the platform category and required fields first, so the listing draft matches the product and the destination.</p><div class="chips"><span class="chip">Category path</span><span class="chip">Required fields</span><span class="chip">Pending facts</span></div></div>
+        <div class="visual category-visual" data-motion data-motion-x="24" data-motion-y="12"><div class="visual-kicker">ADAPT / CATEGORY ROUTE</div><img src="hyperframes-promo/assets/charger-fixture.png" alt="Generic USB-C charger test fixture"><div class="route"><div class="route-line"></div><div class="route-node"><i></i><div><span>Level 1</span><strong>3C electronics</strong></div></div><div class="route-node"><i></i><div><span>Level 2</span><strong>Mobile accessories</strong></div></div><div class="route-node active"><i></i><div><span>Leaf category</span><strong>Chargers</strong></div></div></div><div class="field-list"><div>Brand / confirm</div><div>Port / visible</div><div>Power / pending</div><div>SKU / align</div></div></div>
+      </section>
+      <section class="slide" data-phase="REVIEW" aria-hidden="true">
+        <div class="copy" data-motion data-motion-x="-18" data-motion-y="8"><div class="eyebrow">04 / CLAIM REVIEW</div><h1>Verify the claim before you write it.</h1><p>Keep facts, evidence, and risk words visible together. Remove absolute claims that the source material cannot support.</p><div class="chips"><span class="chip">Facts</span><span class="chip">Evidence</span><span class="chip">Risk words</span></div></div>
+        <div class="visual copy-visual" data-motion data-motion-x="24" data-motion-y="12"><div class="visual-kicker">REVIEW / EDITABLE DRAFT</div><img src="hyperframes-promo/assets/proofreading-desk.png" alt="Proofreading desk with marked-up draft"><div class="claim">This is the <del>best and 100% safe</del> charger.<small>Rewrite: retain only the product facts that can be checked.</small></div><div class="review-stamp">REVISE</div></div>
+      </section>
+      <section class="slide" data-phase="HANDOFF" aria-hidden="true">
+        <div class="copy" data-motion data-motion-x="-18" data-motion-y="8"><div class="eyebrow">05 / REVIEWABLE HANDOFF</div><h1>Deliver one editable listing pack.</h1><p>Research, copy, image requirements, and review fields stay together so the next person can continue without reconstructing the work.</p><div class="chips"><span class="chip">Source-linked</span><span class="chip">Editable</span><span class="chip">Platform-ready</span></div></div>
+        <div class="visual handoff-visual" data-motion data-motion-x="24" data-motion-y="12"><div class="visual-kicker">HANDOFF / WORKING PACKAGE</div><div class="report-shot"><img src="hyperframes-promo/assets/delivery-source.png" alt="Public image specification source screenshot in the delivery package"></div><div class="pack-list"><b>listing-pack/</b><span>market brief</span><span>evidence ledger</span><span>copy draft</span><span>image requirements</span></div><div class="thumb"><img src="hyperframes-promo/assets/delivery-product.png" alt="Travel cup delivery thumbnail"></div></div>
+      </section>
+    </div>
+    <div class="footer">source-linked ecommerce preparation</div>
   </main>
   <script>
-    const slides = [...document.querySelectorAll('.slide')];
-    const step = document.getElementById('step');
-    const phase = document.getElementById('phase');
-    const progress = document.getElementById('progress');
-    window.renderAt = (frame) => { const scene = Math.min(slides.length - 1, Math.floor(frame / 20)); slides.forEach((slide, index) => slide.classList.toggle('active', index === scene)); step.textContent = String(scene + 1).padStart(2, '0'); phase.textContent = slides[scene].dataset.phase; progress.style.width = `${Math.min(100, ((frame + 1) / 100) * 100)}%`; };
-    window.renderAt(0);
+    (() => {
+      const frame = document.querySelector('.frame');
+      const slides = [...document.querySelectorAll('.slide')];
+      const step = document.getElementById('step');
+      const phase = document.getElementById('phase');
+      const progress = document.getElementById('progress');
+      const fps = Number(frame.dataset.animationFps);
+      const totalFrames = Number(frame.dataset.animationFrames);
+      const framesPerScene = totalFrames / slides.length;
+      const frameWidth = 960;
+      const frameHeight = 540;
+      let playbackFrame = 0;
+      let playing = true;
+      let startedAt = performance.now();
+
+      const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
+      const easeOut = (value) => 1 - Math.pow(1 - clamp(value), 3);
+
+      function fitFrame() {
+        const scale = Math.min(window.innerWidth / frameWidth, window.innerHeight / frameHeight);
+        frame.style.left = `${(window.innerWidth - frameWidth * scale) / 2}px`;
+        frame.style.top = `${(window.innerHeight - frameHeight * scale) / 2}px`;
+        frame.style.transform = `scale(${scale})`;
+      }
+
+      function applyFrame(frameNumber) {
+        const numeric = Number.isFinite(Number(frameNumber)) ? Number(frameNumber) : 0;
+        const normalized = ((numeric % totalFrames) + totalFrames) % totalFrames;
+        const scene = Math.min(slides.length - 1, Math.floor(normalized / framesPerScene));
+        const local = normalized - scene * framesPerScene;
+        const sceneProgress = clamp((local + 1) / framesPerScene);
+        const entrance = easeOut(sceneProgress / 0.28);
+        playbackFrame = normalized;
+        slides.forEach((slide, index) => {
+          const active = index === scene;
+          slide.classList.toggle('active', active);
+          slide.style.visibility = active ? 'visible' : 'hidden';
+          slide.style.opacity = active ? '1' : '0';
+          slide.setAttribute('aria-hidden', String(!active));
+          slide.querySelectorAll('[data-motion]').forEach((node) => {
+            const x = Number(node.dataset.motionX || 0);
+            const y = Number(node.dataset.motionY || 0);
+            const scale = Number(node.dataset.motionScale || 0.97);
+            const amount = active ? entrance : 0;
+            const floatY = active && sceneProgress > 0.32 ? Math.sin(sceneProgress * Math.PI * 2) * 1.5 : 0;
+            node.style.opacity = active ? String(0.72 + amount * 0.28) : '0';
+            node.style.transform = `translate3d(${x * (1 - amount)}px, ${y * (1 - amount) + floatY}px, 0) scale(${scale + (1 - scale) * amount})`;
+          });
+        });
+        step.textContent = String(scene + 1).padStart(2, '0');
+        phase.textContent = slides[scene].dataset.phase;
+        progress.style.width = `${(normalized / totalFrames) * 100}%`;
+        frame.dataset.scene = String(scene + 1);
+        frame.dataset.frame = String(normalized);
+      }
+
+      function tick(now) {
+        if (!playing) return;
+        applyFrame(Math.floor(((now - startedAt) / 1000) * fps));
+        requestAnimationFrame(tick);
+      }
+
+      window.renderAt = (frameNumber) => {
+        playing = false;
+        applyFrame(frameNumber);
+        return playbackFrame;
+      };
+      window.animation = {
+        play() {
+          if (playing) return;
+          startedAt = performance.now() - (playbackFrame / fps) * 1000;
+          playing = true;
+          requestAnimationFrame(tick);
+        },
+        pause() { playing = false; },
+        get playing() { return playing; },
+        get frame() { return playbackFrame; },
+        fps,
+        totalFrames
+      };
+
+      fitFrame();
+      window.addEventListener('resize', fitFrame);
+      applyFrame(0);
+      requestAnimationFrame(tick);
+    })();
   </script>
 </body>
 </html>

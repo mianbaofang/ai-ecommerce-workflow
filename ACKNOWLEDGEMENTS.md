@@ -12,7 +12,7 @@
 
 ## Public references
 
-The marketplace compliance checklist is based on public advertising-law concepts, public marketplace policy patterns, and seller-operation knowledge distilled into `skill/references/compliance-terms.md`. It is not a substitute for legal review or each marketplace's latest official rules.
+The marketplace compliance checklist is based on public advertising-law concepts, public marketplace policy patterns, and seller-operation knowledge distilled into `skills/ai-ecommerce-workflow/references/compliance-terms.md`. It is not a substitute for legal review or each marketplace's latest official rules.
 
 ## 中文说明
 

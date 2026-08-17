@@ -6,6 +6,7 @@ tmp/
 .cache/
 *.log
 *.response.json
+*-response.json
 response.json
 
 # Python
@@ -17,8 +18,11 @@ venv/
 # Node / HyperFrames local work
 node_modules/
 dist/
+skills/*/dist-audit/
+_audit-artifacts/
 build/
 .playwright/
+.playwright-cli/
 
 # Media render intermediates
 /mp4/

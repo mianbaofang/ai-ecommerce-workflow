@@ -40,25 +40,25 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 
 | Case | Readiness | Answer key | Decision file |
 | --- | --- | --- | --- |
-| `public-research-contract` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `provider-and-asset-boundary` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `ten-platform-size-matrix` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `image-only-fact-boundary` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `generated-image-quality-gate` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `category-module-separation` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `marketplace-adapter-separation` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `china-category-precedence` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `markdown-evidence-state` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `humanization-fact-regression` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
-| `contextual-listing-compliance` | `awaiting-decision` | `hidden` | `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json` |
+| `public-research-contract` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `provider-and-asset-boundary` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `ten-platform-size-matrix` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `image-only-fact-boundary` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `generated-image-quality-gate` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `category-module-separation` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `marketplace-adapter-separation` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `china-category-precedence` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `markdown-evidence-state` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `humanization-fact-regression` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
+| `contextual-listing-compliance` | `awaiting-decision` | `hidden` | `.\reports\output_review_decisions.json` |
 
 ### public-research-contract
 
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -89,8 +89,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -121,8 +121,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -153,8 +153,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -185,8 +185,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -217,8 +217,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -249,8 +249,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -281,8 +281,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -313,8 +313,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -345,8 +345,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 
@@ -377,8 +377,8 @@ Expected winners stay hidden until a valid reviewer decision is recorded.
 - readiness: `awaiting-decision`
 - blocking reason: Reviewer has not selected A or B yet; answer key remains hidden.
 - answer key visible: `false`
-- blind pack: `E:\Object\ai-ecommerce-workflow\reports\output_blind_review_pack.json`
-- decisions: `E:\Object\ai-ecommerce-workflow\reports\output_review_decisions.json`
+- blind pack: `.\reports\output_blind_review_pack.json`
+- decisions: `.\reports\output_review_decisions.json`
 
 #### Commands
 

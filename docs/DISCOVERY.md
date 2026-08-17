@@ -7,9 +7,10 @@
 | Repository | `mianbaofang/ai-ecommerce-workflow` |
 | Public name | AI Ecommerce Workflow |
 | Skill/package name | `ai-ecommerce-workflow` |
-| Canonical entrypoint | Root `SKILL.md` |
+| Canonical entrypoint | `skills/ai-ecommerce-workflow/SKILL.md` |
+| Release asset pattern | `ai-ecommerce-workflow-v<version>.zip` plus `.sha256` |
 | Homepage | `https://mianbaofang.github.io/ai-ecommerce-workflow/`, deployed from `docs/site/` by GitHub Pages |
-| Release asset | [v1.1.0 install ZIP](https://github.com/mianbaofang/ai-ecommerce-workflow/releases/tag/v1.1.0) with SHA-256 checksum |
+| Release state | [v1.1.1](https://github.com/mianbaofang/ai-ecommerce-workflow/releases/tag/v1.1.1) is public and uses the current `skills/ai-ecommerce-workflow/` package boundary. |
 | Maintenance state | Active, provider-neutral, human-reviewed outputs |
 
 ## Audience And Scope
@@ -20,6 +21,7 @@ This Skill is for sellers and operators who need a reviewable first listing pack
 
 - AI Ecommerce Workflow Skill
 - Public ecommerce market research
+- Product listing Skill
 - Platform-specific listing drafts
 - Marketplace image requirements
 

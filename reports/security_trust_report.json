@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "skill_dir": "E:\\Object\\ai-ecommerce-workflow",
+  "skill_dir": ".",
   "summary": {
     "scanned_files": 33,
     "script_count": 0,
@@ -79,7 +79,7 @@
     "remote_metadata_policy": "allow-metadata-only"
   },
   "artifacts": {
-    "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\security_trust_report.json",
-    "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\security_trust_report.md"
+    "json": ".\\reports\\security_trust_report.json",
+    "markdown": ".\\reports\\security_trust_report.md"
   }
 }

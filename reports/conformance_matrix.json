@@ -48,7 +48,7 @@
     "fail_count": 0
   },
   "artifacts": {
-    "json": "E:\\Object\\ai-ecommerce-workflow\\reports\\conformance_matrix.json",
-    "markdown": "E:\\Object\\ai-ecommerce-workflow\\reports\\conformance_matrix.md"
+    "json": ".\\reports\\conformance_matrix.json",
+    "markdown": ".\\reports\\conformance_matrix.md"
   }
 }

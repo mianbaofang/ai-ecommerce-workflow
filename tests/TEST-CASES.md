@@ -244,7 +244,7 @@ The executed runs are documented in `reports/manual-simulation/07-workflow-regre
 Run the repository's Yao Meta Skill evaluations:
 
 ```text
-python C:\Users\Ethan\.agents\skills\yao-meta-skill\scripts\trigger_eval.py --description-file SKILL.md --cases evals\trigger_cases.json --semantic-config evals\semantic_config.json
+python C:\Users\Ethan\.agents\skills\yao-meta-skill\scripts\trigger_eval.py --description-file skills\ai-ecommerce-workflow\SKILL.md --cases evals\trigger_cases.json --semantic-config evals\semantic_config.json
 python C:\Users\Ethan\.agents\skills\yao-meta-skill\scripts\run_output_eval.py --cases evals\output_cases.jsonl
 ```
 

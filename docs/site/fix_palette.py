@@ -43,10 +43,11 @@ remaining_fixes = {
     '#f1e5dd': '#F0E8DD',
 }
 
+SITE_ROOT = Path(__file__).resolve().parent
 paths = [
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/index.html'),
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/project-intro-animation.html'),
-    Path('E:/Object/taobao-newproduct-launch-workflow/docs/site/project-intro-animation-zh.html'),
+    SITE_ROOT / 'index.html',
+    SITE_ROOT / 'project-intro-animation.html',
+    SITE_ROOT / 'project-intro-animation-zh.html',
 ]
 for p in paths:
     if not p.exists():
